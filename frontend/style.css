@@ -1,0 +1,1556 @@
+/* ================================================================
+   JSR EV TECH – Navbar Styles
+   Colours:
+     Royal Blue    #1746CE
+     Electric Green #65D510
+     Dark text      #101B3D
+     White          #FFFFFF
+================================================================ */
+
+/* ── RESET / BASE ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Inter first; system fonts are fallbacks when offline */
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, sans-serif;
+  color: #101B3D;
+  overflow-x: hidden; /* prevent horizontal scroll down to 320px */
+}
+
+ul  { list-style: none; }
+a   { text-decoration: none; color: inherit; }
+
+/* Remove default button styling – we apply our own */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+/* ── Keyboard focus ring (accessibility) ── */
+:focus-visible {
+  outline: 3px solid #65D510;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Centred page container ── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ================================================================
+   TOP STRIP
+================================================================ */
+.top-strip {
+  background-color: #1746CE;
+  color: #FFFFFF;
+}
+
+.top-strip__inner {
+  display: flex;
+  align-items: center;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+/* ================================================================
+   MAIN NAVBAR
+================================================================ */
+.navbar {
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.09);
+  position: sticky;   /* sticks to top while scrolling */
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  height: 80px;       /* ≈ 80 px desktop height */
+}
+
+/* ================================================================
+   LOGO
+================================================================ */
+.logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  flex-shrink: 0;     /* never squish the logo */
+}
+
+/* "JSR EV TECH" in bold royal blue */
+.logo__name {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1746CE;
+  letter-spacing: -0.5px;
+}
+
+/* Row: green-line · SPARE PARTS · green-line */
+.logo__sub {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 4px;
+}
+
+/* Short green accent bars */
+.logo__line {
+  display: inline-block;
+  width: 20px;
+  height: 2.5px;
+  background-color: #65D510;
+  border-radius: 2px;
+}
+
+.logo__tagline {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #101B3D;
+}
+
+/* ================================================================
+   DESKTOP NAV LINKS
+================================================================ */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;  /* push links toward the right */
+}
+
+/* Base style for every link / button in the desktop nav */
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 14px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #101B3D;
+  border-radius: 6px;
+  white-space: nowrap;
+  min-height: 44px;   /* WCAG touch-target minimum */
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #1746CE;
+  background-color: rgba(23, 70, 206, 0.06);
+}
+
+/* Active link (Home): blue text + green underline */
+.nav-link--active {
+  color: #1746CE;
+  font-weight: 600;
+  position: relative;
+}
+
+.nav-link--active::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 14px;
+  right: 14px;
+  height: 2.5px;
+  background-color: #65D510;
+  border-radius: 2px;
+}
+
+/* React controls mobile-menu availability with the native hidden attribute. */
+.mobile-menu[hidden] {
+  display: none !important;
+}
+
+/* ================================================================
+   ENQUIRE NOW BUTTON
+================================================================ */
+.btn-enquire {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 22px;
+  background-color: #1746CE;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  white-space: nowrap;
+  min-height: 44px;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-enquire:hover  { background-color: #1239b0; }
+.btn-enquire:active { transform: scale(0.97); }
+
+/* Full-width variant used inside mobile menu */
+.btn-enquire--full {
+  width: 100%;
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 14px 22px;
+}
+
+/* ================================================================
+   HAMBURGER BUTTON (mobile only)
+================================================================ */
+.hamburger {
+  display: none;          /* hidden on desktop */
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-left: auto;
+  color: #101B3D;
+  border-radius: 6px;
+  flex-shrink: 0;
+  transition: color 0.2s ease;
+}
+
+.hamburger:hover { color: #1746CE; }
+
+/* Only one icon visible at a time */
+.hamburger__icon--close { display: none; }
+
+.hamburger--open .hamburger__icon--open  { display: none;  }
+.hamburger--open .hamburger__icon--close { display: block; }
+
+/* ================================================================
+   MOBILE MENU PANEL
+================================================================ */
+.mobile-menu {
+  background-color: #FFFFFF;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  display: none;          /* JS adds .mobile-menu--open to show */
+  overflow: hidden;
+}
+
+.mobile-menu--open { display: block; }
+
+/* ── Mobile nav rows ── */
+.mobile-nav { padding: 4px 0 8px; }
+
+.mobile-nav__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #101B3D;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  min-height: 52px;       /* comfortable touch target */
+  transition: background-color 0.15s ease;
+}
+
+.mobile-nav__link:hover {
+  background-color: rgba(23, 70, 206, 0.05);
+}
+
+/* Active Home – blue text + left green accent bar */
+.mobile-nav__link--active {
+  color: #1746CE;
+  font-weight: 600;
+  border-left: 3px solid #65D510;
+  padding-left: 17px;
+}
+
+/* CTA row at the bottom of the mobile menu */
+.mobile-menu__cta {
+  padding: 14px 16px 20px;
+}
+
+/* ================================================================
+   RESPONSIVE – mobile layout below 900 px
+================================================================ */
+@media not all and (min-width: 900px) {
+
+  /* Hide desktop links and the desktop CTA */
+  .nav-links,
+  .btn-enquire:not(.btn-enquire--full) {
+    display: none;
+  }
+
+  /* Reveal hamburger */
+  .hamburger { display: flex; }
+
+  /* Remove extra gap since links are gone */
+  .navbar__inner { gap: 0; }
+}
+
+/* ================================================================
+   REDUCED MOTION – respect user OS preference
+================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration:  0.01ms !important;
+  }
+}
+
+/* ================================================================
+   SITE FOOTER
+   Scoped to .site-footer so existing sections remain unchanged.
+================================================================ */
+.site-footer {
+  padding: 48px 0;
+  background-color: #101B3D;
+  color: #cbd2e3;
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.site-footer__columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(180px, 0.7fr) minmax(0, 1.15fr);
+  gap: clamp(40px, 6vw, 88px);
+}
+
+.site-footer__shop,
+.site-footer__nav,
+.site-footer__contact {
+  min-width: 0;
+}
+
+.site-footer__logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 44px;
+  color: #FFFFFF;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+}
+
+.site-footer__shop-accent,
+.site-footer__heading-accent {
+  display: block;
+  border-radius: 2px;
+  background-color: #65D510;
+}
+
+.site-footer__shop-accent {
+  width: 120px;
+  height: 3px;
+  margin-top: 18px;
+}
+
+.site-footer__description {
+  max-width: 430px;
+  margin-top: 22px;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.site-footer__heading {
+  color: #FFFFFF;
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.site-footer__heading-accent {
+  width: 82px;
+  height: 3px;
+  margin: 12px 0 18px;
+}
+
+.site-footer__links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.site-footer__links a,
+.site-footer__address a,
+.site-footer__top-link {
+  color: #dce2ef;
+  transition: color 0.2s ease;
+}
+
+.site-footer__links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 16px;
+}
+
+.site-footer__links a:hover,
+.site-footer__address a:hover,
+.site-footer__top-link:hover {
+  color: #65D510;
+}
+
+.site-footer__address {
+  display: grid;
+  gap: 10px;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.site-footer__contact-row {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.site-footer__contact-row svg {
+  width: 30px;
+  height: 30px;
+  color: #4f91ff;
+}
+
+.site-footer__contact-row a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  width: fit-content;
+}
+
+.site-footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.site-footer__top-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 44px;
+  flex-shrink: 0;
+  color: #4f91ff;
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.site-footer__top-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+.site-footer a:focus-visible {
+  outline: 3px solid #65D510;
+  outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  .site-footer__columns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 34px;
+  }
+
+  .site-footer__bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 359px) {
+  .site-footer__logo {
+    font-size: 30px;
+  }
+
+  .site-footer__shop-accent {
+    width: 88px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-footer__links a,
+  .site-footer__address a,
+  .site-footer__top-link {
+    transition: none;
+  }
+}
+
+/* ================================================================
+   ABOUT OUR SHOP
+   Scoped to .about so existing sections remain unchanged.
+================================================================ */
+.about {
+  background-color: #FFFFFF;
+  padding: 64px 0;
+  scroll-margin-top: 96px;
+}
+
+.about__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 48px;
+}
+
+.about__media {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 24px;
+  overflow: hidden;
+  border: 1px solid #e1e5ee;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f7f9fd 0%, #eef3fb 100%);
+  color: #1746CE;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.about__shop-icon {
+  width: 64px;
+  height: 64px;
+  color: #1746CE;
+}
+
+.about__photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.about__content {
+  min-width: 0;
+}
+
+.about__label-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.about__label {
+  color: #1746CE;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.about__label-line {
+  width: 58px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #65D510;
+}
+
+.about__heading {
+  margin-bottom: 18px;
+  color: #101B3D;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+.about__copy {
+  margin-bottom: 26px;
+  color: #3d4a6b;
+  font-size: clamp(16px, 1.5vw, 18px);
+  line-height: 1.65;
+}
+
+.about__details {
+  width: 100%;
+  margin: 0 0 28px;
+  overflow: hidden;
+  border: 1px solid #cbd3e1;
+  border-spacing: 0;
+  border-radius: 12px;
+}
+
+.about__detail-row {
+  display: grid;
+  grid-template-columns: minmax(150px, 1fr) minmax(0, 2fr);
+  align-items: center;
+  border-bottom: 1px solid #d8deea;
+}
+
+.about__detail-row:last-child {
+  border-bottom: 0;
+}
+
+.about__detail-row th,
+.about__detail-row td {
+  min-width: 0;
+  padding: 13px 18px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.about__detail-row th {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  background: #eef4fc;
+  color: #101B3D;
+  font-weight: 750;
+  text-align: left;
+}
+
+.about__detail-row td {
+  color: #24304f;
+}
+
+.about__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 24px;
+  border: 2px solid #1746CE;
+  border-radius: 8px;
+  background-color: #1746CE;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.about__button svg {
+  width: 21px;
+  height: 21px;
+}
+
+.about__button:focus-visible {
+  outline: 3px solid #65D510;
+  outline-offset: 3px;
+}
+
+.about__button:hover {
+  border-color: #1239b0;
+  background-color: #1239b0;
+}
+
+@media (max-width: 899px) {
+  .about {
+    padding: 40px 0;
+  }
+
+  .about__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 399px) {
+  .about__media {
+    padding: 16px;
+    font-size: 14px;
+  }
+
+  .about__label {
+    font-size: 12px;
+  }
+
+  .about__detail-row {
+    grid-template-columns: minmax(105px, 0.85fr) minmax(0, 1.4fr);
+  }
+
+  .about__detail-row th,
+  .about__detail-row td {
+    padding: 11px 12px;
+    font-size: 13px;
+  }
+
+  .about__button {
+    width: 100%;
+  }
+}
+
+/* ================================================================
+   MEET OUR FOUNDER
+   Scoped to .founder so existing sections remain unchanged.
+================================================================ */
+.founder {
+  position: relative;
+  overflow: hidden;
+  padding: 64px 0;
+  background-color: #FFFFFF;
+  scroll-margin-top: 96px;
+}
+
+.founder__decoration {
+  position: absolute;
+  z-index: 0;
+  width: 290px;
+  height: 290px;
+  border-radius: 50%;
+  background-color: #f0f5fd;
+  pointer-events: none;
+}
+
+.founder__decoration--top {
+  top: -190px;
+  right: -100px;
+}
+
+.founder__decoration--bottom {
+  bottom: -230px;
+  left: -130px;
+}
+
+.founder__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 38fr) minmax(0, 62fr);
+  align-items: center;
+  gap: 48px;
+}
+
+.founder__portrait-wrap {
+  position: relative;
+  width: min(100%, 340px);
+  justify-self: center;
+}
+
+.founder__portrait {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid #cbd5e6;
+  border-radius: 28px;
+  box-shadow: 0 12px 30px rgba(16, 27, 61, 0.12);
+}
+
+.founder__corner {
+  position: absolute;
+  z-index: 2;
+  width: 64px;
+  height: 64px;
+  border-color: #65D510;
+  border-style: solid;
+  pointer-events: none;
+}
+
+.founder__corner--top {
+  top: -7px;
+  left: -7px;
+  border-width: 4px 0 0 4px;
+  border-radius: 28px 0 0;
+}
+
+.founder__corner--bottom {
+  right: -7px;
+  bottom: -7px;
+  border-width: 0 4px 4px 0;
+  border-radius: 0 0 28px;
+}
+
+.founder__content {
+  min-width: 0;
+}
+
+.founder__label-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.founder__eyebrow {
+  color: #1746CE;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.founder__label-line {
+  width: 64px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #65D510;
+}
+
+.founder__heading {
+  color: #101B3D;
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+.founder__designation {
+  margin-top: 8px;
+  color: #1746CE;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.founder__copy {
+  display: grid;
+  gap: 16px;
+  margin-top: 28px;
+  color: #303b5c;
+  font-size: clamp(16px, 1.45vw, 18px);
+  line-height: 1.7;
+}
+
+.founder__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.founder__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background-color: #edf3fc;
+  color: #101B3D;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.founder__chip svg {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  color: #65D510;
+}
+
+@media (max-width: 899px) {
+  .founder {
+    padding: 40px 0;
+  }
+
+  .founder__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .founder__portrait-wrap {
+    max-width: 340px;
+  }
+
+  .founder__copy {
+    text-align: left;
+  }
+}
+
+@media (max-width: 399px) {
+  .founder__eyebrow {
+    font-size: 12px;
+  }
+
+  .founder__label-row {
+    gap: 10px;
+  }
+
+  .founder__label-line {
+    width: 36px;
+  }
+
+  .founder__chip {
+    max-width: 100%;
+  }
+}
+
+/* ================================================================
+   OUR SERVICES
+   Scoped to .services so existing sections remain unchanged.
+================================================================ */
+.services {
+  padding: 64px 0;
+  background-color: #F5F7FC;
+  scroll-margin-top: 96px;
+}
+
+.services__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.services__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.services__label {
+  color: #1746CE;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.services__accent {
+  width: 64px;
+  height: 3px;
+  margin: 14px 0 24px;
+  border-radius: 2px;
+  background-color: #65D510;
+}
+
+.services__heading {
+  color: #101B3D;
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+.services__subtitle {
+  margin-top: 12px;
+  color: #4c5570;
+  font-size: clamp(16px, 1.6vw, 19px);
+  line-height: 1.6;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.services__card {
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid #dce2ed;
+  border-radius: 16px;
+  background-color: #FFFFFF;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+              transform 0.2s ease;
+}
+
+.services__card:hover,
+.services__card:focus-visible {
+  border-color: rgba(23, 70, 206, 0.45);
+  box-shadow: 0 10px 28px rgba(23, 70, 206, 0.1);
+  transform: translateY(-3px);
+}
+
+.services__card:focus-visible {
+  outline: 3px solid #65D510;
+  outline-offset: 3px;
+}
+
+.services__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 24px;
+  border-radius: 16px;
+  background-color: #edf3ff;
+  color: #1746CE;
+}
+
+.services__icon svg {
+  width: 52px;
+  height: 52px;
+}
+
+.services__card-heading {
+  margin-bottom: 12px;
+  color: #101B3D;
+  font-size: clamp(21px, 2vw, 26px);
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.services__card-copy {
+  color: #4c5570;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.services__actions {
+  display: flex;
+  justify-content: center;
+}
+
+.services__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 24px;
+  border: 2px solid #1746CE;
+  border-radius: 8px;
+  background-color: #1746CE;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.services__button:hover {
+  border-color: #1239b0;
+  background-color: #1239b0;
+}
+
+.services__button svg {
+  width: 21px;
+  height: 21px;
+}
+
+@media (max-width: 899px) {
+  .services {
+    padding: 40px 0;
+  }
+
+  .services__inner {
+    gap: 32px;
+  }
+
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 399px) {
+  .services__card {
+    padding: 24px 20px;
+  }
+
+  .services__label {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services__card {
+    transition: none;
+  }
+
+  .services__card:hover,
+  .services__card:focus-visible {
+    transform: none;
+  }
+}
+
+/* ================================================================
+   CONTACT & LOCATION
+   Scoped to .contact so existing sections remain unchanged.
+================================================================ */
+.contact {
+  padding: 64px 0;
+  background-color: #FFFFFF;
+  scroll-margin-top: 96px;
+}
+
+.contact__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.contact__header {
+  max-width: 720px;
+}
+
+.contact__heading {
+  color: #101B3D;
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.contact__heading::before {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 3px;
+  margin-bottom: 14px;
+  border-radius: 2px;
+  background-color: #65D510;
+}
+
+.contact__subtitle {
+  margin-top: 12px;
+  color: #4c5570;
+  font-size: clamp(16px, 1.6vw, 18px);
+  line-height: 1.6;
+}
+
+.contact__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 32px;
+  align-items: stretch;
+}
+
+.contact__details,
+.contact__map-card {
+  min-width: 0;
+}
+
+.contact__shop-card,
+.contact__map-card {
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid #dce2ed;
+  border-radius: 16px;
+  background-color: #F5F7FC;
+}
+
+.contact__shop-card {
+  padding: 28px;
+}
+
+.contact__shop-name {
+  margin-bottom: 24px;
+  color: #101B3D;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.contact__address {
+  font-style: normal;
+}
+
+.contact__detail {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  padding: 18px 0;
+  border-top: 1px solid #dce2ed;
+  color: #101B3D;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.contact__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: #e8efff;
+  color: #1746CE;
+}
+
+.contact__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.contact__detail-label {
+  display: block;
+  margin-bottom: 3px;
+  color: #1746CE;
+  font-size: 13px;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.contact__detail a {
+  text-decoration: underline;
+  text-decoration-color: rgba(23, 70, 206, 0.35);
+  text-underline-offset: 3px;
+}
+
+.contact__muted {
+  color: #5e6882;
+}
+
+.contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.contact__button,
+.contact__maps-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 22px;
+  border: 2px solid #1746CE;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 650;
+  text-align: center;
+  transition: background-color 0.2s ease, color 0.2s ease,
+              border-color 0.2s ease;
+}
+
+.contact__button--primary,
+.contact__maps-link {
+  background-color: #1746CE;
+  color: #FFFFFF;
+}
+
+.contact__button--secondary {
+  background-color: #FFFFFF;
+  color: #101B3D;
+}
+
+.contact__button--primary:hover,
+.contact__maps-link:hover {
+  border-color: #1239b0;
+  background-color: #1239b0;
+}
+
+.contact__button--secondary:hover {
+  background-color: #edf3ff;
+}
+
+.contact__map-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact__map {
+  display: block;
+  width: 100%;
+  height: 360px;
+  border: 0;
+  background-color: #e8edf5;
+}
+
+.contact__map-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px;
+  color: #4c5570;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.contact__maps-link {
+  flex-shrink: 0;
+}
+
+@media (max-width: 899px) {
+  .contact {
+    padding: 40px 0;
+  }
+
+  .contact__inner {
+    gap: 30px;
+  }
+
+  .contact__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 599px) {
+  .contact__shop-card {
+    padding: 24px 20px;
+  }
+
+  .contact__actions,
+  .contact__map-info {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .contact__button,
+  .contact__maps-link {
+    width: 100%;
+  }
+
+  .contact__map {
+    height: 320px;
+  }
+}
+
+@media (max-width: 339px) {
+  .contact__detail {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 10px;
+    font-size: 15px;
+  }
+
+  .contact__icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact__button,
+  .contact__maps-link {
+    transition: none;
+  }
+}
+
+/* ================================================================
+   HERO SECTION
+   All rules are prefixed .hero__ to avoid touching navbar styles.
+================================================================ */
+
+/* Outer section – pale blue-to-white gradient background */
+.hero {
+  background: linear-gradient(135deg, #e8eeff 0%, #f4f7ff 50%, #ffffff 100%);
+  overflow: hidden; /* contain the decorative corner accents */
+}
+
+/* Two-column grid: text | image */
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 48px;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+/* ── TEXT COLUMN ── */
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;             /* consistent vertical rhythm */
+  max-width: 560px;
+}
+
+/* Eyebrow: "JSR EV TECH · ROHINI, DELHI" */
+.hero__eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #1746CE;
+}
+
+/* Main H1 heading */
+.hero__heading {
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 800;
+  line-height: 1.12;
+  color: #101B3D;
+  letter-spacing: -0.02em;
+}
+
+/* "E-Rickshaw" in royal blue */
+.hero__highlight {
+  color: #1746CE;
+}
+
+/* Description paragraph */
+.hero__desc {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #3d4a6b;         /* slightly softer than full dark text */
+  max-width: 440px;
+}
+
+/* Button row */
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;        /* wraps to stacked on very narrow screens */
+  gap: 16px;
+  margin-top: 8px;
+}
+
+/* ── SHARED BUTTON BASE ── */
+.hero__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 26px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  min-height: 48px;        /* exceeds the 44px touch-target minimum */
+  white-space: nowrap;
+  transition: background-color 0.2s ease,
+              color           0.2s ease,
+              border-color    0.2s ease,
+              transform       0.1s ease;
+  text-decoration: none;
+}
+
+.hero__btn:active { transform: scale(0.97); }
+
+/* Primary – royal blue fill */
+.hero__btn--primary {
+  background-color: #1746CE;
+  color: #FFFFFF;
+  border: 2px solid #1746CE;
+}
+
+.hero__btn--primary:hover {
+  background-color: #1239b0;
+  border-color: #1239b0;
+}
+
+/* Secondary – white with blue border + green WhatsApp icon */
+.hero__btn--whatsapp {
+  background-color: #FFFFFF;
+  color: #101B3D;
+  border: 2px solid #1746CE;
+}
+
+.hero__btn--whatsapp:hover {
+  background-color: #f0f4ff;
+}
+
+/* WhatsApp SVG icon sizing */
+.hero__wa-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+}
+
+/* ── IMAGE COLUMN ── */
+.hero__image-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The e-rickshaw product image */
+.hero__img {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  /* Placeholder style shown until the image asset is added */
+  min-height: 260px;
+  background-color: #edf1fc;
+  border-radius: 16px;
+}
+
+/* ── DECORATIVE CORNER ACCENTS ──
+   Electric-green right-angle shapes in two corners,
+   matching the design reference image */
+.hero__corner {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-color: #65D510;
+  border-style: solid;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+/* Top-right corner */
+.hero__corner--tr {
+  top: -4px;
+  right: -4px;
+  border-width: 4px 4px 0 0;  /* only top + right edges */
+}
+
+/* Bottom-left corner */
+.hero__corner--bl {
+  bottom: -4px;
+  left: -4px;
+  border-width: 0 0 4px 4px;  /* only bottom + left edges */
+}
+
+/* ================================================================
+   HERO – MOBILE  (below 900 px)
+================================================================ */
+@media (max-width: 899px) {
+
+  /* Switch to single-column, text above image */
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  /* Allow full container width on mobile */
+  .hero__text { max-width: 100%; }
+  .hero__desc { max-width: 100%; }
+
+  /* Stack buttons on narrow screens */
+  .hero__actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Full-width buttons on mobile */
+  .hero__btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Image below the text */
+  .hero__image-wrap { order: 2; }
+  .hero__text       { order: 1; }
+
+  /* Slightly smaller image on mobile */
+  .hero__img { max-width: 100%; }
+
+  /* Adjust corner sizes on mobile */
+  .hero__corner { width: 36px; height: 36px; }
+}
+
+/* Very narrow screens (320 px) – prevent any overflow */
+@media (max-width: 399px) {
+  .hero__inner {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+

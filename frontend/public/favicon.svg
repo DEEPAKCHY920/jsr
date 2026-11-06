@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="JSR EV SPARE PARTS">
+  <rect width="64" height="64" rx="12" fill="#1746CE"/>
+  <path d="M14 18h36v7H21v10c0 8 4 11 11 11s11-3 11-11v-3h7v3c0 13-7 19-18 19S14 48 14 35V18Z" fill="#fff"/>
+  <path d="M18 11h28v5H18z" fill="#65D510"/>
+</svg>
