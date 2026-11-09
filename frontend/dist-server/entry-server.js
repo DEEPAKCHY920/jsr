@@ -1,5 +1,6 @@
 import { StrictMode, useEffect, useRef, useState } from "react";
 import { renderToString } from "react-dom/server";
+import { Analytics } from "@vercel/analytics/react";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 // src/Navbar.jsx
 var DESKTOP_QUERY = "(min-width: 900px)";
@@ -1118,7 +1119,8 @@ function App() {
 				/* @__PURE__ */ jsx(Contact, {})
 			]
 		}),
-		/* @__PURE__ */ jsx(Footer, {})
+		/* @__PURE__ */ jsx(Footer, {}),
+		/* @__PURE__ */ jsx(Analytics, {})
 	] });
 }
 // src/entry-server.jsx
