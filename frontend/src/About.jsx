@@ -10,22 +10,15 @@ export default function About() {
   return (
     <section className="about" id="about" aria-labelledby="about-heading">
       <div className="container about__inner">
-        <div className="about__media" aria-label="Shop photo placeholder">
-          <svg
-            className="about__shop-icon"
-            width="64"
-            height="64"
-            viewBox="0 0 64 64"
-            fill="none"
-            aria-hidden="true"
-            focusable="false"
-          >
-            <path d="M10 27h44v27H10V27Z" stroke="currentColor" strokeWidth="3" />
-            <path d="M7 27 13 11h38l6 16M19 27v27M45 27v27" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" />
-            <path d="M7 27c0 5 8 7 12 0 4 7 10 5 13 0 3 5 9 7 13 0 4 7 12 5 12 0" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-            <path d="M26 40h12" stroke="#65D510" strokeWidth="3" strokeLinecap="round" />
-          </svg>
-          <span>Shop photo coming soon</span>
+        <div className="about__media">
+          <img
+            src="/shop.jpg"
+            alt="JSR EV Spares Parts shop front in Sector 18, Rohini, Delhi"
+            className="about__photo"
+            loading="lazy"
+            decoding="async"
+          />
+          <span className="about__photo-caption">JSR EV Spares Parts — Our Shop</span>
         </div>
 
         <div className="about__content">
