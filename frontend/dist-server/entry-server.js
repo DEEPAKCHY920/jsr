@@ -295,10 +295,6 @@ function Navbar() {
 		})
 	});
 }
-// assets/images/hero-ev-640.webp
-var hero_ev_640_default = "/assets/hero-ev-640-f0DT967a.webp";
-// assets/images/hero-ev-1280.webp
-var hero_ev_1280_default = "/assets/hero-ev-1280-BxVLupxL.webp";
 // src/Hero.jsx
 function Hero() {
 	return /* @__PURE__ */ jsx("section", {
@@ -310,77 +306,178 @@ function Hero() {
 			children: [/* @__PURE__ */ jsxs("div", {
 				className: "hero__text",
 				children: [
-					/* @__PURE__ */ jsx("p", {
-						className: "hero__eyebrow",
-						children: "JSR EV SPARE PARTS · ROHINI, DELHI"
+					/* @__PURE__ */ jsxs("div", {
+						className: "hero__badge",
+						children: [/* @__PURE__ */ jsx("svg", {
+							className: "hero__badge-icon",
+							viewBox: "0 0 24 24",
+							fill: "none",
+							"aria-hidden": "true",
+							focusable: "false",
+							children: /* @__PURE__ */ jsx("path", {
+								d: "M13 2L3 14h8l-2 8 11-13h-8l3-7z",
+								fill: "#65D510",
+								stroke: "#65D510",
+								strokeWidth: "1",
+								strokeLinejoin: "round"
+							})
+						}), /* @__PURE__ */ jsx("span", { children: "E-Rickshaw & Electric Scooter Spare Parts" })]
 					}),
 					/* @__PURE__ */ jsxs("h1", {
 						className: "hero__heading",
 						id: "hero-heading",
-						children: [
-							"Your destination for",
-							/* @__PURE__ */ jsx("br", {}),
-							/* @__PURE__ */ jsx("span", {
-								className: "hero__highlight",
-								children: "E-Rickshaw"
-							}),
-							/* @__PURE__ */ jsx("br", {}),
-							"Spare Parts"
-						]
+						children: [/* @__PURE__ */ jsx("span", {
+							className: "hero__heading-sub",
+							children: "Your Destination for"
+						}), /* @__PURE__ */ jsxs("span", {
+							className: "hero__heading-highlight",
+							children: ["E-Rickshaw Spare Parts", /* @__PURE__ */ jsx("svg", {
+								className: "hero__heading-curve",
+								viewBox: "0 0 260 14",
+								fill: "none",
+								"aria-hidden": "true",
+								focusable: "false",
+								children: /* @__PURE__ */ jsx("path", {
+									d: "M3 10C65 3 175 3 257 10",
+									stroke: "#65D510",
+									strokeWidth: "4.5",
+									strokeLinecap: "round"
+								})
+							})]
+						})]
 					}),
-					/* @__PURE__ */ jsxs("p", {
+					/* @__PURE__ */ jsx("p", {
 						className: "hero__desc",
-						children: [
-							"E-rickshaw spare parts and electric scooter spare parts.",
-							/* @__PURE__ */ jsx("br", {}),
-							"Contact us to find the right part for your vehicle."
-						]
+						children: "Genuine spare parts, repair and fitting services for e-rickshaws and electric scooters."
 					}),
-					/* @__PURE__ */ jsx("div", {
+					/* @__PURE__ */ jsxs("div", {
 						className: "hero__actions",
-						children: /* @__PURE__ */ jsxs("a", {
+						children: [/* @__PURE__ */ jsxs("a", {
 							href: "https://wa.me/919990120067?text=Hello%20JSR%20EV%20SPARE%20PARTS%2C%20I%20would%20like%20to%20enquire%20about%20spare%20parts%20or%20services.",
 							className: "hero__btn hero__btn--whatsapp",
 							"aria-label": "Send JSR EV SPARE PARTS a WhatsApp enquiry",
 							target: "_blank",
 							rel: "noopener noreferrer",
 							children: [/* @__PURE__ */ jsxs("svg", {
-								className: "hero__wa-icon",
-								width: "22",
-								height: "22",
+								className: "hero__btn-icon",
+								width: "20",
+								height: "20",
 								viewBox: "0 0 24 24",
-								fill: "#65D510",
+								fill: "currentColor",
 								"aria-hidden": "true",
-								focusable: "false",
 								children: [/* @__PURE__ */ jsx("path", { d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" }), /* @__PURE__ */ jsx("path", { d: "M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.531 5.845L0 24l6.335-1.51A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.374l-.36-.214-3.724.888.936-3.618-.235-.372A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182 17.43 2.182 21.818 6.57 21.818 12S17.43 21.818 12 21.818z" })]
 							}), "WhatsApp Enquiry"]
-						})
+						}), /* @__PURE__ */ jsxs("a", {
+							href: "tel:+919990120067",
+							className: "hero__btn hero__btn--call",
+							"aria-label": "Call JSR EV SPARE PARTS",
+							children: [/* @__PURE__ */ jsx("svg", {
+								className: "hero__btn-icon",
+								width: "18",
+								height: "18",
+								viewBox: "0 0 24 24",
+								fill: "currentColor",
+								"aria-hidden": "true",
+								children: /* @__PURE__ */ jsx("path", { d: "M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" })
+							}), "Call Now"]
+						})]
+					}),
+					/* @__PURE__ */ jsxs("div", {
+						className: "hero__features",
+						role: "list",
+						children: [
+							/* @__PURE__ */ jsxs("div", {
+								className: "hero__feature-item",
+								role: "listitem",
+								children: [/* @__PURE__ */ jsxs("svg", {
+									className: "hero__feature-icon",
+									width: "18",
+									height: "18",
+									viewBox: "0 0 24 24",
+									fill: "none",
+									stroke: "currentColor",
+									strokeWidth: "2.2",
+									strokeLinecap: "round",
+									strokeLinejoin: "round",
+									"aria-hidden": "true",
+									children: [/* @__PURE__ */ jsx("path", { d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" }), /* @__PURE__ */ jsx("path", { d: "M9 12l2 2 4-4" })]
+								}), /* @__PURE__ */ jsx("span", { children: "Genuine Parts" })]
+							}),
+							/* @__PURE__ */ jsx("div", {
+								className: "hero__feature-divider",
+								"aria-hidden": "true"
+							}),
+							/* @__PURE__ */ jsxs("div", {
+								className: "hero__feature-item",
+								role: "listitem",
+								children: [/* @__PURE__ */ jsxs("svg", {
+									className: "hero__feature-icon",
+									width: "18",
+									height: "18",
+									viewBox: "0 0 24 24",
+									fill: "none",
+									stroke: "currentColor",
+									strokeWidth: "2.2",
+									strokeLinecap: "round",
+									strokeLinejoin: "round",
+									"aria-hidden": "true",
+									children: [
+										/* @__PURE__ */ jsx("rect", {
+											x: "1",
+											y: "3",
+											width: "15",
+											height: "13"
+										}),
+										/* @__PURE__ */ jsx("polygon", { points: "16 8 20 8 23 11 23 16 16 16 16 8" }),
+										/* @__PURE__ */ jsx("circle", {
+											cx: "5.5",
+											cy: "18.5",
+											r: "2.5"
+										}),
+										/* @__PURE__ */ jsx("circle", {
+											cx: "18.5",
+											cy: "18.5",
+											r: "2.5"
+										})
+									]
+								}), /* @__PURE__ */ jsx("span", { children: "Fast Service" })]
+							}),
+							/* @__PURE__ */ jsx("div", {
+								className: "hero__feature-divider",
+								"aria-hidden": "true"
+							}),
+							/* @__PURE__ */ jsxs("div", {
+								className: "hero__feature-item",
+								role: "listitem",
+								children: [/* @__PURE__ */ jsx("svg", {
+									className: "hero__feature-icon",
+									width: "18",
+									height: "18",
+									viewBox: "0 0 24 24",
+									fill: "none",
+									stroke: "currentColor",
+									strokeWidth: "2.2",
+									strokeLinecap: "round",
+									strokeLinejoin: "round",
+									"aria-hidden": "true",
+									children: /* @__PURE__ */ jsx("path", { d: "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" })
+								}), /* @__PURE__ */ jsx("span", { children: "Repair & Fitting" })]
+							})
+						]
 					})
 				]
-			}), /* @__PURE__ */ jsxs("div", {
+			}), /* @__PURE__ */ jsx("div", {
 				className: "hero__image-wrap",
-				children: [
-					/* @__PURE__ */ jsx("span", {
-						className: "hero__corner hero__corner--tr",
-						"aria-hidden": "true"
-					}),
-					/* @__PURE__ */ jsx("span", {
-						className: "hero__corner hero__corner--bl",
-						"aria-hidden": "true"
-					}),
-					/* @__PURE__ */ jsx("img", {
-						src: hero_ev_1280_default,
-						srcSet: `${hero_ev_640_default} 640w, ${hero_ev_1280_default} 1280w`,
-						sizes: "(max-width: 399px) 100vw, (min-width: 1200px) 576px, (min-width: 900px) calc(50vw - 44px), calc(100vw - 40px)",
-						alt: "Blue e-rickshaw with motor, controller and charger spare parts",
-						className: "hero__img",
-						width: "1280",
-						height: "853",
-						loading: "eager",
-						decoding: "async",
-						fetchPriority: "high"
-					})
-				]
+				children: /* @__PURE__ */ jsx("img", {
+					src: "/hero-ev-banner.png",
+					alt: "Blue e-rickshaw with motor, controller, brake shoes and tyre spare parts",
+					className: "hero__banner-img",
+					width: "552",
+					height: "402",
+					loading: "eager",
+					decoding: "async",
+					fetchPriority: "high"
+				})
 			})]
 		})
 	});

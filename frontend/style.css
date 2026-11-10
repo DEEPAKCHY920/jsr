@@ -1472,118 +1472,179 @@ button {
    All rules are prefixed .hero__ to avoid touching navbar styles.
 ================================================================ */
 
-/* Outer section – pale blue-to-white gradient background */
+/* ================================================================
+   HERO SECTION
+================================================================ */
 .hero {
-  background: linear-gradient(135deg, #e8eeff 0%, #f4f7ff 50%, #ffffff 100%);
-  overflow: hidden; /* contain the decorative corner accents */
+  background-color: #FFFFFF;
+  overflow: hidden;
+  padding: 40px 0 32px;
 }
 
-/* Two-column grid: text | image */
 .hero__inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr);
   align-items: center;
-  gap: 48px;
-  padding-top: 64px;
-  padding-bottom: 64px;
+  gap: 36px;
 }
 
 /* ── TEXT COLUMN ── */
 .hero__text {
   display: flex;
   flex-direction: column;
-  gap: 24px;             /* consistent vertical rhythm */
-  max-width: 560px;
+  gap: 20px;
+  max-width: 540px;
 }
 
-/* Eyebrow: "JSR EV TECH · ROHINI, DELHI" */
-.hero__eyebrow {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+/* Eyebrow Badge Pill */
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 50px;
+  background-color: #eef3ff;
   color: #1746CE;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  width: fit-content;
+}
+
+.hero__badge-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
 }
 
 /* Main H1 heading */
 .hero__heading {
-  font-size: clamp(32px, 4vw, 56px);
+  font-size: clamp(34px, 4.2vw, 52px);
   font-weight: 800;
-  line-height: 1.12;
-  color: #101B3D;
-  letter-spacing: -0.02em;
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-/* "E-Rickshaw" in royal blue */
-.hero__highlight {
+.hero__heading-sub {
+  color: #101B3D;
+}
+
+.hero__heading-highlight {
   color: #1746CE;
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+}
+
+.hero__heading-curve {
+  display: block;
+  width: 100%;
+  max-width: 270px;
+  height: 10px;
+  margin-top: -2px;
 }
 
 /* Description paragraph */
 .hero__desc {
-  font-size: 18px;
+  font-size: 16.5px;
   line-height: 1.6;
-  color: #3d4a6b;         /* slightly softer than full dark text */
-  max-width: 440px;
+  color: #4c5570;
+  max-width: 460px;
 }
 
-/* Button row */
+/* Buttons */
 .hero__actions {
   display: flex;
-  flex-wrap: wrap;        /* wraps to stacked on very narrow screens */
-  gap: 16px;
-  margin-top: 8px;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 4px;
 }
 
-/* ── SHARED BUTTON BASE ── */
 .hero__btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 13px 26px;
+  padding: 13px 24px;
   font-size: 15px;
-  font-weight: 600;
-  border-radius: 8px;
-  min-height: 48px;        /* exceeds the 44px touch-target minimum */
+  font-weight: 700;
+  border-radius: 10px;
+  min-height: 48px;
   white-space: nowrap;
-  transition: background-color 0.2s ease,
-              color           0.2s ease,
-              border-color    0.2s ease,
-              transform       0.1s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
   text-decoration: none;
 }
 
-.hero__btn:active { transform: scale(0.97); }
-
-/* Primary – royal blue fill */
-.hero__btn--primary {
-  background-color: #1746CE;
-  color: #FFFFFF;
-  border: 2px solid #1746CE;
+.hero__btn:active {
+  transform: scale(0.97);
 }
 
-.hero__btn--primary:hover {
-  background-color: #1239b0;
-  border-color: #1239b0;
+.hero__btn-icon {
+  flex-shrink: 0;
 }
 
-/* Secondary – white with blue border + green WhatsApp icon */
+/* WhatsApp: rich green */
 .hero__btn--whatsapp {
+  background-color: #16a34a;
+  color: #FFFFFF;
+  border: 2px solid #16a34a;
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.25);
+}
+
+.hero__btn--whatsapp:hover {
+  background-color: #15803d;
+  border-color: #15803d;
+}
+
+/* Call Now: white with blue outline */
+.hero__btn--call {
   background-color: #FFFFFF;
   color: #101B3D;
   border: 2px solid #1746CE;
 }
 
-.hero__btn--whatsapp:hover {
-  background-color: #f0f4ff;
+.hero__btn--call .hero__btn-icon {
+  color: #1746CE;
 }
 
-/* WhatsApp SVG icon sizing */
-.hero__wa-icon {
+.hero__btn--call:hover {
+  background-color: #edf3ff;
+  border-color: #1239b0;
+}
+
+/* Trust Features Strip */
+.hero__features {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 14px;
+  padding-top: 6px;
+  flex-wrap: wrap;
+}
+
+.hero__feature-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #101B3D;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.hero__feature-icon {
+  color: #1746CE;
   flex-shrink: 0;
-  width: 22px;
-  height: 22px;
+}
+
+.hero__feature-divider {
+  width: 1px;
+  height: 18px;
+  background-color: #dce2ed;
 }
 
 /* ── IMAGE COLUMN ── */
@@ -1592,93 +1653,98 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
-/* The e-rickshaw product image */
-.hero__img {
+.hero__banner-img {
   width: 100%;
-  max-width: 640px;
+  max-width: 580px;
   height: auto;
   object-fit: contain;
   display: block;
-  /* Placeholder style shown until the image asset is added */
-  min-height: 260px;
-  background-color: #edf1fc;
   border-radius: 16px;
-}
-
-/* ── DECORATIVE CORNER ACCENTS ──
-   Electric-green right-angle shapes in two corners,
-   matching the design reference image */
-.hero__corner {
-  position: absolute;
-  width: 56px;
-  height: 56px;
-  border-color: #65D510;
-  border-style: solid;
-  border-radius: 4px;
-  pointer-events: none;
-}
-
-/* Top-right corner */
-.hero__corner--tr {
-  top: -4px;
-  right: -4px;
-  border-width: 4px 4px 0 0;  /* only top + right edges */
-}
-
-/* Bottom-left corner */
-.hero__corner--bl {
-  bottom: -4px;
-  left: -4px;
-  border-width: 0 0 4px 4px;  /* only bottom + left edges */
 }
 
 /* ================================================================
    HERO – MOBILE  (below 900 px)
 ================================================================ */
 @media (max-width: 899px) {
+  .hero {
+    padding: 24px 0 36px;
+  }
 
-  /* Switch to single-column, text above image */
   .hero__inner {
     grid-template-columns: 1fr;
-    gap: 32px;
-    padding-top: 32px;
-    padding-bottom: 32px;
+    gap: 28px;
   }
 
-  /* Allow full container width on mobile */
-  .hero__text { max-width: 100%; }
-  .hero__desc { max-width: 100%; }
+  .hero__text {
+    order: 1;
+    max-width: 100%;
+    gap: 16px;
+  }
 
-  /* Stack buttons on narrow screens */
+  .hero__heading {
+    font-size: clamp(28px, 6.8vw, 38px);
+  }
+
+  .hero__heading-curve {
+    max-width: 220px;
+  }
+
+  .hero__desc {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
   .hero__actions {
-    flex-direction: column;
-    gap: 12px;
+    flex-direction: row;
+    gap: 10px;
   }
 
-  /* Full-width buttons on mobile */
   .hero__btn {
-    width: 100%;
-    justify-content: center;
+    flex: 1;
+    min-width: 140px;
+    padding: 12px 16px;
+    font-size: 14px;
   }
 
-  /* Image below the text */
-  .hero__image-wrap { order: 2; }
-  .hero__text       { order: 1; }
+  .hero__features {
+    gap: 12px;
+    margin-top: 8px;
+  }
 
-  /* Slightly smaller image on mobile */
-  .hero__img { max-width: 100%; }
+  .hero__feature-item {
+    font-size: 13px;
+  }
 
-  /* Adjust corner sizes on mobile */
-  .hero__corner { width: 36px; height: 36px; }
+  .hero__image-wrap {
+    order: 2;
+  }
+
+  .hero__banner-img {
+    max-width: 100%;
+  }
 }
 
-/* Very narrow screens (320 px) – prevent any overflow */
-@media (max-width: 399px) {
-  .hero__inner {
-    padding-left: 0;
-    padding-right: 0;
+@media (max-width: 440px) {
+  .hero__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero__btn {
+    width: 100%;
+  }
+
+  .hero__features {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .hero__feature-divider {
+    display: none;
   }
 }
 
