@@ -238,7 +238,10 @@ function Navbar() {
 	};
 	return /* @__PURE__ */ jsxs(Fragment, { children: [/* @__PURE__ */ jsx("div", {
 		className: "scroll-progress-bar",
-		style: { transform: `scaleX(${scrollProgress})` },
+		style: {
+			transform: `scaleX(${scrollProgress})`,
+			opacity: scrollProgress > 0 ? 1 : 0
+		},
 		"aria-hidden": "true"
 	}), /* @__PURE__ */ jsx("header", {
 		className: `site-header${scrolled ? " site-header--scrolled" : ""}`,
@@ -1308,32 +1311,49 @@ function About() {
 		"aria-labelledby": "about-heading",
 		children: /* @__PURE__ */ jsxs("div", {
 			className: "container about__container",
-			children: [
-				/* @__PURE__ */ jsxs("div", {
-					className: "about__header reveal-up",
-					children: [
-						/* @__PURE__ */ jsxs("div", {
-							className: "about__label-row",
-							children: [/* @__PURE__ */ jsx("p", {
-								className: "about__label",
-								children: "ABOUT OUR SHOP"
-							}), /* @__PURE__ */ jsx("span", {
-								className: "about__label-line",
-								"aria-hidden": "true"
-							})]
-						}),
-						/* @__PURE__ */ jsx("h2", {
-							className: "about__heading",
-							id: "about-heading",
-							children: "About JSR EV SPARE PARTS"
-						}),
-						/* @__PURE__ */ jsx("p", {
-							className: "about__copy",
-							children: "Established in 2024, JSR EV SPARE PARTS is a trusted local shop in Sector 18, Rohini, Delhi, supplying genuine spare parts, expert repair and dependable fitting services for e-rickshaws and electric scooters. We cater to retail vehicle owners, independent mechanics and commercial fleet operators across North Delhi."
+			children: [/* @__PURE__ */ jsxs("div", {
+				className: "about__header reveal-up",
+				children: [
+					/* @__PURE__ */ jsxs("div", {
+						className: "about__label-row",
+						children: [/* @__PURE__ */ jsx("p", {
+							className: "about__label",
+							children: "ABOUT OUR SHOP"
+						}), /* @__PURE__ */ jsx("span", {
+							className: "about__label-line",
+							"aria-hidden": "true"
+						})]
+					}),
+					/* @__PURE__ */ jsx("h2", {
+						className: "about__heading",
+						id: "about-heading",
+						children: "About JSR EV SPARE PARTS"
+					}),
+					/* @__PURE__ */ jsx("p", {
+						className: "about__copy",
+						children: "Established in 2024, JSR EV SPARE PARTS is a trusted local shop in Sector 18, Rohini, Delhi, supplying genuine spare parts, expert repair and dependable fitting services for e-rickshaws and electric scooters. We cater to retail vehicle owners, independent mechanics and commercial fleet operators across North Delhi."
+					})
+				]
+			}), /* @__PURE__ */ jsxs("div", {
+				className: "about__grid",
+				children: [/* @__PURE__ */ jsxs("div", {
+					className: "about__media reveal-up",
+					children: [/* @__PURE__ */ jsx("div", {
+						className: "about__photo-wrapper",
+						children: /* @__PURE__ */ jsx("img", {
+							src: "/shop.jpg",
+							alt: "JSR EV Spare Parts physical shop front with JSR EV SPARES PARTS signboard in Sector 18, Rohini, Delhi",
+							className: "about__photo",
+							loading: "lazy",
+							decoding: "async",
+							width: "1024",
+							height: "576"
 						})
-					]
-				}),
-				/* @__PURE__ */ jsxs("article", {
+					}), /* @__PURE__ */ jsx("span", {
+						className: "about__photo-caption",
+						children: "JSR EV SPARE PARTS — Our Physical Shop in Sector 18, Rohini"
+					})]
+				}), /* @__PURE__ */ jsxs("article", {
 					className: "founder-card reveal-up",
 					"aria-labelledby": "founder-name",
 					children: [/* @__PURE__ */ jsx("div", {
@@ -1478,23 +1498,8 @@ function About() {
 							})
 						]
 					})]
-				}),
-				/* @__PURE__ */ jsxs("div", {
-					className: "about__media reveal-up",
-					children: [/* @__PURE__ */ jsx("img", {
-						src: "/shop.jpg",
-						alt: "JSR EV Spare Parts physical shop front in Sector 18, Rohini, Delhi",
-						className: "about__photo",
-						loading: "lazy",
-						decoding: "async",
-						width: "1200",
-						height: "450"
-					}), /* @__PURE__ */ jsx("span", {
-						className: "about__photo-caption",
-						children: "JSR EV SPARE PARTS — Our Physical Shop in Sector 18, Rohini"
-					})]
-				})
-			]
+				})]
+			})]
 		})
 	});
 }
@@ -2453,41 +2458,12 @@ function Footer() {
 						})]
 					})
 				]
-			}), /* @__PURE__ */ jsxs("div", {
+			}), /* @__PURE__ */ jsx("div", {
 				className: "site-footer__bottom reveal-up",
-				children: [/* @__PURE__ */ jsx("p", {
+				children: /* @__PURE__ */ jsx("p", {
 					className: "site-footer__copyright",
 					children: "© 2026 JSR EV SPARE PARTS. All rights reserved."
-				}), /* @__PURE__ */ jsxs("div", {
-					className: "site-footer__legal-links",
-					children: [
-						/* @__PURE__ */ jsx("a", {
-							href: "#privacy",
-							className: "site-footer__legal-link",
-							children: "Privacy Policy"
-						}),
-						/* @__PURE__ */ jsx("span", {
-							className: "site-footer__legal-divider",
-							"aria-hidden": "true",
-							children: "|"
-						}),
-						/* @__PURE__ */ jsx("a", {
-							href: "#terms",
-							className: "site-footer__legal-link",
-							children: "Terms & Conditions"
-						}),
-						/* @__PURE__ */ jsx("span", {
-							className: "site-footer__legal-divider",
-							"aria-hidden": "true",
-							children: "|"
-						}),
-						/* @__PURE__ */ jsx("a", {
-							href: "#refund",
-							className: "site-footer__legal-link",
-							children: "Refund Policy"
-						})
-					]
-				})]
+				})
 			})]
 		})]
 	});
