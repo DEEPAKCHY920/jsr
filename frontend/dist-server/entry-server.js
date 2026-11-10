@@ -1046,7 +1046,7 @@ var serviceHighlights = [
 			viewBox: "0 0 24 24",
 			fill: "none",
 			stroke: "#65C91A",
-			strokeWidth: "2",
+			strokeWidth: "2.2",
 			strokeLinecap: "round",
 			strokeLinejoin: "round",
 			"aria-hidden": "true",
@@ -1066,7 +1066,7 @@ var serviceHighlights = [
 			viewBox: "0 0 24 24",
 			fill: "none",
 			stroke: "#65C91A",
-			strokeWidth: "2",
+			strokeWidth: "2.2",
 			strokeLinecap: "round",
 			strokeLinejoin: "round",
 			"aria-hidden": "true",
@@ -1082,26 +1082,21 @@ var serviceHighlights = [
 			viewBox: "0 0 24 24",
 			fill: "none",
 			stroke: "#65C91A",
-			strokeWidth: "2",
+			strokeWidth: "2.2",
 			strokeLinecap: "round",
 			strokeLinejoin: "round",
 			"aria-hidden": "true",
 			children: [
-				/* @__PURE__ */ jsx("rect", {
-					x: "1",
-					y: "3",
-					width: "15",
-					height: "13"
-				}),
-				/* @__PURE__ */ jsx("polygon", { points: "16 8 20 8 23 11 23 16 16 16 16 8" }),
+				/* @__PURE__ */ jsx("path", { d: "M10 17h4V5H2v12h3" }),
+				/* @__PURE__ */ jsx("path", { d: "M20 17h2v-3.34a4 4 0 0 0-1.17-2.83L19 9h-5v8h1" }),
 				/* @__PURE__ */ jsx("circle", {
-					cx: "5.5",
-					cy: "18.5",
+					cx: "7.5",
+					cy: "17.5",
 					r: "2.5"
 				}),
 				/* @__PURE__ */ jsx("circle", {
-					cx: "18.5",
-					cy: "18.5",
+					cx: "17.5",
+					cy: "17.5",
 					r: "2.5"
 				})
 			]
@@ -1116,7 +1111,7 @@ var serviceHighlights = [
 			viewBox: "0 0 24 24",
 			fill: "none",
 			stroke: "#65C91A",
-			strokeWidth: "2",
+			strokeWidth: "2.2",
 			strokeLinecap: "round",
 			strokeLinejoin: "round",
 			"aria-hidden": "true",
@@ -1192,85 +1187,6 @@ var socialLinks = [
 		})
 	}
 ];
-var footerFeatureStrip = [
-	{
-		id: "parts",
-		title: "Genuine Parts",
-		desc: "Original & Reliable",
-		icon: /* @__PURE__ */ jsxs("svg", {
-			width: "28",
-			height: "28",
-			viewBox: "0 0 24 24",
-			fill: "none",
-			stroke: "#65C91A",
-			strokeWidth: "2.2",
-			strokeLinecap: "round",
-			strokeLinejoin: "round",
-			"aria-hidden": "true",
-			children: [/* @__PURE__ */ jsx("path", { d: "M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" }), /* @__PURE__ */ jsx("circle", {
-				cx: "12",
-				cy: "12",
-				r: "3"
-			})]
-		})
-	},
-	{
-		id: "repair",
-		title: "Repair & Fitting",
-		desc: "By Experienced Technicians",
-		icon: /* @__PURE__ */ jsxs("svg", {
-			width: "28",
-			height: "28",
-			viewBox: "0 0 24 24",
-			fill: "none",
-			stroke: "#65C91A",
-			strokeWidth: "2.2",
-			strokeLinecap: "round",
-			strokeLinejoin: "round",
-			"aria-hidden": "true",
-			children: [/* @__PURE__ */ jsx("path", { d: "m10 13-6 6a1.9 1.9 0 0 0 2.7 2.7l6-6M14 11l4.5-4.5 2.6-.4-.4 2.6-4.5 4.5" }), /* @__PURE__ */ jsx("path", { d: "M4.5 3.5c-.8 3 .4 5.6 3 6.8 1.5.8 3 .4 4.1-.4l7.9 9.8a1.9 1.9 0 0 0 3-2.3L13.5 8.3c.4-1.5 0-3-1.1-4.1-1.5-1.5-3.4-1.9-5.3-1.1l3 3-3 3-3.4-3c-.4-.8-.4-1.9.8-2.6Z" })]
-		})
-	},
-	{
-		id: "trusted",
-		title: "Trusted Shop",
-		desc: "Quality Service",
-		icon: /* @__PURE__ */ jsxs("svg", {
-			width: "28",
-			height: "28",
-			viewBox: "0 0 24 24",
-			fill: "none",
-			stroke: "#65C91A",
-			strokeWidth: "2.2",
-			strokeLinecap: "round",
-			strokeLinejoin: "round",
-			"aria-hidden": "true",
-			children: [/* @__PURE__ */ jsx("path", { d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" }), /* @__PURE__ */ jsx("path", { d: "m9 12 2 2 4-4" })]
-		})
-	},
-	{
-		id: "visit",
-		title: "Visit Our Shop",
-		desc: "Sector 18, Rohini, Delhi",
-		href: "https://maps.google.com/?q=Sector+18+Rohini+Delhi",
-		icon: /* @__PURE__ */ jsxs("svg", {
-			width: "28",
-			height: "28",
-			viewBox: "0 0 24 24",
-			fill: "none",
-			stroke: "#65C91A",
-			strokeWidth: "2.2",
-			strokeLinecap: "round",
-			strokeLinejoin: "round",
-			"aria-hidden": "true",
-			children: [/* @__PURE__ */ jsx("path", { d: "M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" }), /* @__PURE__ */ jsx("circle", {
-				cx: "12",
-				cy: "10",
-				r: "3"
-			})]
-		})
-	}
-];
 function FooterHeading({ title, isOpen, onToggle, isCollapsible = false }) {
 	return /* @__PURE__ */ jsxs("div", {
 		className: `site-footer__heading-group ${isCollapsible ? "site-footer__heading-group--collapsible" : ""}`,
@@ -1314,331 +1230,331 @@ function Footer() {
 			"aria-hidden": "true"
 		}), /* @__PURE__ */ jsxs("div", {
 			className: "container site-footer__inner",
-			children: [
-				/* @__PURE__ */ jsxs("div", {
-					className: "site-footer__grid",
-					children: [
-						/* @__PURE__ */ jsxs("div", {
-							className: "site-footer__col site-footer__col--brand",
-							children: [
-								/* @__PURE__ */ jsx("a", {
-									className: "site-footer__logo",
-									href: "#home",
-									"aria-label": "JSR EV SPARE PARTS — back to home",
-									children: /* @__PURE__ */ jsx("img", {
-										src: "/jsr-logo-footer.png",
-										alt: "JSR EV SPARE PARTS",
-										className: "site-footer__logo-img",
-										width: "210",
-										height: "70"
-									})
-								}),
-								/* @__PURE__ */ jsx("p", {
-									className: "site-footer__description",
-									children: "Spare parts, repair and fitting services for e-rickshaws and electric scooters in Sector 18, Rohini, Delhi."
-								}),
-								/* @__PURE__ */ jsx("div", {
-									className: "site-footer__highlights",
-									role: "list",
-									children: serviceHighlights.map((item) => /* @__PURE__ */ jsxs("div", {
-										className: "site-footer__highlight-item",
-										role: "listitem",
-										children: [/* @__PURE__ */ jsx("span", {
-											className: "site-footer__highlight-icon",
-											children: item.icon
-										}), /* @__PURE__ */ jsx("span", {
-											className: "site-footer__highlight-label",
-											children: item.label
-										})]
-									}, item.id))
-								})
-							]
-						}),
-						/* @__PURE__ */ jsx("div", {
-							className: "site-footer__divider-col",
-							"aria-hidden": "true"
-						}),
-						/* @__PURE__ */ jsxs("div", {
-							className: "site-footer__col site-footer__col--links",
-							children: [/* @__PURE__ */ jsx(FooterHeading, {
-								title: "Quick Links",
-								isOpen: quickLinksOpen,
-								onToggle: () => setQuickLinksOpen(!quickLinksOpen),
-								isCollapsible: true
-							}), /* @__PURE__ */ jsx("div", {
-								className: `site-footer__collapse-content ${quickLinksOpen ? "site-footer__collapse-content--open" : ""}`,
-								children: /* @__PURE__ */ jsx("ul", {
-									className: "site-footer__links",
-									role: "list",
-									children: quickLinks.map((link) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsxs("a", {
-										href: link.href,
-										className: "site-footer__link",
-										children: [/* @__PURE__ */ jsx("svg", {
-											className: "site-footer__link-arrow",
-											width: "14",
-											height: "14",
-											viewBox: "0 0 24 24",
-											fill: "none",
-											stroke: "currentColor",
-											strokeWidth: "2.5",
-											strokeLinecap: "round",
-											strokeLinejoin: "round",
-											"aria-hidden": "true",
-											children: /* @__PURE__ */ jsx("polyline", { points: "9 18 15 12 9 6" })
-										}), /* @__PURE__ */ jsx("span", { children: link.label })]
-									}) }, link.id))
-								})
-							})]
-						}),
-						/* @__PURE__ */ jsx("div", {
-							className: "site-footer__divider-col",
-							"aria-hidden": "true"
-						}),
-						/* @__PURE__ */ jsxs("div", {
-							className: "site-footer__col site-footer__col--contact",
-							children: [/* @__PURE__ */ jsx(FooterHeading, {
-								title: "Contact & Timings",
-								isOpen: contactOpen,
-								onToggle: () => setContactOpen(!contactOpen),
-								isCollapsible: true
-							}), /* @__PURE__ */ jsx("div", {
-								className: `site-footer__collapse-content ${contactOpen ? "site-footer__collapse-content--open" : ""}`,
-								children: /* @__PURE__ */ jsxs("address", {
-									className: "site-footer__contact-list",
-									children: [
-										/* @__PURE__ */ jsxs("div", {
-											className: "site-footer__contact-row",
-											children: [/* @__PURE__ */ jsx("span", {
-												className: "site-footer__icon-badge site-footer__icon-badge--blue",
-												"aria-hidden": "true",
-												children: /* @__PURE__ */ jsx("svg", {
-													width: "15",
-													height: "15",
-													viewBox: "0 0 24 24",
-													fill: "currentColor",
-													children: /* @__PURE__ */ jsx("path", { d: "M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" })
-												})
-											}), /* @__PURE__ */ jsx("a", {
-												href: "tel:+919990120067",
-												className: "site-footer__contact-link",
-												children: "+91 9990120067"
-											})]
-										}),
-										/* @__PURE__ */ jsxs("div", {
-											className: "site-footer__contact-row",
-											children: [/* @__PURE__ */ jsx("span", {
-												className: "site-footer__icon-badge site-footer__icon-badge--green",
-												"aria-hidden": "true",
-												children: /* @__PURE__ */ jsxs("svg", {
-													width: "15",
-													height: "15",
-													viewBox: "0 0 24 24",
-													fill: "currentColor",
-													children: [/* @__PURE__ */ jsx("path", { d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" }), /* @__PURE__ */ jsx("path", { d: "M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.531 5.845L0 24l6.335-1.51A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.374l-.36-.214-3.724.888.936-3.618-.235-.372A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182 17.43 2.182 21.818 6.57 21.818 12S17.43 21.818 12 21.818z" })]
-												})
-											}), /* @__PURE__ */ jsx("a", {
-												href: "https://wa.me/919990120067",
-												target: "_blank",
-												rel: "noopener noreferrer",
-												className: "site-footer__contact-link",
-												children: "+91 9990120067"
-											})]
-										}),
-										/* @__PURE__ */ jsxs("div", {
-											className: "site-footer__contact-row",
-											children: [/* @__PURE__ */ jsx("span", {
-												className: "site-footer__icon-badge site-footer__icon-badge--green",
-												"aria-hidden": "true",
-												children: /* @__PURE__ */ jsxs("svg", {
-													width: "15",
-													height: "15",
-													viewBox: "0 0 24 24",
-													fill: "none",
-													stroke: "currentColor",
-													strokeWidth: "2.2",
-													strokeLinecap: "round",
-													strokeLinejoin: "round",
-													children: [/* @__PURE__ */ jsx("rect", {
-														width: "20",
-														height: "16",
-														x: "2",
-														y: "4",
-														rx: "2"
-													}), /* @__PURE__ */ jsx("path", { d: "m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" })]
-												})
-											}), /* @__PURE__ */ jsx("a", {
-												href: "mailto:admin@jsrevtech.in",
-												className: "site-footer__contact-link site-footer__contact-link--email",
-												children: "admin@jsrevtech.in"
-											})]
-										}),
-										/* @__PURE__ */ jsxs("div", {
-											className: "site-footer__contact-row",
-											children: [/* @__PURE__ */ jsx("span", {
-												className: "site-footer__icon-badge site-footer__icon-badge--blue",
-												"aria-hidden": "true",
-												children: /* @__PURE__ */ jsxs("svg", {
-													width: "15",
-													height: "15",
-													viewBox: "0 0 24 24",
-													fill: "none",
-													stroke: "currentColor",
-													strokeWidth: "2.2",
-													strokeLinecap: "round",
-													strokeLinejoin: "round",
-													children: [/* @__PURE__ */ jsx("path", { d: "M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" }), /* @__PURE__ */ jsx("circle", {
-														cx: "12",
-														cy: "10",
-														r: "3"
-													})]
-												})
-											}), /* @__PURE__ */ jsxs("a", {
-												href: "https://maps.google.com/?q=Sector+18+Rohini+Delhi",
-												target: "_blank",
-												rel: "noopener noreferrer",
-												className: "site-footer__contact-text site-footer__contact-link",
-												children: [
-													"Sector 18, Rohini, Delhi – 110089",
-													/* @__PURE__ */ jsx("br", {}),
-													/* @__PURE__ */ jsx("span", {
-														className: "site-footer__text-muted",
-														children: "Near Data Ram Apartment"
-													})
-												]
-											})]
-										}),
-										/* @__PURE__ */ jsxs("div", {
-											className: "site-footer__contact-row",
-											children: [/* @__PURE__ */ jsx("span", {
-												className: "site-footer__icon-badge site-footer__icon-badge--blue",
-												"aria-hidden": "true",
-												children: /* @__PURE__ */ jsxs("svg", {
-													width: "15",
-													height: "15",
-													viewBox: "0 0 24 24",
-													fill: "none",
-													stroke: "currentColor",
-													strokeWidth: "2.2",
-													strokeLinecap: "round",
-													strokeLinejoin: "round",
-													children: [/* @__PURE__ */ jsx("circle", {
-														cx: "12",
-														cy: "12",
-														r: "10"
-													}), /* @__PURE__ */ jsx("polyline", { points: "12 6 12 12 16 14" })]
-												})
-											}), /* @__PURE__ */ jsxs("div", {
-												className: "site-footer__contact-text",
-												children: [
-													/* @__PURE__ */ jsx("span", { children: "8:00 AM – 8:00 PM" }),
-													/* @__PURE__ */ jsx("br", {}),
-													/* @__PURE__ */ jsx("span", {
-														className: "site-footer__text-accent",
-														children: "Open every day"
-													})
-												]
-											})]
-										})
-									]
-								})
-							})]
-						}),
-						/* @__PURE__ */ jsxs("div", {
-							className: "site-footer__col site-footer__col--social",
-							children: [/* @__PURE__ */ jsx(FooterHeading, { title: "Follow Us" }), /* @__PURE__ */ jsxs("div", {
-								className: "site-footer__social-wrap",
-								children: [/* @__PURE__ */ jsx("div", {
-									className: "site-footer__social-row",
-									children: socialLinks.map((item) => /* @__PURE__ */ jsx("a", {
-										href: item.href,
-										className: "site-footer__social-btn",
-										"aria-label": `JSR EV on ${item.label}`,
-										target: "_blank",
-										rel: "noopener noreferrer",
-										children: item.icon
-									}, item.id))
-								}), /* @__PURE__ */ jsx("img", {
-									src: "/footer-erickshaw.webp",
-									alt: "JSR EV E-Rickshaw",
-									className: "site-footer__social-rickshaw",
-									loading: "lazy",
-									decoding: "async"
-								})]
-							})]
-						})
-					]
-				}),
-				/* @__PURE__ */ jsx("div", {
-					className: "site-footer__feature-strip",
-					role: "region",
-					"aria-label": "Shop highlights",
-					children: footerFeatureStrip.map((item, index) => {
-						const ItemTag = item.href ? "a" : "div";
-						return /* @__PURE__ */ jsxs("div", {
-							className: "site-footer__feature-cell",
-							children: [/* @__PURE__ */ jsxs(ItemTag, {
-								href: item.href,
-								target: item.href ? "_blank" : void 0,
-								rel: item.href ? "noopener noreferrer" : void 0,
-								className: `site-footer__feature-item ${item.href ? "site-footer__feature-item--link" : ""}`,
-								children: [/* @__PURE__ */ jsx("span", {
-									className: "site-footer__feature-icon",
+			children: [/* @__PURE__ */ jsxs("div", {
+				className: "site-footer__grid",
+				children: [
+					/* @__PURE__ */ jsxs("div", {
+						className: "site-footer__col site-footer__col--brand",
+						children: [
+							/* @__PURE__ */ jsxs("a", {
+								className: "site-footer__logo",
+								href: "#home",
+								"aria-label": "JSR EV SPARE PARTS — back to home",
+								children: [/* @__PURE__ */ jsxs("svg", {
+									className: "site-footer__logo-car",
+									viewBox: "0 0 150 40",
+									fill: "none",
 									"aria-hidden": "true",
-									children: item.icon
-								}), /* @__PURE__ */ jsxs("span", {
-									className: "site-footer__feature-content",
-									children: [/* @__PURE__ */ jsx("span", {
-										className: "site-footer__feature-title",
-										children: item.title
-									}), /* @__PURE__ */ jsx("span", {
-										className: "site-footer__feature-desc",
-										children: item.desc
+									children: [/* @__PURE__ */ jsx("path", {
+										d: "M14 28l6-10h-5l9-12-3 8h5l-7 10h5z",
+										fill: "#65C91A"
+									}), /* @__PURE__ */ jsx("path", {
+										d: "M26 22c10-12 32-17 56-17 26 0 46 5 56 17",
+										stroke: "#65C91A",
+										strokeWidth: "3.6",
+										strokeLinecap: "round"
+									})]
+								}), /* @__PURE__ */ jsxs("div", {
+									className: "site-footer__logo-text",
+									children: [/* @__PURE__ */ jsxs("div", {
+										className: "site-footer__logo-main",
+										children: [/* @__PURE__ */ jsx("span", {
+											className: "site-footer__logo-brand",
+											children: "JSR"
+										}), /* @__PURE__ */ jsx("span", {
+											className: "site-footer__logo-ev",
+											children: "EV"
+										})]
+									}), /* @__PURE__ */ jsxs("div", {
+										className: "site-footer__logo-sub",
+										children: [
+											/* @__PURE__ */ jsx("span", {
+												className: "site-footer__logo-line",
+												"aria-hidden": "true"
+											}),
+											/* @__PURE__ */ jsx("span", {
+												className: "site-footer__logo-tag",
+												children: "SPARE PARTS"
+											}),
+											/* @__PURE__ */ jsx("span", {
+												className: "site-footer__logo-line",
+												"aria-hidden": "true"
+											})
+										]
 									})]
 								})]
-							}), index < footerFeatureStrip.length - 1 && /* @__PURE__ */ jsx("span", {
-								className: "site-footer__feature-divider",
-								"aria-hidden": "true"
-							})]
-						}, item.id);
-					})
-				}),
-				/* @__PURE__ */ jsxs("div", {
-					className: "site-footer__bottom",
-					children: [/* @__PURE__ */ jsx("p", {
-						className: "site-footer__copyright",
-						children: "© 2026 JSR EV SPARE PARTS. All rights reserved."
-					}), /* @__PURE__ */ jsxs("div", {
-						className: "site-footer__legal-links",
-						children: [
-							/* @__PURE__ */ jsx("a", {
-								href: "#privacy",
-								className: "site-footer__legal-link",
-								children: "Privacy Policy"
 							}),
-							/* @__PURE__ */ jsx("span", {
-								className: "site-footer__legal-divider",
-								"aria-hidden": "true",
-								children: "|"
+							/* @__PURE__ */ jsx("p", {
+								className: "site-footer__description",
+								children: "Spare parts, repair and fitting services for e-rickshaws and electric scooters in Sector 18, Rohini, Delhi."
 							}),
-							/* @__PURE__ */ jsx("a", {
-								href: "#terms",
-								className: "site-footer__legal-link",
-								children: "Terms & Conditions"
-							}),
-							/* @__PURE__ */ jsx("span", {
-								className: "site-footer__legal-divider",
-								"aria-hidden": "true",
-								children: "|"
-							}),
-							/* @__PURE__ */ jsx("a", {
-								href: "#refund",
-								className: "site-footer__legal-link",
-								children: "Refund Policy"
+							/* @__PURE__ */ jsx("div", {
+								className: "site-footer__highlights",
+								role: "list",
+								children: serviceHighlights.map((item) => /* @__PURE__ */ jsxs("div", {
+									className: "site-footer__highlight-item",
+									role: "listitem",
+									children: [/* @__PURE__ */ jsx("span", {
+										className: "site-footer__highlight-icon",
+										children: item.icon
+									}), /* @__PURE__ */ jsx("span", {
+										className: "site-footer__highlight-label",
+										children: item.label
+									})]
+								}, item.id))
 							})
 						]
-					})]
-				})
-			]
+					}),
+					/* @__PURE__ */ jsx("div", {
+						className: "site-footer__divider-col",
+						"aria-hidden": "true"
+					}),
+					/* @__PURE__ */ jsxs("div", {
+						className: "site-footer__col site-footer__col--links",
+						children: [/* @__PURE__ */ jsx(FooterHeading, {
+							title: "Quick Links",
+							isOpen: quickLinksOpen,
+							onToggle: () => setQuickLinksOpen(!quickLinksOpen),
+							isCollapsible: true
+						}), /* @__PURE__ */ jsx("div", {
+							className: `site-footer__collapse-content ${quickLinksOpen ? "site-footer__collapse-content--open" : ""}`,
+							children: /* @__PURE__ */ jsx("ul", {
+								className: "site-footer__links",
+								role: "list",
+								children: quickLinks.map((link) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsxs("a", {
+									href: link.href,
+									className: "site-footer__link",
+									children: [/* @__PURE__ */ jsx("svg", {
+										className: "site-footer__link-arrow",
+										width: "14",
+										height: "14",
+										viewBox: "0 0 24 24",
+										fill: "none",
+										stroke: "currentColor",
+										strokeWidth: "2.5",
+										strokeLinecap: "round",
+										strokeLinejoin: "round",
+										"aria-hidden": "true",
+										children: /* @__PURE__ */ jsx("polyline", { points: "9 18 15 12 9 6" })
+									}), /* @__PURE__ */ jsx("span", { children: link.label })]
+								}) }, link.id))
+							})
+						})]
+					}),
+					/* @__PURE__ */ jsx("div", {
+						className: "site-footer__divider-col",
+						"aria-hidden": "true"
+					}),
+					/* @__PURE__ */ jsxs("div", {
+						className: "site-footer__col site-footer__col--contact",
+						children: [/* @__PURE__ */ jsx(FooterHeading, {
+							title: "Contact & Timings",
+							isOpen: contactOpen,
+							onToggle: () => setContactOpen(!contactOpen),
+							isCollapsible: true
+						}), /* @__PURE__ */ jsx("div", {
+							className: `site-footer__collapse-content ${contactOpen ? "site-footer__collapse-content--open" : ""}`,
+							children: /* @__PURE__ */ jsxs("address", {
+								className: "site-footer__contact-list",
+								children: [
+									/* @__PURE__ */ jsxs("div", {
+										className: "site-footer__contact-row",
+										children: [/* @__PURE__ */ jsx("span", {
+											className: "site-footer__icon-badge site-footer__icon-badge--blue",
+											"aria-hidden": "true",
+											children: /* @__PURE__ */ jsx("svg", {
+												width: "15",
+												height: "15",
+												viewBox: "0 0 24 24",
+												fill: "currentColor",
+												children: /* @__PURE__ */ jsx("path", { d: "M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" })
+											})
+										}), /* @__PURE__ */ jsx("a", {
+											href: "tel:+919990120067",
+											className: "site-footer__contact-link",
+											children: "+91 9990120067"
+										})]
+									}),
+									/* @__PURE__ */ jsxs("div", {
+										className: "site-footer__contact-row",
+										children: [/* @__PURE__ */ jsx("span", {
+											className: "site-footer__icon-badge site-footer__icon-badge--green",
+											"aria-hidden": "true",
+											children: /* @__PURE__ */ jsxs("svg", {
+												width: "15",
+												height: "15",
+												viewBox: "0 0 24 24",
+												fill: "currentColor",
+												children: [/* @__PURE__ */ jsx("path", { d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" }), /* @__PURE__ */ jsx("path", { d: "M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.531 5.845L0 24l6.335-1.51A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.374l-.36-.214-3.724.888.936-3.618-.235-.372A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182 17.43 2.182 21.818 6.57 21.818 12S17.43 21.818 12 21.818z" })]
+											})
+										}), /* @__PURE__ */ jsx("a", {
+											href: "https://wa.me/919990120067",
+											target: "_blank",
+											rel: "noopener noreferrer",
+											className: "site-footer__contact-link",
+											children: "+91 9990120067"
+										})]
+									}),
+									/* @__PURE__ */ jsxs("div", {
+										className: "site-footer__contact-row",
+										children: [/* @__PURE__ */ jsx("span", {
+											className: "site-footer__icon-badge site-footer__icon-badge--green",
+											"aria-hidden": "true",
+											children: /* @__PURE__ */ jsxs("svg", {
+												width: "15",
+												height: "15",
+												viewBox: "0 0 24 24",
+												fill: "none",
+												stroke: "currentColor",
+												strokeWidth: "2.2",
+												strokeLinecap: "round",
+												strokeLinejoin: "round",
+												children: [/* @__PURE__ */ jsx("rect", {
+													width: "20",
+													height: "16",
+													x: "2",
+													y: "4",
+													rx: "2"
+												}), /* @__PURE__ */ jsx("path", { d: "m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" })]
+											})
+										}), /* @__PURE__ */ jsx("a", {
+											href: "mailto:admin@jsrevtech.in",
+											className: "site-footer__contact-link site-footer__contact-link--email",
+											children: "admin@jsrevtech.in"
+										})]
+									}),
+									/* @__PURE__ */ jsxs("div", {
+										className: "site-footer__contact-row",
+										children: [/* @__PURE__ */ jsx("span", {
+											className: "site-footer__icon-badge site-footer__icon-badge--blue",
+											"aria-hidden": "true",
+											children: /* @__PURE__ */ jsxs("svg", {
+												width: "15",
+												height: "15",
+												viewBox: "0 0 24 24",
+												fill: "none",
+												stroke: "currentColor",
+												strokeWidth: "2.2",
+												strokeLinecap: "round",
+												strokeLinejoin: "round",
+												children: [/* @__PURE__ */ jsx("path", { d: "M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" }), /* @__PURE__ */ jsx("circle", {
+													cx: "12",
+													cy: "10",
+													r: "3"
+												})]
+											})
+										}), /* @__PURE__ */ jsxs("a", {
+											href: "https://maps.google.com/?q=Sector+18+Rohini+Delhi",
+											target: "_blank",
+											rel: "noopener noreferrer",
+											className: "site-footer__contact-text site-footer__contact-link",
+											children: [
+												"Sector 18, Rohini, Delhi – 110089",
+												/* @__PURE__ */ jsx("br", {}),
+												/* @__PURE__ */ jsx("span", {
+													className: "site-footer__text-muted",
+													children: "Near Data Ram Apartment"
+												})
+											]
+										})]
+									}),
+									/* @__PURE__ */ jsxs("div", {
+										className: "site-footer__contact-row",
+										children: [/* @__PURE__ */ jsx("span", {
+											className: "site-footer__icon-badge site-footer__icon-badge--blue",
+											"aria-hidden": "true",
+											children: /* @__PURE__ */ jsxs("svg", {
+												width: "15",
+												height: "15",
+												viewBox: "0 0 24 24",
+												fill: "none",
+												stroke: "currentColor",
+												strokeWidth: "2.2",
+												strokeLinecap: "round",
+												strokeLinejoin: "round",
+												children: [/* @__PURE__ */ jsx("circle", {
+													cx: "12",
+													cy: "12",
+													r: "10"
+												}), /* @__PURE__ */ jsx("polyline", { points: "12 6 12 12 16 14" })]
+											})
+										}), /* @__PURE__ */ jsxs("div", {
+											className: "site-footer__contact-text",
+											children: [
+												/* @__PURE__ */ jsx("span", { children: "8:00 AM – 8:00 PM" }),
+												/* @__PURE__ */ jsx("br", {}),
+												/* @__PURE__ */ jsx("span", {
+													className: "site-footer__text-accent",
+													children: "Open every day"
+												})
+											]
+										})]
+									})
+								]
+							})
+						})]
+					}),
+					/* @__PURE__ */ jsxs("div", {
+						className: "site-footer__col site-footer__col--social",
+						children: [/* @__PURE__ */ jsx(FooterHeading, { title: "Follow Us" }), /* @__PURE__ */ jsxs("div", {
+							className: "site-footer__social-wrap",
+							children: [/* @__PURE__ */ jsx("div", {
+								className: "site-footer__social-row",
+								children: socialLinks.map((item) => /* @__PURE__ */ jsx("a", {
+									href: item.href,
+									className: "site-footer__social-btn",
+									"aria-label": `JSR EV on ${item.label}`,
+									target: "_blank",
+									rel: "noopener noreferrer",
+									children: item.icon
+								}, item.id))
+							}), /* @__PURE__ */ jsx("img", {
+								src: "/footer-mobile-rickshaw.png",
+								alt: "JSR E-Rickshaw",
+								className: "site-footer__social-rickshaw",
+								loading: "lazy",
+								width: "360",
+								height: "285"
+							})]
+						})]
+					})
+				]
+			}), /* @__PURE__ */ jsxs("div", {
+				className: "site-footer__bottom",
+				children: [/* @__PURE__ */ jsx("p", {
+					className: "site-footer__copyright",
+					children: "© 2026 JSR EV SPARE PARTS. All rights reserved."
+				}), /* @__PURE__ */ jsxs("div", {
+					className: "site-footer__legal-links",
+					children: [
+						/* @__PURE__ */ jsx("a", {
+							href: "#privacy",
+							className: "site-footer__legal-link",
+							children: "Privacy Policy"
+						}),
+						/* @__PURE__ */ jsx("span", {
+							className: "site-footer__legal-divider",
+							"aria-hidden": "true",
+							children: "|"
+						}),
+						/* @__PURE__ */ jsx("a", {
+							href: "#terms",
+							className: "site-footer__legal-link",
+							children: "Terms & Conditions"
+						}),
+						/* @__PURE__ */ jsx("span", {
+							className: "site-footer__legal-divider",
+							"aria-hidden": "true",
+							children: "|"
+						}),
+						/* @__PURE__ */ jsx("a", {
+							href: "#refund",
+							className: "site-footer__legal-link",
+							children: "Refund Policy"
+						})
+					]
+				})]
+			})]
 		})]
 	});
 }

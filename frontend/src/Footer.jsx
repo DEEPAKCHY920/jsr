@@ -13,7 +13,7 @@ const serviceHighlights = [
     id: "genuine",
     label: "Genuine Parts",
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#65C91A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#65C91A" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
         <circle cx="12" cy="12" r="3" />
       </svg>
@@ -23,7 +23,7 @@ const serviceHighlights = [
     id: "repair",
     label: "Repair & Fitting",
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#65C91A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#65C91A" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
       </svg>
     ),
@@ -32,11 +32,11 @@ const serviceHighlights = [
     id: "fast",
     label: "Fast Service",
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#65C91A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <rect x="1" y="3" width="15" height="13" />
-        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
-        <circle cx="5.5" cy="18.5" r="2.5" />
-        <circle cx="18.5" cy="18.5" r="2.5" />
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#65C91A" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M10 17h4V5H2v12h3" />
+        <path d="M20 17h2v-3.34a4 4 0 0 0-1.17-2.83L19 9h-5v8h1" />
+        <circle cx="7.5" cy="17.5" r="2.5" />
+        <circle cx="17.5" cy="17.5" r="2.5" />
       </svg>
     ),
   },
@@ -44,7 +44,7 @@ const serviceHighlights = [
     id: "trusted",
     label: "Trusted Shop",
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#65C91A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#65C91A" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
         <path d="M9 12l2 2 4-4" />
       </svg>
@@ -84,54 +84,6 @@ const socialLinks = [
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
         <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.531 5.845L0 24l6.335-1.51A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.374l-.36-.214-3.724.888.936-3.618-.235-.372A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182 17.43 2.182 21.818 6.57 21.818 12S17.43 21.818 12 21.818z" />
-      </svg>
-    ),
-  },
-];
-
-const footerFeatureStrip = [
-  {
-    id: "parts",
-    title: "Genuine Parts",
-    desc: "Original & Reliable",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#65C91A" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
-        <circle cx="12" cy="12" r="3" />
-      </svg>
-    ),
-  },
-  {
-    id: "repair",
-    title: "Repair & Fitting",
-    desc: "By Experienced Technicians",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#65C91A" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="m10 13-6 6a1.9 1.9 0 0 0 2.7 2.7l6-6M14 11l4.5-4.5 2.6-.4-.4 2.6-4.5 4.5" />
-        <path d="M4.5 3.5c-.8 3 .4 5.6 3 6.8 1.5.8 3 .4 4.1-.4l7.9 9.8a1.9 1.9 0 0 0 3-2.3L13.5 8.3c.4-1.5 0-3-1.1-4.1-1.5-1.5-3.4-1.9-5.3-1.1l3 3-3 3-3.4-3c-.4-.8-.4-1.9.8-2.6Z" />
-      </svg>
-    ),
-  },
-  {
-    id: "trusted",
-    title: "Trusted Shop",
-    desc: "Quality Service",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#65C91A" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        <path d="m9 12 2 2 4-4" />
-      </svg>
-    ),
-  },
-  {
-    id: "visit",
-    title: "Visit Our Shop",
-    desc: "Sector 18, Rohini, Delhi",
-    href: "https://maps.google.com/?q=Sector+18+Rohini+Delhi",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#65C91A" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
-        <circle cx="12" cy="10" r="3" />
       </svg>
     ),
   },
@@ -185,20 +137,30 @@ export default function Footer() {
           {/* Column 1 – Brand Information */}
           <div className="site-footer__col site-footer__col--brand">
             <a className="site-footer__logo" href="#home" aria-label="JSR EV SPARE PARTS — back to home">
-              <img
-                src="/jsr-logo-footer.png"
-                alt="JSR EV SPARE PARTS"
-                className="site-footer__logo-img"
-                width="210"
-                height="70"
-              />
+              <svg className="site-footer__logo-car" viewBox="0 0 150 40" fill="none" aria-hidden="true">
+                {/* Green contour electric car silhouette with lightning bolt */}
+                <path d="M14 28l6-10h-5l9-12-3 8h5l-7 10h5z" fill="#65C91A" />
+                <path d="M26 22c10-12 32-17 56-17 26 0 46 5 56 17" stroke="#65C91A" strokeWidth="3.6" strokeLinecap="round" />
+              </svg>
+
+              <div className="site-footer__logo-text">
+                <div className="site-footer__logo-main">
+                  <span className="site-footer__logo-brand">JSR</span>
+                  <span className="site-footer__logo-ev">EV</span>
+                </div>
+                <div className="site-footer__logo-sub">
+                  <span className="site-footer__logo-line" aria-hidden="true" />
+                  <span className="site-footer__logo-tag">SPARE PARTS</span>
+                  <span className="site-footer__logo-line" aria-hidden="true" />
+                </div>
+              </div>
             </a>
 
             <p className="site-footer__description">
               Spare parts, repair and fitting services for e-rickshaws and electric scooters in Sector 18, Rohini, Delhi.
             </p>
 
-            {/* 4 service highlight badges in a row */}
+            {/* Service highlight cards */}
             <div className="site-footer__highlights" role="list">
               {serviceHighlights.map((item) => (
                 <div className="site-footer__highlight-item" key={item.id} role="listitem">
@@ -335,45 +297,16 @@ export default function Footer() {
                   </a>
                 ))}
               </div>
-
-              {/* Mobile-visible E-Rickshaw graphic */}
               <img
-                src="/footer-erickshaw.webp"
-                alt="JSR EV E-Rickshaw"
+                src="/footer-mobile-rickshaw.png"
+                alt="JSR E-Rickshaw"
                 className="site-footer__social-rickshaw"
                 loading="lazy"
-                decoding="async"
+                width="360"
+                height="285"
               />
             </div>
           </div>
-        </div>
-
-        {/* Feature Strip (Trust / Quality Bar) */}
-        <div className="site-footer__feature-strip" role="region" aria-label="Shop highlights">
-          {footerFeatureStrip.map((item, index) => {
-            const ItemTag = item.href ? "a" : "div";
-            return (
-              <div key={item.id} className="site-footer__feature-cell">
-                <ItemTag
-                  href={item.href}
-                  target={item.href ? "_blank" : undefined}
-                  rel={item.href ? "noopener noreferrer" : undefined}
-                  className={`site-footer__feature-item ${item.href ? "site-footer__feature-item--link" : ""}`}
-                >
-                  <span className="site-footer__feature-icon" aria-hidden="true">
-                    {item.icon}
-                  </span>
-                  <span className="site-footer__feature-content">
-                    <span className="site-footer__feature-title">{item.title}</span>
-                    <span className="site-footer__feature-desc">{item.desc}</span>
-                  </span>
-                </ItemTag>
-                {index < footerFeatureStrip.length - 1 && (
-                  <span className="site-footer__feature-divider" aria-hidden="true" />
-                )}
-              </div>
-            );
-          })}
         </div>
 
         {/* Bottom Bar */}
