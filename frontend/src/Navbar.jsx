@@ -103,21 +103,13 @@ export default function Navbar() {
 
           {/* ── Logo ── */}
           <a ref={logoRef} href="#home" className="logo" aria-label="JSR EV SPARE PARTS – home">
-            <div className="logo__wordmark">
-              <span className="logo__jsr">JSR</span>
-              <span className="logo__ev">
-                {" EV"}
-                {/* Lightning bolt */}
-                <svg className="logo__bolt" viewBox="0 0 14 22" fill="none" aria-hidden="true">
-                  <path d="M8 1L1 13h5.5L5 21l8-12H7L8 1z" fill="#65D510" stroke="#65D510" strokeWidth="0.5" strokeLinejoin="round" />
-                </svg>
-              </span>
-            </div>
-            <div className="logo__sub">
-              <span className="logo__line" aria-hidden="true" />
-              <span className="logo__tagline">SPARE PARTS</span>
-              <span className="logo__line" aria-hidden="true" />
-            </div>
+            <img
+              src="/jsr-logo.png"
+              alt="JSR EV SPARE PARTS"
+              className="logo__img"
+              width="180"
+              height="60"
+            />
           </a>
 
           {/* ── Desktop nav links ── */}
