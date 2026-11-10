@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import Navbar from "./Navbar.jsx";
 import Hero from "./Hero.jsx";
+import Services from "./Services.jsx";
 import WhyChooseUs from "./WhyChooseUs.jsx";
 import StatsStrip from "./StatsStrip.jsx";
 import About from "./About.jsx";
-import Founder from "./Founder.jsx";
-import Services from "./Services.jsx";
 import FAQ from "./FAQ.jsx";
 import Contact from "./Contact.jsx";
 import FloatingCTA from "./FloatingCTA.jsx";
@@ -48,11 +47,10 @@ export default function App() {
       <Navbar />
       <main aria-label="Main content">
         <Hero />
+        <Services />
         <WhyChooseUs />
         <StatsStrip />
         <About />
-        <Founder />
-        <Services />
         <FAQ />
         <Contact />
       </main>

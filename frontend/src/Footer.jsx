@@ -2,9 +2,10 @@ import { useState } from "react";
 
 const quickLinks = [
   { id: "home", href: "#home", label: "Home" },
-  { id: "about", href: "#about", label: "About Our Shop" },
   { id: "services", href: "#services", label: "Our Services" },
-  { id: "shop", href: "#about", label: "Shop / Products" },
+  { id: "why-us", href: "#why-choose-us", label: "Why Choose Us" },
+  { id: "about", href: "#about", label: "About Our Shop" },
+  { id: "faq", href: "#faq", label: "FAQ" },
   { id: "contact", href: "#contact", label: "Contact" },
 ];
 
@@ -319,13 +320,13 @@ export default function Footer() {
             © 2026 JSR EV SPARE PARTS. All rights reserved.
           </p>
 
-          <div className="site-footer__legal-links">
+          {/* <div className="site-footer__legal-links">
             <a href="#privacy" className="site-footer__legal-link">Privacy Policy</a>
             <span className="site-footer__legal-divider" aria-hidden="true">|</span>
             <a href="#terms" className="site-footer__legal-link">Terms &amp; Conditions</a>
             <span className="site-footer__legal-divider" aria-hidden="true">|</span>
             <a href="#refund" className="site-footer__legal-link">Refund Policy</a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

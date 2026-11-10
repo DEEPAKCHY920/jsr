@@ -489,36 +489,43 @@ button {
   line-height: 1.25;
 }
 
-/* Bottom CTA: WhatsApp Enquire Now Button */
-.mobile-menu-card__cta-btn {
+/* Bottom CTA: Single Full-Width Green Enquire Now Button matching Image 1 */
+.mobile-menu-card__actions {
+  display: flex;
+  width: 100%;
+  margin-top: 18px;
+}
+
+.mobile-menu-card__enquire-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   width: 100%;
   min-height: 52px;
-  margin-top: 18px;
-  background-color: #2ea008;
+  background-color: #2CA50D;
   color: #FFFFFF !important;
   font-size: 17.5px;
   font-weight: 750;
   border-radius: 14px;
   text-decoration: none;
-  box-shadow: 0 4px 14px rgba(46, 160, 8, 0.32);
+  box-shadow: 0 4px 14px rgba(44, 165, 13, 0.35);
   transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.mobile-menu-card__cta-btn:hover {
-  background-color: #268e07;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(46, 160, 8, 0.42);
+@media (hover: hover) {
+  .mobile-menu-card__enquire-btn:hover {
+    background-color: #23890a;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(44, 165, 13, 0.45);
+  }
 }
 
-.mobile-menu-card__cta-btn:active {
+.mobile-menu-card__enquire-btn:active {
   transform: translateY(0);
 }
 
-.mobile-menu-card__cta-btn svg {
+.mobile-menu-card__enquire-btn svg {
   flex-shrink: 0;
 }
 
@@ -554,6 +561,7 @@ button {
 .site-footer {
   position: relative;
   background-color: #071B36;
+  overflow: hidden;
   color: #94A3B8;
   padding: 56px 0 24px;
   overflow: hidden;
@@ -786,11 +794,13 @@ button {
   display: none;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 768px) {
   .site-footer__collapse-content {
-    display: block;
-    opacity: 1;
-    visibility: visible;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    grid-template-rows: none !important;
+    overflow: visible !important;
   }
 }
 
@@ -1374,12 +1384,12 @@ button {
   .site-footer__social-rickshaw {
     display: block !important;
     width: 220px;
-    max-width: 56%;
+    max-width: 52%;
     height: auto;
     object-fit: contain;
     position: absolute;
-    right: -10px;
-    bottom: -15px;
+    right: 0;
+    bottom: -10px;
     pointer-events: none;
     z-index: 1;
     opacity: 0.9;
@@ -1571,9 +1581,9 @@ button {
 }
 
 .why-us__card-desc {
-  font-size: 13.5px;
-  color: #64748B;
-  line-height: 1.45;
+  font-size: 14.5px;
+  color: #475569;
+  line-height: 1.5;
   margin: 0;
 }
 
@@ -1587,17 +1597,20 @@ button {
 
 .why-us__image-wrapper {
   position: relative;
-  border-radius: 20px;
+  border-radius: 24px 72px 24px 72px;
   overflow: hidden;
+  border: 3.5px solid #65D510;
   box-shadow: 0 18px 45px -12px rgba(16, 27, 61, 0.16);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
   width: 100%;
-  max-width: 480px;
+  max-width: 500px;
 }
 
-.why-us__image-wrapper:hover {
-  transform: translateY(-3px) scale(1.015);
-  box-shadow: 0 24px 50px -10px rgba(16, 27, 61, 0.22);
+@media (hover: hover) {
+  .why-us__image-wrapper:hover {
+    transform: translateY(-3px) scale(1.015);
+    box-shadow: 0 24px 50px -10px rgba(16, 27, 61, 0.22);
+  }
 }
 
 .why-us__image {
@@ -1645,68 +1658,24 @@ button {
 }
 
 /* ================================================================
-   ABOUT OUR SHOP
-   Scoped to .about so existing sections remain unchanged.
+   ABOUT OUR SHOP & FOUNDER FEATURE CARD (Merged)
 ================================================================ */
 .about {
   background-color: #FFFFFF;
-  padding: 64px 0;
+  padding: 72px 0 80px;
   scroll-margin-top: 96px;
-}
-
-.about__inner {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  align-items: center;
-  gap: 48px;
-}
-
-.about__media {
   position: relative;
-  width: 100%;
-  min-width: 0;
-  border-radius: 20px;
   overflow: hidden;
-  box-shadow:
-    0 4px 6px -1px rgba(23, 70, 206, 0.12),
-    0 10px 32px -4px rgba(23, 70, 206, 0.18);
-  border: 3px solid #1746CE;
-  background: #0d1a3a;
 }
 
-.about__photo {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 17px;
-  transition: transform 0.45s ease;
+.about__container {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
 }
 
-/* ── no text overlay on this image so caption is decorative only ── */
-
-.about__media:hover .about__photo {
-  transform: scale(1.04);
-}
-
-.about__photo-caption {
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 10px 18px;
-  background: linear-gradient(to top, rgba(10, 20, 55, 0.88) 0%, transparent 100%);
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  text-align: center;
-}
-
-.about__content {
-  min-width: 0;
+.about__header {
+  max-width: 860px;
 }
 
 .about__label-row {
@@ -1732,143 +1701,340 @@ button {
 }
 
 .about__heading {
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   color: #101B3D;
-  font-size: clamp(28px, 3vw, 40px);
+  font-size: clamp(28px, 3.2vw, 42px);
   font-weight: 800;
   line-height: 1.18;
   letter-spacing: -0.02em;
 }
 
 .about__copy {
-  margin-bottom: 26px;
+  margin: 0;
   color: #3d4a6b;
-  font-size: clamp(16px, 1.5vw, 18px);
+  font-size: clamp(16px, 1.5vw, 17.5px);
   line-height: 1.65;
 }
 
-.about__details {
-  width: 100%;
-  margin: 0 0 28px;
-  overflow: hidden;
-  border: 1px solid #cbd3e1;
-  border-spacing: 0;
-  border-radius: 12px;
-}
-
-.about__detail-row {
+/* ── ABOUT SECTION TWO-COLUMN GRID (Left = Shop Photo, Right = Founder Card) ── */
+.about__grid {
   display: grid;
-  grid-template-columns: minmax(150px, 1fr) minmax(0, 2fr);
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: stretch;
+  margin-top: 10px;
+}
+
+/* ── SHOP STOREFRONT PHOTO (Left Column) ── */
+.about__media {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px -2px rgba(16, 27, 61, 0.06);
+  border: 1px solid #E2E8F0;
+  background-color: #F8FAFC;
+}
+
+.about__photo-wrapper {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+}
+
+.about__photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.45s ease;
+}
+
+@media (hover: hover) {
+  .about__media:hover .about__photo {
+    transform: scale(1.025);
+  }
+}
+
+.about__photo-caption {
+  display: block;
+  padding: 14px 20px;
+  background-color: #FFFFFF;
+  border-top: 1px solid #E2E8F0;
+  color: #475569;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+/* ── LARGE FOUNDER FEATURE CARD (Right Column) ── */
+.founder-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  background-color: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 24px;
+  padding: 32px 30px;
+  box-shadow: 0 4px 24px -2px rgba(16, 27, 61, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (min-width: 992px) {
+  .founder-card {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 28px;
+    align-items: center;
+    padding: 36px 32px;
+  }
+}
+
+@media (hover: hover) {
+  .founder-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px -4px rgba(23, 70, 206, 0.1);
+  }
+  .founder-card:hover .founder-card__corner--top {
+    transform: translate(-3px, -3px);
+  }
+  .founder-card:hover .founder-card__corner--bottom {
+    transform: translate(3px, 3px);
+  }
+}
+
+.founder-card__portrait-col {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  border-bottom: 1px solid #d8deea;
-  transition: background-color 0.2s ease;
 }
 
-.about__detail-row:hover {
-  background-color: #f6f9fe;
-}
-
-.about__detail-row:last-child {
-  border-bottom: 0;
-}
-
-.about__detail-row th,
-.about__detail-row td {
-  min-width: 0;
-  padding: 13px 18px;
-  font-size: 15px;
-  line-height: 1.4;
-}
-
-.about__detail-row th {
-  align-self: stretch;
+.founder-card__portrait-frame {
+  position: relative;
+  width: 190px;
+  height: 190px;
   display: flex;
   align-items: center;
-  background: #eef4fc;
+  justify-content: center;
+}
+
+.founder-card__img {
+  width: 190px;
+  height: 190px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 20px;
+  display: block;
+  box-shadow: 0 6px 18px rgba(16, 27, 61, 0.1);
+}
+
+.founder-card__corner {
+  position: absolute;
+  z-index: 2;
+  width: 48px;
+  height: 48px;
+  border-color: #65D510;
+  border-style: solid;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.founder-card__corner--top {
+  top: -7px;
+  left: -7px;
+  border-width: 4px 0 0 4px;
+  border-radius: 22px 0 0;
+}
+
+.founder-card__corner--bottom {
+  right: -7px;
+  bottom: -7px;
+  border-width: 0 4px 4px 0;
+  border-radius: 0 0 22px;
+}
+
+.founder-card__content-col {
+  min-width: 0;
+}
+
+.founder-card__name {
+  font-size: clamp(24px, 2.2vw, 28px);
+  font-weight: 800;
   color: #101B3D;
-  font-weight: 750;
-  text-align: left;
+  margin: 0 0 4px;
+  line-height: 1.2;
 }
 
-.about__detail-row td {
-  color: #24304f;
+.founder-card__role {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1746CE;
+  margin: 0 0 12px;
 }
 
-.about__button {
+.founder-card__bio {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #475569;
+  margin: 0 0 16px;
+  max-width: 640px;
+}
+
+.founder-card__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.founder-card__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #EEF4FC;
+  color: #101B3D;
+  font-size: 13.5px;
+  font-weight: 650;
+  padding: 6px 14px;
+  border-radius: 50px;
+  border: 1px solid #D8E4F8;
+}
+
+.founder-card__chip svg {
+  color: #1746CE;
+  flex-shrink: 0;
+}
+
+.founder-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.founder-card__btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  min-height: 48px;
-  padding: 12px 24px;
-  border: 2px solid #1746CE;
-  border-radius: 8px;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 14.5px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.founder-card__btn--call {
   background-color: #1746CE;
   color: #FFFFFF;
-  font-size: 15px;
-  font-weight: 600;
-  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+  border: 2px solid #1746CE;
 }
 
-.about__button:hover {
-  background-color: #1239b0;
-  border-color: #1239b0;
+.founder-card__btn--call:hover {
+  background-color: #1239B0;
+  border-color: #1239B0;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(23, 70, 206, 0.25);
+  box-shadow: 0 6px 16px rgba(23, 70, 206, 0.25);
 }
 
-.about__button svg {
-  width: 21px;
-  height: 21px;
-  transition: transform 0.2s ease;
+.founder-card__btn--wa {
+  background-color: #2EA008;
+  color: #FFFFFF;
+  border: 2px solid #2EA008;
 }
 
-.about__button:hover svg {
-  transform: translateX(4px);
+.founder-card__btn--wa:hover {
+  background-color: #268C07;
+  border-color: #268C07;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(46, 160, 8, 0.25);
 }
 
-.about__button:focus-visible {
-  outline: 3px solid #65D510;
-  outline-offset: 3px;
+.founder-card__btn svg {
+  flex-shrink: 0;
 }
 
-.about__button:hover {
-  border-color: #1239b0;
-  background-color: #1239b0;
-}
-
-@media (max-width: 899px) {
+/* Mobile Layout (<=768px): Stacked & Centered (Photo first, then Founder card) */
+@media (max-width: 768px) {
   .about {
-    padding: 40px 0;
+    padding: 48px 0 54px;
   }
-
-  .about__inner {
-    grid-template-columns: minmax(0, 1fr);
+  .about__container {
     gap: 24px;
   }
-
-  /* ── On mobile: content (heading + table + button) comes first ── */
-  .about__content {
-    order: 1;
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
-
-  /* ── Image comes AFTER the table/content on mobile ── */
   .about__media {
-    order: 2;
-    border-radius: 16px;
-    overflow: hidden;
-    margin: 0;
+    order: 1;
+    height: auto;
   }
-
+  .about__photo-wrapper {
+    height: auto;
+  }
   .about__photo {
-    aspect-ratio: 16 / 9;
-    object-position: center 20%;
-    border-radius: 0;
-    max-height: 260px;
+    aspect-ratio: 4 / 3;
+    max-height: 290px;
   }
-
-  .about__photo-caption {
-    display: none;
+  .founder-card {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 26px 20px;
+    gap: 20px;
+    height: auto;
+  }
+  .founder-card__portrait-col {
+    width: 100%;
+  }
+  .founder-card__portrait-frame {
+    width: 130px;
+    height: 130px;
+  }
+  .founder-card__img {
+    width: 130px;
+    height: 130px;
+    border-radius: 16px;
+  }
+  .founder-card__corner {
+    width: 36px;
+    height: 36px;
+  }
+  .founder-card__corner--top {
+    top: -6px;
+    left: -6px;
+    border-radius: 18px 0 0;
+  }
+  .founder-card__corner--bottom {
+    right: -6px;
+    bottom: -6px;
+    border-radius: 0 0 18px;
+  }
+  .founder-card__chips {
+    justify-content: center;
+  }
+  .founder-card__actions {
+    justify-content: center;
+    width: 100%;
+  }
+  .founder-card__btn {
+    flex: 1;
+    min-width: 130px;
+    padding: 11px 16px;
   }
 }
 
@@ -2459,6 +2625,28 @@ button {
   max-width: 720px;
 }
 
+.contact__eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.contact__eyebrow {
+  color: #1746CE;
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.contact__eyebrow-line {
+  width: 52px;
+  height: 3px;
+  background-color: #65D510;
+  border-radius: 2px;
+}
+
 .contact__heading {
   color: #101B3D;
   font-size: clamp(28px, 3.5vw, 42px);
@@ -2468,13 +2656,7 @@ button {
 }
 
 .contact__heading::before {
-  content: "";
-  display: block;
-  width: 52px;
-  height: 3px;
-  margin-bottom: 14px;
-  border-radius: 2px;
-  background-color: #65D510;
+  display: none;
 }
 
 .contact__subtitle {
@@ -2641,14 +2823,34 @@ button {
 .contact__map-card {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid #dce2ed;
+  border-radius: 16px;
+  background-color: #FFFFFF;
+}
+
+.contact__map-frame-wrap {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-height: 320px;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  overflow: hidden;
+  display: flex;
 }
 
 .contact__map {
   display: block;
   width: 100%;
-  height: 360px;
+  height: 100%;
+  min-height: 320px;
   border: 0;
-  background-color: #e8edf5;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
 }
 
 .contact__map-info {
@@ -2697,8 +2899,14 @@ button {
     width: 100%;
   }
 
+  .contact__map-frame-wrap {
+    min-height: 280px;
+    height: 280px;
+  }
+
   .contact__map {
-    height: 320px;
+    min-height: 280px;
+    height: 100%;
   }
 }
 
@@ -3496,7 +3704,7 @@ a:active,
   transform-origin: 0% 50%;
   z-index: 10002;
   pointer-events: none;
-  transition: transform 0.05s linear;
+  transition: transform 0.05s linear, opacity 0.15s ease;
 }
 
 #home,
@@ -3841,6 +4049,12 @@ a:active,
 
 .stats-strip__highlight {
   color: #65D510;
+}
+
+.stats-strip__highlight--since {
+  font-size: clamp(28px, 2.6vw, 36px);
+  letter-spacing: -0.015em;
+  white-space: nowrap;
 }
 
 .stats-strip__label {

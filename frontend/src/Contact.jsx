@@ -1,8 +1,15 @@
 export default function Contact() {
+  const mapsSearchUrl =
+    "https://www.google.com/maps/search/?api=1&query=Sector+18+Rohini+Delhi+110089+Near+Data+Ram+Apartment";
+
   return (
     <section className="contact" id="contact" aria-labelledby="contact-heading">
       <div className="container contact__inner">
         <header className="contact__header reveal-up">
+          <div className="contact__eyebrow-row">
+            <span className="contact__eyebrow">VISIT US</span>
+            <span className="contact__eyebrow-line" aria-hidden="true" />
+          </div>
           <h2 className="contact__heading" id="contact-heading">Visit or Contact Our Shop</h2>
           <p className="contact__subtitle">Contact us for spare parts, repair and fitting enquiries.</p>
         </header>
@@ -62,16 +69,30 @@ export default function Contact() {
           </div>
 
           <div className="contact__map-card reveal-right">
-            <iframe
-              className="contact__map"
-              src="https://maps.google.com/maps?q=Sector%2018%20Rohini%20Delhi&output=embed"
-              title="Approximate area map of Sector 18, Rohini, Delhi"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+            <div className="contact__map-frame-wrap">
+              <iframe
+                className="contact__map"
+                src="https://maps.google.com/maps?q=28.730825,77.126488+(JSR%20EV%20SPARE%20PARTS%20Sector%2018%20Rohini%20Delhi)&t=&z=15&ie=UTF8&iwloc=B&output=embed"
+                title="Google Maps location of JSR EV SPARE PARTS in Sector 18 Rohini"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
             <div className="contact__map-info">
-              <p>Area map only. Please call us for the exact shop location.</p>
-              <a className="contact__maps-link" href="https://www.google.com/maps/search/?api=1&query=Sector%2018%20Rohini%20Delhi" target="_blank" rel="noopener noreferrer">View Area on Maps</a>
+              <p>Located in Sector 18, Rohini near Data Ram Apartment. Call us for easy directions or on-site fitting assistance.</p>
+              <a
+                className="contact__maps-link"
+                href={mapsSearchUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open shop location in Google Maps (opens in new tab)"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+                  <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
+                  <circle cx="12" cy="10" r="2.5" />
+                </svg>
+                View on Google Maps
+              </a>
             </div>
           </div>
         </div>

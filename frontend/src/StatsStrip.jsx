@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 export default function StatsStrip() {
   const containerRef = useRef(null);
   // Default to final values so SSR/prerender and no-JS have full values in HTML
-  const [counts, setCounts] = useState({ years: 3, parts: 300, vehicles: 800 });
+  const [counts, setCounts] = useState({ parts: 300, vehicles: 800 });
 
   useEffect(() => {
     // If reduced-motion is requested or SSR, keep final values
@@ -17,7 +17,7 @@ export default function StatsStrip() {
     }
 
     // Set to 0 initially on client before viewport intersection triggers count-up
-    setCounts({ years: 0, parts: 0, vehicles: 0 });
+    setCounts({ parts: 0, vehicles: 0 });
 
     let hasAnimated = false;
     const observer = new IntersectionObserver(
@@ -37,7 +37,6 @@ export default function StatsStrip() {
               const eased = 1 - Math.pow(1 - progress, 3);
 
               setCounts({
-                years: Math.round(eased * 3),
                 parts: Math.round(eased * 300),
                 vehicles: Math.round(eased * 800),
               });
@@ -45,7 +44,7 @@ export default function StatsStrip() {
               if (progress < 1) {
                 requestAnimationFrame(animate);
               } else {
-                setCounts({ years: 3, parts: 300, vehicles: 800 });
+                setCounts({ parts: 300, vehicles: 800 });
               }
             };
 
@@ -66,13 +65,12 @@ export default function StatsStrip() {
   return (
     <section className="stats-strip" ref={containerRef} aria-label="Key business facts">
       <div className="container stats-strip__inner">
-        {/* Stat 1: Years */}
-        <div className="stats-strip__item reveal-up" aria-label="3 plus years serving Rohini">
-          <div className="stats-strip__number" aria-hidden="true">
-            <span className="stats-strip__val stats-strip__val--1dig">{counts.years}</span>
-            <span className="stats-strip__suffix">+</span>
+        {/* Stat 1: Established Since 2024 */}
+        <div className="stats-strip__item reveal-up" aria-label="Since 2024 serving Rohini">
+          <div className="stats-strip__number">
+            <span className="stats-strip__highlight stats-strip__highlight--since">Since 2024</span>
           </div>
-          <p className="stats-strip__label">Years Serving Rohini</p>
+          <p className="stats-strip__label">Serving Rohini</p>
           <span className="stats-strip__sub">Sector 18, Rohini</span>
         </div>
 
