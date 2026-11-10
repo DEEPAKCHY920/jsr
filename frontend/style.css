@@ -49,29 +49,13 @@ button {
 }
 
 /* ================================================================
-   TOP STRIP
-================================================================ */
-.top-strip {
-  background-color: #1746CE;
-  color: #FFFFFF;
-}
-
-.top-strip__inner {
-  display: flex;
-  align-items: center;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  font-size: 13px;
-  letter-spacing: 0.02em;
-}
-
-/* ================================================================
-   MAIN NAVBAR
+   MAIN NAVBAR  - single white bar, no top strip
 ================================================================ */
 .navbar {
   background-color: #FFFFFF;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.09);
-  position: sticky;   /* sticks to top while scrolling */
+  border-bottom: 2px solid #e8ecf4;
+  box-shadow: 0 2px 16px rgba(23, 70, 206, 0.07);
+  position: sticky;
   top: 0;
   z-index: 1000;
 }
@@ -79,8 +63,8 @@ button {
 .navbar__inner {
   display: flex;
   align-items: center;
-  gap: 32px;
-  height: 80px;       /* ≈ 80 px desktop height */
+  gap: 12px;
+  height: 72px;
 }
 
 /* ================================================================
@@ -90,39 +74,58 @@ button {
   display: flex;
   flex-direction: column;
   line-height: 1;
-  flex-shrink: 0;     /* never squish the logo */
+  flex-shrink: 0;
+  gap: 5px;
 }
-
-/* "JSR EV TECH" in bold royal blue */
-.logo__name {
-  font-size: 24px;
-  font-weight: 800;
+.logo__wordmark {
+  display: flex;
+  align-items: baseline;
+  line-height: 1;
+}
+.logo__jsr {
+  font-size: 28px;
+  font-weight: 900;
   color: #1746CE;
-  letter-spacing: -0.5px;
+  font-style: italic;
+  letter-spacing: -1px;
 }
-
-/* Row: green-line · SPARE PARTS · green-line */
+.logo__ev {
+  font-size: 28px;
+  font-weight: 900;
+  color: #1746CE;
+  font-style: italic;
+  letter-spacing: -1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+.logo__bolt {
+  width: 14px;
+  height: 22px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 3px;
+  flex-shrink: 0;
+}
 .logo__sub {
   display: flex;
   align-items: center;
-  gap: 5px;
-  margin-top: 4px;
+  gap: 6px;
 }
-
-/* Short green accent bars */
 .logo__line {
   display: inline-block;
-  width: 20px;
-  height: 2.5px;
-  background-color: #65D510;
+  width: 22px;
+  height: 2px;
+  background-color: #1746CE;
   border-radius: 2px;
+  flex-shrink: 0;
 }
-
 .logo__tagline {
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: #101B3D;
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  color: #1746CE;
+  white-space: nowrap;
 }
 
 /* ================================================================
@@ -131,105 +134,98 @@ button {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 6px;
-  margin-left: auto;  /* push links toward the right */
+  gap: 2px;
+  margin-left: auto;
 }
-
-/* Base style for every link / button in the desktop nav */
 .nav-link {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 8px 14px;
-  font-size: 16px;
+  gap: 6px;
+  padding: 9px 16px;
+  font-size: 15px;
   font-weight: 500;
-  color: #101B3D;
-  border-radius: 6px;
+  color: #2d3a52;
+  border-radius: 50px;
   white-space: nowrap;
-  min-height: 44px;   /* WCAG touch-target minimum */
+  min-height: 42px;
+  position: relative;
   transition: color 0.2s ease, background-color 0.2s ease;
 }
-
-.nav-link:hover {
-  color: #1746CE;
-  background-color: rgba(23, 70, 206, 0.06);
-}
-
-/* Active link (Home): blue text + green underline */
+.nav-link svg { flex-shrink: 0; opacity: 0.75; }
+.nav-link:hover { color: #1746CE; background-color: rgba(23, 70, 206, 0.07); }
+.nav-link:hover svg { opacity: 1; }
 .nav-link--active {
-  color: #1746CE;
+  background-color: #1746CE;
+  color: #ffffff;
   font-weight: 600;
-  position: relative;
 }
-
+.nav-link--active svg { opacity: 1; color: #ffffff; }
+.nav-link--active:hover { background-color: #1239b0; color: #ffffff; }
 .nav-link--active::after {
   content: "";
   position: absolute;
-  bottom: 4px;
-  left: 14px;
-  right: 14px;
-  height: 2.5px;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 3px;
   background-color: #65D510;
   border-radius: 2px;
 }
-
-/* React controls mobile-menu availability with the native hidden attribute. */
-.mobile-menu[hidden] {
-  display: none !important;
-}
+.mobile-menu[hidden] { display: none !important; }
 
 /* ================================================================
-   ENQUIRE NOW BUTTON
+   ENQUIRE NOW  - green pill
 ================================================================ */
 .btn-enquire {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 11px 22px;
-  background-color: #1746CE;
+  gap: 8px;
+  padding: 11px 20px;
+  background-color: #3dba0a;
   color: #FFFFFF;
   font-size: 15px;
-  font-weight: 600;
-  border-radius: 8px;
+  font-weight: 700;
+  border-radius: 50px;
   white-space: nowrap;
   min-height: 44px;
   flex-shrink: 0;
+  margin-left: 10px;
   transition: background-color 0.2s ease, transform 0.1s ease;
+  letter-spacing: 0.01em;
 }
-
-.btn-enquire:hover  { background-color: #1239b0; }
+.btn-enquire svg { flex-shrink: 0; }
+.btn-enquire:hover  { background-color: #2ea008; }
 .btn-enquire:active { transform: scale(0.97); }
-
-/* Full-width variant used inside mobile menu */
+.btn-enquire:focus-visible { outline: 3px solid #65D510; outline-offset: 3px; }
 .btn-enquire--full {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 16px;
   padding: 14px 22px;
+  margin-left: 0;
+  justify-content: center;
 }
 
 /* ================================================================
-   HAMBURGER BUTTON (mobile only)
+   HAMBURGER (mobile only)
 ================================================================ */
 .hamburger {
-  display: none;          /* hidden on desktop */
+  display: none;
   align-items: center;
   justify-content: center;
   width: 44px;
   height: 44px;
   margin-left: auto;
   color: #101B3D;
-  border-radius: 6px;
+  border-radius: 8px;
   flex-shrink: 0;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
-
-.hamburger:hover { color: #1746CE; }
-
-/* Only one icon visible at a time */
+.hamburger:hover { color: #1746CE; background-color: rgba(23,70,206,0.07); }
 .hamburger__icon--close { display: none; }
-
-.hamburger--open .hamburger__icon--open  { display: none;  }
+.hamburger--open .hamburger__icon--open  { display: none; }
 .hamburger--open .hamburger__icon--close { display: block; }
 
 /* ================================================================
@@ -237,62 +233,43 @@ button {
 ================================================================ */
 .mobile-menu {
   background-color: #FFFFFF;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-  display: none;          /* JS adds .mobile-menu--open to show */
+  border-top: 1px solid #e8ecf4;
+  display: none;
   overflow: hidden;
 }
-
 .mobile-menu--open { display: block; }
-
-/* ── Mobile nav rows ── */
-.mobile-nav { padding: 4px 0 8px; }
-
+.mobile-nav { padding: 6px 0 10px; }
 .mobile-nav__link {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 12px;
   width: 100%;
-  padding: 14px 20px;
-  font-size: 16px;
+  padding: 13px 20px;
+  font-size: 15px;
   font-weight: 500;
-  color: #101B3D;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-  min-height: 52px;       /* comfortable touch target */
+  color: #2d3a52;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  min-height: 52px;
   transition: background-color 0.15s ease;
 }
-
-.mobile-nav__link:hover {
-  background-color: rgba(23, 70, 206, 0.05);
-}
-
-/* Active Home – blue text + left green accent bar */
+.mobile-nav__link:hover { background-color: rgba(23,70,206,0.05); color: #1746CE; }
+.mobile-nav__icon { display: flex; align-items: center; color: #1746CE; flex-shrink: 0; }
 .mobile-nav__link--active {
   color: #1746CE;
-  font-weight: 600;
+  font-weight: 700;
   border-left: 3px solid #65D510;
   padding-left: 17px;
+  background-color: rgba(23,70,206,0.04);
 }
-
-/* CTA row at the bottom of the mobile menu */
-.mobile-menu__cta {
-  padding: 14px 16px 20px;
-}
+.mobile-menu__cta { padding: 14px 16px 20px; }
 
 /* ================================================================
-   RESPONSIVE – mobile layout below 900 px
+   RESPONSIVE - below 900px
 ================================================================ */
 @media not all and (min-width: 900px) {
-
-  /* Hide desktop links and the desktop CTA */
   .nav-links,
-  .btn-enquire:not(.btn-enquire--full) {
-    display: none;
-  }
-
-  /* Reveal hamburger */
+  .btn-enquire:not(.btn-enquire--full) { display: none; }
   .hamburger { display: flex; }
-
-  /* Remove extra gap since links are gone */
   .navbar__inner { gap: 0; }
 }
 
@@ -544,6 +521,8 @@ button {
   transition: transform 0.45s ease;
 }
 
+/* ── no text overlay on this image so caption is decorative only ── */
+
 .about__media:hover .about__photo {
   transform: scale(1.04);
 }
@@ -687,12 +666,35 @@ button {
     grid-template-columns: minmax(0, 1fr);
     gap: 24px;
   }
+
+  /* ── On mobile: content (heading + table + button) comes first ── */
+  .about__content {
+    order: 1;
+  }
+
+  /* ── Image comes AFTER the table/content on mobile ── */
+  .about__media {
+    order: 2;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  .about__photo {
+    aspect-ratio: 16 / 9;
+    object-position: center 20%;
+    border-radius: 0;
+    max-height: 260px;
+  }
+
+  .about__photo-caption {
+    display: none;
+  }
 }
 
 @media (max-width: 399px) {
-  .about__media {
-    padding: 16px;
-    font-size: 14px;
+  .about__photo {
+    max-height: 210px;
   }
 
   .about__label {
@@ -884,7 +886,14 @@ button {
     gap: 24px;
   }
 
+  /* ── On mobile: content comes first ── */
+  .founder__content {
+    order: 1;
+  }
+
+  /* ── Portrait comes AFTER the content on mobile ── */
   .founder__portrait-wrap {
+    order: 2;
     max-width: 340px;
   }
 
