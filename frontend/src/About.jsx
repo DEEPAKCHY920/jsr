@@ -23,17 +23,17 @@ export default function About() {
 
         {/* Two-Column Row: Left = Shop Photo, Right = Founder Card */}
         <div className="about__grid">
-          {/* Left Column: Physical Shop Photo (Aspect-ratio 4/3, signboard visible) */}
+          {/* Left Column: Physical Shop Photo (Aspect-ratio 16/9, signboard visible) */}
           <div className="about__media reveal-up">
             <div className="about__photo-wrapper">
               <img
                 src="/shop.jpg"
-                alt="JSR EV Spare Parts physical shop front with JSR EV SPARE PARTS signboard in Sector 18, Rohini, Delhi"
+                alt="JSR EV Spare Parts physical shop front with JSR EV SPARES PARTS signboard in Sector 18, Rohini, Delhi"
                 className="about__photo"
                 loading="lazy"
                 decoding="async"
-                width="800"
-                height="600"
+                width="1024"
+                height="576"
               />
             </div>
             <span className="about__photo-caption">JSR EV SPARE PARTS — Our Physical Shop in Sector 18, Rohini</span>
