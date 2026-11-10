@@ -1,14 +1,19 @@
+import OpenNowBadge from "./OpenNowBadge.jsx";
+
 export default function Hero() {
   return (
     <section className="hero" id="home" aria-labelledby="hero-heading">
       <div className="container hero__inner">
         <div className="hero__text">
-          {/* Eyebrow Pill */}
-          <div className="hero__badge">
-            <svg className="hero__badge-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-              <path d="M13 2L3 14h8l-2 8 11-13h-8l3-7z" fill="#65D510" stroke="#65D510" strokeWidth="1" strokeLinejoin="round" />
-            </svg>
-            <span>E-Rickshaw &amp; Electric Scooter Spare Parts</span>
+          {/* Eyebrow Row with EV Badge & Real-Time Open Status */}
+          <div className="hero__eyebrow-row">
+            <div className="hero__badge">
+              <svg className="hero__badge-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                <path d="M13 2L3 14h8l-2 8 11-13h-8l3-7z" fill="#65D510" stroke="#65D510" strokeWidth="1" strokeLinejoin="round" />
+              </svg>
+              <span>E-Rickshaw &amp; Electric Scooter Spare Parts</span>
+            </div>
+            <OpenNowBadge />
           </div>
 
           {/* Main Heading with curved underline */}
@@ -88,8 +93,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right Graphic Banner */}
+        {/* Right Graphic Banner with EV Charge Pulse Glow */}
         <div className="hero__image-wrap">
+          <div className="hero__glow-accent" aria-hidden="true" />
           <img
             src="/hero-ev-banner.png"
             alt="Blue e-rickshaw with motor, controller, brake shoes and tyre spare parts"

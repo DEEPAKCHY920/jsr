@@ -20,6 +20,18 @@ export default function Services() {
             <div className="services__card-content">
               <h3 className="services__card-heading">Spare Parts Sales</h3>
               <p className="services__card-copy">Spare parts for e-rickshaws and electric scooters.</p>
+              <a
+                href="https://wa.me/919990120067?text=Hi%20JSR%20EV%2C%20I%20want%20to%20check%20availability%20of%20spare%20parts."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="services__card-action"
+                aria-label="Check spare parts availability on WhatsApp"
+              >
+                <span>Check Availability</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
             </div>
           </article>
 
@@ -33,6 +45,16 @@ export default function Services() {
             <div className="services__card-content">
               <h3 className="services__card-heading">Repair Services</h3>
               <p className="services__card-copy">Visit our shop to discuss your vehicle’s repair requirements.</p>
+              <a
+                href="tel:+919990120067"
+                className="services__card-action"
+                aria-label="Call JSR EV to discuss repair services and pricing"
+              >
+                <span>Call for Price</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
             </div>
           </article>
 
@@ -47,6 +69,18 @@ export default function Services() {
             <div className="services__card-content">
               <h3 className="services__card-heading">Parts Fitting</h3>
               <p className="services__card-copy">Get fitting services for your e-rickshaw and electric scooter parts.</p>
+              <a
+                href="https://wa.me/919990120067?text=Hello%20JSR%20EV%2C%20I%20would%20like%20to%20enquire%20about%20fitting%20charges%20for%20my%20electric%20vehicle."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="services__card-action"
+                aria-label="Enquire about parts fitting charges on WhatsApp"
+              >
+                <span>Check Fitting Price</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
             </div>
           </article>
         </div>
