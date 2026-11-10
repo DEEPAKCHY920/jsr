@@ -133,9 +133,9 @@ export default function Footer() {
       <div className="site-footer__bg-vehicle" aria-hidden="true" />
 
       <div className="container site-footer__inner">
-        <div className="site-footer__grid">
+        <div className="site-footer__grid reveal-stagger">
           {/* Column 1 – Brand Information */}
-          <div className="site-footer__col site-footer__col--brand">
+          <div className="site-footer__col site-footer__col--brand reveal-up">
             <a className="site-footer__logo" href="#home" aria-label="JSR EV SPARE PARTS — back to home">
               <svg className="site-footer__logo-car" viewBox="0 0 150 40" fill="none" aria-hidden="true">
                 {/* Green contour electric car silhouette with lightning bolt */}
@@ -175,7 +175,7 @@ export default function Footer() {
           <div className="site-footer__divider-col" aria-hidden="true" />
 
           {/* Column 2 – Quick Links */}
-          <div className="site-footer__col site-footer__col--links">
+          <div className="site-footer__col site-footer__col--links reveal-up">
             <FooterHeading
               title="Quick Links"
               isOpen={quickLinksOpen}
@@ -202,7 +202,7 @@ export default function Footer() {
           <div className="site-footer__divider-col" aria-hidden="true" />
 
           {/* Column 3 – Contact & Timings */}
-          <div className="site-footer__col site-footer__col--contact">
+          <div className="site-footer__col site-footer__col--contact reveal-up">
             <FooterHeading
               title="Contact & Timings"
               isOpen={contactOpen}
@@ -280,7 +280,7 @@ export default function Footer() {
           </div>
 
           {/* Column 4 – Follow Us */}
-          <div className="site-footer__col site-footer__col--social">
+          <div className="site-footer__col site-footer__col--social reveal-up">
             <FooterHeading title="Follow Us" />
             <div className="site-footer__social-wrap">
               <div className="site-footer__social-row">
@@ -310,7 +310,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="site-footer__bottom">
+        <div className="site-footer__bottom reveal-up">
           <p className="site-footer__copyright">
             © 2026 JSR EV SPARE PARTS. All rights reserved.
           </p>

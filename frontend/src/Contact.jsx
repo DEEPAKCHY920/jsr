@@ -2,14 +2,14 @@ export default function Contact() {
   return (
     <section className="contact" id="contact" aria-labelledby="contact-heading">
       <div className="container contact__inner">
-        <header className="contact__header">
+        <header className="contact__header reveal-up">
           <h2 className="contact__heading" id="contact-heading">Visit or Contact Our Shop</h2>
           <p className="contact__subtitle">Contact us for spare parts, repair and fitting enquiries.</p>
         </header>
 
         <div className="contact__layout">
           <div className="contact__details">
-            <div className="contact__shop-card">
+            <div className="contact__shop-card reveal-left">
               <p className="contact__shop-name">JSR EV SPARE PARTS</p>
 
               <address className="contact__address">
@@ -61,7 +61,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="contact__map-card">
+          <div className="contact__map-card reveal-right">
             <iframe
               className="contact__map"
               src="https://maps.google.com/maps?q=Sector%2018%20Rohini%20Delhi&output=embed"

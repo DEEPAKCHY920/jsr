@@ -13,7 +13,7 @@ export default function Founder() {
       />
 
       <div className="container founder__inner">
-        <div className="founder__portrait-wrap">
+        <div className="founder__portrait-wrap reveal-left">
           <span className="founder__corner founder__corner--top" aria-hidden="true" />
           <span className="founder__corner founder__corner--bottom" aria-hidden="true" />
           <img
@@ -27,7 +27,7 @@ export default function Founder() {
           />
         </div>
 
-        <div className="founder__content">
+        <div className="founder__content reveal-right">
           <div className="founder__label-row">
             <p className="founder__eyebrow">MEET OUR FOUNDER</p>
             <span className="founder__label-line" aria-hidden="true" />

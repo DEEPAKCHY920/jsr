@@ -51,13 +51,37 @@ button {
 /* ================================================================
    MAIN NAVBAR  - single white bar, no top strip
 ================================================================ */
+.site-header {
+  animation: headerSlideDown 0.45s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+@keyframes headerSlideDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 .navbar {
   background-color: #FFFFFF;
   border-bottom: 2px solid #e8ecf4;
-  box-shadow: 0 2px 16px rgba(23, 70, 206, 0.07);
+  box-shadow: 0 2px 16px rgba(23, 70, 206, 0.05);
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.navbar--scrolled {
+  border-color: rgba(232, 236, 244, 0.6);
+  box-shadow: 0 4px 20px -2px rgba(23, 70, 206, 0.09), 0 2px 6px -1px rgba(23, 70, 206, 0.04);
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .navbar__inner {
@@ -83,7 +107,7 @@ button {
   max-width: 175px;
   object-fit: contain;
   display: block;
-  transition: transform 0.2s ease;
+  transition: transform 0.25s ease;
 }
 
 .logo:hover .logo__img,
@@ -119,11 +143,38 @@ button {
   white-space: nowrap;
   min-height: 42px;
   position: relative;
-  transition: color 0.2s ease, background-color 0.2s ease;
+  transition: color 0.25s ease, background-color 0.25s ease, transform 0.2s ease;
 }
-.nav-link svg { flex-shrink: 0; opacity: 0.75; }
-.nav-link:hover { color: #1746CE; background-color: rgba(23, 70, 206, 0.07); }
-.nav-link:hover svg { opacity: 1; }
+.nav-link svg {
+  flex-shrink: 0;
+  opacity: 0.75;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.nav-link:hover {
+  color: #1746CE;
+  background-color: rgba(23, 70, 206, 0.07);
+}
+.nav-link:hover svg {
+  opacity: 1;
+  transform: scale(1.1);
+}
+/* Subtle animated underline hover indicator */
+.nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 18px;
+  right: 18px;
+  height: 2px;
+  background-color: #1746CE;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-link:not(.nav-link--active):hover::before {
+  transform: scaleX(1);
+}
 .nav-link--active {
   background-color: #1746CE;
   color: #ffffff;
@@ -142,7 +193,6 @@ button {
   background-color: #65D510;
   border-radius: 2px;
 }
-.mobile-menu[hidden] { display: none !important; }
 
 /* ================================================================
    ENQUIRE NOW  - green pill
@@ -162,11 +212,21 @@ button {
   min-height: 44px;
   flex-shrink: 0;
   margin-left: 10px;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  transition: background-color 0.25s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
   letter-spacing: 0.01em;
 }
-.btn-enquire svg { flex-shrink: 0; }
-.btn-enquire:hover  { background-color: #2ea008; }
+.btn-enquire svg {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+.btn-enquire:hover {
+  background-color: #2ea008;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(61, 186, 10, 0.3);
+}
+.btn-enquire:hover svg:last-child {
+  transform: translateX(3px);
+}
 .btn-enquire:active { transform: scale(0.97); }
 .btn-enquire:focus-visible { outline: 3px solid #65D510; outline-offset: 3px; }
 .btn-enquire--full {
@@ -191,9 +251,10 @@ button {
   color: #101B3D;
   border-radius: 8px;
   flex-shrink: 0;
-  transition: color 0.2s ease, background-color 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 .hamburger:hover { color: #1746CE; background-color: rgba(23,70,206,0.07); }
+.hamburger:active { transform: scale(0.94); }
 .hamburger__icon--close { display: none; }
 .hamburger--open .hamburger__icon--open  { display: none; }
 .hamburger--open .hamburger__icon--close { display: block; }
@@ -204,10 +265,23 @@ button {
 .mobile-menu {
   background-color: #FFFFFF;
   border-top: 1px solid #e8ecf4;
-  display: none;
   overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.25s ease,
+              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  visibility: hidden;
+  pointer-events: none;
 }
-.mobile-menu--open { display: block; }
+.mobile-menu--open {
+  max-height: 380px;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+}
 .mobile-nav { padding: 6px 0 10px; }
 .mobile-nav__link {
   display: flex;
@@ -220,10 +294,23 @@ button {
   color: #2d3a52;
   border-bottom: 1px solid rgba(0,0,0,0.06);
   min-height: 52px;
-  transition: background-color 0.15s ease;
+  transition: background-color 0.2s ease, padding-left 0.2s ease, color 0.2s ease;
 }
-.mobile-nav__link:hover { background-color: rgba(23,70,206,0.05); color: #1746CE; }
-.mobile-nav__icon { display: flex; align-items: center; color: #1746CE; flex-shrink: 0; }
+.mobile-nav__link:hover {
+  background-color: rgba(23,70,206,0.05);
+  color: #1746CE;
+  padding-left: 24px;
+}
+.mobile-nav__icon {
+  display: flex;
+  align-items: center;
+  color: #1746CE;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+.mobile-nav__link:hover .mobile-nav__icon {
+  transform: scale(1.15);
+}
 .mobile-nav__link--active {
   color: #1746CE;
   font-weight: 700;
@@ -499,6 +586,9 @@ button {
 
 .site-footer__collapse-content {
   display: block !important;
+  max-height: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 /* ── Column 2: Quick Links ── */
@@ -1008,7 +1098,7 @@ button {
   .site-footer__chevron {
     display: block;
     color: #FFFFFF;
-    transition: transform 0.25s ease;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .site-footer__chevron--open {
@@ -1016,12 +1106,21 @@ button {
   }
 
   .site-footer__collapse-content {
-    display: none !important;
-    padding-top: 16px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding-top: 0;
+    transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.25s ease,
+                padding-top 0.35s ease;
+    visibility: hidden;
   }
 
   .site-footer__collapse-content--open {
-    display: block !important;
+    max-height: 480px;
+    opacity: 1;
+    padding-top: 16px;
+    visibility: visible;
   }
 
   /* Follow Us section on Mobile */
@@ -1231,6 +1330,11 @@ button {
   grid-template-columns: minmax(150px, 1fr) minmax(0, 2fr);
   align-items: center;
   border-bottom: 1px solid #d8deea;
+  transition: background-color 0.2s ease;
+}
+
+.about__detail-row:hover {
+  background-color: #f6f9fe;
 }
 
 .about__detail-row:last-child {
@@ -1272,12 +1376,24 @@ button {
   color: #FFFFFF;
   font-size: 15px;
   font-weight: 600;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.about__button:hover {
+  background-color: #1239b0;
+  border-color: #1239b0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(23, 70, 206, 0.25);
 }
 
 .about__button svg {
   width: 21px;
   height: 21px;
+  transition: transform 0.2s ease;
+}
+
+.about__button:hover svg {
+  transform: translateX(4px);
 }
 
 .about__button:focus-visible {
@@ -1405,6 +1521,12 @@ button {
   border: 1px solid #cbd5e6;
   border-radius: 28px;
   box-shadow: 0 12px 30px rgba(16, 27, 61, 0.12);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.founder__portrait-wrap:hover .founder__portrait {
+  transform: scale(1.03);
+  box-shadow: 0 16px 36px rgba(16, 27, 61, 0.16);
 }
 
 .founder__corner {
@@ -1415,6 +1537,15 @@ button {
   border-color: #65D510;
   border-style: solid;
   pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+.founder__portrait-wrap:hover .founder__corner--top {
+  transform: translate(-3px, -3px);
+}
+
+.founder__portrait-wrap:hover .founder__corner--bottom {
+  transform: translate(3px, 3px);
 }
 
 .founder__corner--top {
@@ -1500,6 +1631,15 @@ button {
   color: #101B3D;
   font-size: 15px;
   font-weight: 700;
+  border: 1px solid transparent;
+  transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.founder__chip:hover {
+  transform: translateY(-2px);
+  background-color: #e2edfd;
+  border-color: rgba(101, 213, 16, 0.4);
+  box-shadow: 0 4px 12px rgba(23, 70, 206, 0.08);
 }
 
 .founder__chip svg {
@@ -1618,15 +1758,15 @@ button {
   border: 1px solid #dce2ed;
   border-radius: 16px;
   background-color: #FFFFFF;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease,
-              transform 0.2s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease,
+              transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .services__card:hover,
 .services__card:focus-visible {
-  border-color: rgba(23, 70, 206, 0.45);
-  box-shadow: 0 10px 28px rgba(23, 70, 206, 0.1);
-  transform: translateY(-3px);
+  border-color: #65D510;
+  box-shadow: 0 14px 32px -4px rgba(23, 70, 206, 0.12), 0 4px 10px -2px rgba(23, 70, 206, 0.05);
+  transform: translateY(-5px);
 }
 
 .services__card:focus-visible {
@@ -1644,6 +1784,12 @@ button {
   border-radius: 16px;
   background-color: #edf3ff;
   color: #1746CE;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease;
+}
+
+.services__card:hover .services__icon {
+  transform: scale(1.08) rotate(1.5deg);
+  background-color: #e5eeff;
 }
 
 .services__icon svg {
@@ -1661,6 +1807,11 @@ button {
   font-size: clamp(21px, 2vw, 26px);
   font-weight: 750;
   line-height: 1.25;
+  transition: color 0.2s ease;
+}
+
+.services__card:hover .services__card-heading {
+  color: #1746CE;
 }
 
 .services__card-copy {
@@ -1687,7 +1838,22 @@ button {
   color: #FFFFFF;
   font-size: 15px;
   font-weight: 600;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.services__button:hover {
+  background-color: #1239b0;
+  border-color: #1239b0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(23, 70, 206, 0.25);
+}
+
+.services__button svg {
+  transition: transform 0.2s ease;
+}
+
+.services__button:hover svg {
+  transform: translateX(4px);
 }
 
 .services__button:hover {
@@ -1906,6 +2072,13 @@ button {
   border: 1px solid #dce2ed;
   border-radius: 16px;
   background-color: #F5F7FC;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.contact__shop-card:hover,
+.contact__map-card:hover {
+  box-shadow: 0 12px 30px rgba(16, 27, 61, 0.08);
+  border-color: #cbd8ec;
 }
 
 .contact__shop-card {
@@ -1934,6 +2107,7 @@ button {
   color: #101B3D;
   font-size: 16px;
   line-height: 1.55;
+  transition: background-color 0.2s ease;
 }
 
 .contact__icon {
@@ -1945,6 +2119,12 @@ button {
   border-radius: 12px;
   background-color: #e8efff;
   color: #1746CE;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease;
+}
+
+.contact__detail:hover .contact__icon {
+  transform: scale(1.08);
+  background-color: #dbe7ff;
 }
 
 .contact__icon svg {
@@ -1966,6 +2146,12 @@ button {
   text-decoration: underline;
   text-decoration-color: rgba(23, 70, 206, 0.35);
   text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.contact__detail a:hover {
+  color: #1746CE;
+  text-decoration-color: #1746CE;
 }
 
 .contact__muted {
@@ -1991,8 +2177,9 @@ button {
   font-size: 15px;
   font-weight: 650;
   text-align: center;
-  transition: background-color 0.2s ease, color 0.2s ease,
-              border-color 0.2s ease;
+  transition: background-color 0.25s ease, color 0.25s ease,
+              border-color 0.25s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s ease;
 }
 
 .contact__button--primary,
@@ -2010,10 +2197,14 @@ button {
 .contact__maps-link:hover {
   border-color: #1239b0;
   background-color: #1239b0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(23, 70, 206, 0.25);
 }
 
 .contact__button--secondary:hover {
   background-color: #edf3ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(23, 70, 206, 0.12);
 }
 
 .contact__map-card {
@@ -2142,6 +2333,7 @@ button {
   font-weight: 700;
   letter-spacing: 0.01em;
   width: fit-content;
+  animation: heroFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards;
 }
 
 .hero__badge-icon {
@@ -2159,6 +2351,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  animation: heroFadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
 }
 
 .hero__heading-sub {
@@ -2186,6 +2379,7 @@ button {
   line-height: 1.6;
   color: #4c5570;
   max-width: 460px;
+  animation: heroFadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.35s backwards;
 }
 
 /* Buttons */
@@ -2195,6 +2389,7 @@ button {
   gap: 14px;
   flex-wrap: wrap;
   margin-top: 4px;
+  animation: heroFadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.45s backwards;
 }
 
 .hero__btn {
@@ -2208,7 +2403,7 @@ button {
   border-radius: 10px;
   min-height: 48px;
   white-space: nowrap;
-  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
   text-decoration: none;
 }
 
@@ -2218,6 +2413,7 @@ button {
 
 .hero__btn-icon {
   flex-shrink: 0;
+  transition: transform 0.2s ease;
 }
 
 /* WhatsApp: rich green */
@@ -2231,6 +2427,12 @@ button {
 .hero__btn--whatsapp:hover {
   background-color: #15803d;
   border-color: #15803d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(22, 163, 74, 0.35);
+}
+
+.hero__btn--whatsapp:hover .hero__btn-icon {
+  transform: scale(1.08);
 }
 
 /* Call Now: white with blue outline */
@@ -2247,6 +2449,12 @@ button {
 .hero__btn--call:hover {
   background-color: #edf3ff;
   border-color: #1239b0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(23, 70, 206, 0.16);
+}
+
+.hero__btn--call:hover .hero__btn-icon {
+  transform: scale(1.08);
 }
 
 /* Trust Features Strip */
@@ -2257,6 +2465,7 @@ button {
   margin-top: 14px;
   padding-top: 6px;
   flex-wrap: wrap;
+  animation: heroFadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.55s backwards;
 }
 
 .hero__feature-item {
@@ -2267,11 +2476,21 @@ button {
   font-size: 14px;
   font-weight: 700;
   white-space: nowrap;
+  transition: transform 0.2s ease;
+}
+
+.hero__feature-item:hover {
+  transform: translateY(-2px);
 }
 
 .hero__feature-icon {
   color: #1746CE;
   flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.hero__feature-item:hover .hero__feature-icon {
+  transform: scale(1.1);
 }
 
 .hero__feature-divider {
@@ -2296,6 +2515,35 @@ button {
   object-fit: contain;
   display: block;
   border-radius: 16px;
+  animation: heroImageIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.25s backwards;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+}
+
+.hero__image-wrap:hover .hero__banner-img {
+  transform: translateY(-4px);
+  filter: drop-shadow(0 12px 24px rgba(23, 70, 206, 0.12));
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes heroImageIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translate3d(0, 10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
 }
 
 /* ================================================================
@@ -2595,5 +2843,96 @@ button {
 
   .nf__btn {
     width: 100%;
+  }
+}
+
+/* ================================================================
+   PROFESSIONAL SCROLL REVEAL & MOTION SYSTEM
+   GPU-accelerated, natural easing, 0-layout shift
+================================================================ */
+
+/* Initial state only when JavaScript is loaded */
+.js-ready .reveal-up {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.js-ready .reveal-fade {
+  opacity: 0;
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity;
+}
+
+.js-ready .reveal-left {
+  opacity: 0;
+  transform: translate3d(-24px, 0, 0);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.js-ready .reveal-right {
+  opacity: 0;
+  transform: translate3d(24px, 0, 0);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.js-ready .reveal-scale {
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Active Revealed State */
+.js-ready .reveal-up.is-revealed,
+.js-ready .reveal-fade.is-revealed,
+.js-ready .reveal-left.is-revealed,
+.js-ready .reveal-right.is-revealed,
+.js-ready .reveal-scale.is-revealed {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) scale(1) !important;
+}
+
+/* Automatic Stagger Delays for child cards/columns */
+.js-ready .reveal-stagger > *:nth-child(1) { transition-delay: 0ms; }
+.js-ready .reveal-stagger > *:nth-child(2) { transition-delay: 90ms; }
+.js-ready .reveal-stagger > *:nth-child(3) { transition-delay: 180ms; }
+.js-ready .reveal-stagger > *:nth-child(4) { transition-delay: 270ms; }
+.js-ready .reveal-stagger > *:nth-child(5) { transition-delay: 360ms; }
+
+/* Custom transition delays */
+.delay-100 { transition-delay: 100ms !important; }
+.delay-200 { transition-delay: 200ms !important; }
+.delay-300 { transition-delay: 300ms !important; }
+.delay-400 { transition-delay: 400ms !important; }
+
+/* Global Reduced Motion Overrides */
+@media (prefers-reduced-motion: reduce) {
+  .site-header {
+    animation: none !important;
+  }
+  .hero__badge,
+  .hero__heading,
+  .hero__desc,
+  .hero__actions,
+  .hero__features,
+  .hero__banner-img {
+    animation: none !important;
+  }
+  .js-ready .reveal-up,
+  .js-ready .reveal-fade,
+  .js-ready .reveal-left,
+  .js-ready .reveal-right,
+  .js-ready .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }

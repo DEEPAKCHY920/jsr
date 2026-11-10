@@ -10,7 +10,7 @@ export default function About() {
   return (
     <section className="about" id="about" aria-labelledby="about-heading">
       <div className="container about__inner">
-        <div className="about__media">
+        <div className="about__media reveal-left">
           <img
             src="/shop.jpg"
             alt="JSR EV Spares Parts shop front in Sector 18, Rohini, Delhi"
@@ -21,7 +21,7 @@ export default function About() {
           <span className="about__photo-caption">JSR EV Spares Parts — Our Shop</span>
         </div>
 
-        <div className="about__content">
+        <div className="about__content reveal-right">
           <div className="about__label-row">
             <p className="about__label">ABOUT OUR SHOP</p>
             <span className="about__label-line" aria-hidden="true" />

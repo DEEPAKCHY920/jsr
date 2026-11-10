@@ -48,10 +48,22 @@ const navLinks = [
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const mobileContainerRef = useRef(null);
   const hamburgerRef = useRef(null);
   const logoRef = useRef(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const handleScroll = () => {
+      const isPast = window.scrollY > 20;
+      setScrolled((prev) => (prev !== isPast ? isPast : prev));
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const handlePointerDown = (event) => {
@@ -97,8 +109,8 @@ export default function Navbar() {
   const handleMobileLink = () => setMobileOpen(false);
 
   return (
-    <header className="site-header" role="banner">
-      <nav className="navbar" aria-label="Main navigation">
+    <header className={`site-header${scrolled ? " site-header--scrolled" : ""}`} role="banner">
+      <nav className={`navbar${scrolled ? " navbar--scrolled" : ""}`} aria-label="Main navigation">
         <div className="container navbar__inner">
 
           {/* ── Logo ── */}
@@ -169,7 +181,7 @@ export default function Navbar() {
           className={`mobile-menu${mobileOpen ? " mobile-menu--open" : ""}`}
           id="mobile-menu"
           aria-label="Mobile navigation"
-          hidden={!mobileOpen}
+          aria-hidden={!mobileOpen}
         >
           <ul className="mobile-nav" role="list">
             {navLinks.map((link) => (

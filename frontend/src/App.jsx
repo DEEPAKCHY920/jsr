@@ -7,6 +7,7 @@ import Services from "./Services.jsx";
 import Contact from "./Contact.jsx";
 import Footer from "./Footer.jsx";
 import NotFound from "./NotFound.jsx";
+import { useScrollReveal } from "./useScrollReveal.js";
 
 /** Returns true when the current pathname is the root page. */
 function isHomePath() {
@@ -17,6 +18,7 @@ function isHomePath() {
 
 export default function App() {
   const [isHome, setIsHome] = useState(isHomePath);
+  useScrollReveal();
 
   useEffect(() => {
     const onPop = () => setIsHome(isHomePath());

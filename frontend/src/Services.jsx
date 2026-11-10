@@ -2,15 +2,15 @@ export default function Services() {
   return (
     <section className="services" id="services" aria-labelledby="services-heading">
       <div className="container services__inner">
-        <header className="services__header">
+        <header className="services__header reveal-up">
           <p className="services__label">WHAT WE DO</p>
           <span className="services__accent" aria-hidden="true" />
           <h2 className="services__heading" id="services-heading">Our Services</h2>
           <p className="services__subtitle">Spare parts, repair and fitting for your electric vehicle.</p>
         </header>
 
-        <div className="services__grid">
-          <article className="services__card" tabIndex="0">
+        <div className="services__grid reveal-stagger">
+          <article className="services__card reveal-up" tabIndex="0">
             <div className="services__icon" aria-hidden="true">
               <svg viewBox="0 0 64 64" fill="none" focusable="false">
                 <path d="m27 8 10 1 2 8 7 4 8-2 5 9-6 6v8l6 6-6 9-8-3-7 4-2 8H26l-2-8-7-4-8 3-5-9 6-6v-8l-6-6 5-9 8 2 7-4 3-9Z" stroke="currentColor" strokeWidth="4" strokeLinejoin="round" />
@@ -23,7 +23,7 @@ export default function Services() {
             </div>
           </article>
 
-          <article className="services__card" tabIndex="0">
+          <article className="services__card reveal-up" tabIndex="0">
             <div className="services__icon" aria-hidden="true">
               <svg viewBox="0 0 64 64" fill="none" focusable="false">
                 <path d="M26 35 10 51a5 5 0 0 0 7 7l16-16M38 29l12-12 7-1-1 7-12 12" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
@@ -36,7 +36,7 @@ export default function Services() {
             </div>
           </article>
 
-          <article className="services__card" tabIndex="0">
+          <article className="services__card reveal-up" tabIndex="0">
             <div className="services__icon" aria-hidden="true">
               <svg viewBox="0 0 64 64" fill="none" focusable="false">
                 <path d="M24 9h11l2 8 7 3 7-3 6 9-6 6v5" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
@@ -51,7 +51,7 @@ export default function Services() {
           </article>
         </div>
 
-        <div className="services__actions">
+        <div className="services__actions reveal-up">
           <a className="services__button" href="#contact">
             Contact Us for Service
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">

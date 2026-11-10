@@ -64,9 +64,20 @@ var navLinks = [
 ];
 function Navbar() {
 	const [mobileOpen, setMobileOpen] = useState(false);
+	const [scrolled, setScrolled] = useState(false);
 	const mobileContainerRef = useRef(null);
 	const hamburgerRef = useRef(null);
 	const logoRef = useRef(null);
+	useEffect(() => {
+		if (typeof window === "undefined") return;
+		const handleScroll = () => {
+			const isPast = window.scrollY > 20;
+			setScrolled((prev) => prev !== isPast ? isPast : prev);
+		};
+		window.addEventListener("scroll", handleScroll, { passive: true });
+		handleScroll();
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
 	useEffect(() => {
 		const handlePointerDown = (event) => {
 			if (mobileOpen && mobileContainerRef.current && !mobileContainerRef.current.contains(event.target) && !hamburgerRef.current?.contains(event.target)) setMobileOpen(false);
@@ -97,10 +108,10 @@ function Navbar() {
 	}, []);
 	const handleMobileLink = () => setMobileOpen(false);
 	return /* @__PURE__ */ jsx("header", {
-		className: "site-header",
+		className: `site-header${scrolled ? " site-header--scrolled" : ""}`,
 		role: "banner",
 		children: /* @__PURE__ */ jsxs("nav", {
-			className: "navbar",
+			className: `navbar${scrolled ? " navbar--scrolled" : ""}`,
 			"aria-label": "Main navigation",
 			children: [/* @__PURE__ */ jsxs("div", {
 				className: "container navbar__inner",
@@ -228,7 +239,7 @@ function Navbar() {
 				className: `mobile-menu${mobileOpen ? " mobile-menu--open" : ""}`,
 				id: "mobile-menu",
 				"aria-label": "Mobile navigation",
-				hidden: !mobileOpen,
+				"aria-hidden": !mobileOpen,
 				children: [/* @__PURE__ */ jsx("ul", {
 					className: "mobile-nav",
 					role: "list",
@@ -487,7 +498,7 @@ function About() {
 		children: /* @__PURE__ */ jsxs("div", {
 			className: "container about__inner",
 			children: [/* @__PURE__ */ jsxs("div", {
-				className: "about__media",
+				className: "about__media reveal-left",
 				children: [/* @__PURE__ */ jsx("img", {
 					src: "/shop.jpg",
 					alt: "JSR EV Spares Parts shop front in Sector 18, Rohini, Delhi",
@@ -499,7 +510,7 @@ function About() {
 					children: "JSR EV Spares Parts — Our Shop"
 				})]
 			}), /* @__PURE__ */ jsxs("div", {
-				className: "about__content",
+				className: "about__content reveal-right",
 				children: [
 					/* @__PURE__ */ jsxs("div", {
 						className: "about__label-row",
@@ -572,7 +583,7 @@ function Founder() {
 			/* @__PURE__ */ jsxs("div", {
 				className: "container founder__inner",
 				children: [/* @__PURE__ */ jsxs("div", {
-					className: "founder__portrait-wrap",
+					className: "founder__portrait-wrap reveal-left",
 					children: [
 						/* @__PURE__ */ jsx("span", {
 							className: "founder__corner founder__corner--top",
@@ -593,7 +604,7 @@ function Founder() {
 						})
 					]
 				}), /* @__PURE__ */ jsxs("div", {
-					className: "founder__content",
+					className: "founder__content reveal-right",
 					children: [
 						/* @__PURE__ */ jsxs("div", {
 							className: "founder__label-row",
@@ -680,7 +691,7 @@ function Services() {
 			className: "container services__inner",
 			children: [
 				/* @__PURE__ */ jsxs("header", {
-					className: "services__header",
+					className: "services__header reveal-up",
 					children: [
 						/* @__PURE__ */ jsx("p", {
 							className: "services__label",
@@ -702,10 +713,10 @@ function Services() {
 					]
 				}),
 				/* @__PURE__ */ jsxs("div", {
-					className: "services__grid",
+					className: "services__grid reveal-stagger",
 					children: [
 						/* @__PURE__ */ jsxs("article", {
-							className: "services__card",
+							className: "services__card reveal-up",
 							tabIndex: "0",
 							children: [/* @__PURE__ */ jsx("div", {
 								className: "services__icon",
@@ -739,7 +750,7 @@ function Services() {
 							})]
 						}),
 						/* @__PURE__ */ jsxs("article", {
-							className: "services__card",
+							className: "services__card reveal-up",
 							tabIndex: "0",
 							children: [/* @__PURE__ */ jsx("div", {
 								className: "services__icon",
@@ -774,7 +785,7 @@ function Services() {
 							})]
 						}),
 						/* @__PURE__ */ jsxs("article", {
-							className: "services__card",
+							className: "services__card reveal-up",
 							tabIndex: "0",
 							children: [/* @__PURE__ */ jsx("div", {
 								className: "services__icon",
@@ -821,7 +832,7 @@ function Services() {
 					]
 				}),
 				/* @__PURE__ */ jsx("div", {
-					className: "services__actions",
+					className: "services__actions reveal-up",
 					children: /* @__PURE__ */ jsxs("a", {
 						className: "services__button",
 						href: "#contact",
@@ -853,7 +864,7 @@ function Contact() {
 		children: /* @__PURE__ */ jsxs("div", {
 			className: "container contact__inner",
 			children: [/* @__PURE__ */ jsxs("header", {
-				className: "contact__header",
+				className: "contact__header reveal-up",
 				children: [/* @__PURE__ */ jsx("h2", {
 					className: "contact__heading",
 					id: "contact-heading",
@@ -867,7 +878,7 @@ function Contact() {
 				children: [/* @__PURE__ */ jsx("div", {
 					className: "contact__details",
 					children: /* @__PURE__ */ jsxs("div", {
-						className: "contact__shop-card",
+						className: "contact__shop-card reveal-left",
 						children: [
 							/* @__PURE__ */ jsx("p", {
 								className: "contact__shop-name",
@@ -986,7 +997,7 @@ function Contact() {
 						]
 					})
 				}), /* @__PURE__ */ jsxs("div", {
-					className: "contact__map-card",
+					className: "contact__map-card reveal-right",
 					children: [/* @__PURE__ */ jsx("iframe", {
 						className: "contact__map",
 						src: "https://maps.google.com/maps?q=Sector%2018%20Rohini%20Delhi&output=embed",
@@ -1231,10 +1242,10 @@ function Footer() {
 		}), /* @__PURE__ */ jsxs("div", {
 			className: "container site-footer__inner",
 			children: [/* @__PURE__ */ jsxs("div", {
-				className: "site-footer__grid",
+				className: "site-footer__grid reveal-stagger",
 				children: [
 					/* @__PURE__ */ jsxs("div", {
-						className: "site-footer__col site-footer__col--brand",
+						className: "site-footer__col site-footer__col--brand reveal-up",
 						children: [
 							/* @__PURE__ */ jsxs("a", {
 								className: "site-footer__logo",
@@ -1310,7 +1321,7 @@ function Footer() {
 						"aria-hidden": "true"
 					}),
 					/* @__PURE__ */ jsxs("div", {
-						className: "site-footer__col site-footer__col--links",
+						className: "site-footer__col site-footer__col--links reveal-up",
 						children: [/* @__PURE__ */ jsx(FooterHeading, {
 							title: "Quick Links",
 							isOpen: quickLinksOpen,
@@ -1346,7 +1357,7 @@ function Footer() {
 						"aria-hidden": "true"
 					}),
 					/* @__PURE__ */ jsxs("div", {
-						className: "site-footer__col site-footer__col--contact",
+						className: "site-footer__col site-footer__col--contact reveal-up",
 						children: [/* @__PURE__ */ jsx(FooterHeading, {
 							title: "Contact & Timings",
 							isOpen: contactOpen,
@@ -1495,7 +1506,7 @@ function Footer() {
 						})]
 					}),
 					/* @__PURE__ */ jsxs("div", {
-						className: "site-footer__col site-footer__col--social",
+						className: "site-footer__col site-footer__col--social reveal-up",
 						children: [/* @__PURE__ */ jsx(FooterHeading, { title: "Follow Us" }), /* @__PURE__ */ jsxs("div", {
 							className: "site-footer__social-wrap",
 							children: [/* @__PURE__ */ jsx("div", {
@@ -1520,7 +1531,7 @@ function Footer() {
 					})
 				]
 			}), /* @__PURE__ */ jsxs("div", {
-				className: "site-footer__bottom",
+				className: "site-footer__bottom reveal-up",
 				children: [/* @__PURE__ */ jsx("p", {
 					className: "site-footer__copyright",
 					children: "© 2026 JSR EV SPARE PARTS. All rights reserved."
@@ -1674,6 +1685,43 @@ function NotFound() {
 		})]
 	});
 }
+// src/useScrollReveal.js
+/**
+* High-performance, zero-dependency IntersectionObserver hook for smooth scroll-reveal animations.
+*
+* - Automatically respects 'prefers-reduced-motion'
+* - Animates each element only once (triggerOnce) for optimal performance
+* - Fully safe for SSR / static prerendering
+*/
+function useScrollReveal() {
+	useEffect(() => {
+		if (typeof window === "undefined") return;
+		document.documentElement.classList.add("js-ready");
+		if (!("IntersectionObserver" in window)) {
+			document.querySelectorAll(".reveal, .reveal-up, .reveal-fade, .reveal-left, .reveal-right, .reveal-scale, .reveal-stagger").forEach((el) => el.classList.add("is-revealed"));
+			return;
+		}
+		if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+			document.querySelectorAll(".reveal, .reveal-up, .reveal-fade, .reveal-left, .reveal-right, .reveal-scale, .reveal-stagger").forEach((el) => el.classList.add("is-revealed"));
+			return;
+		}
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add("is-revealed");
+					observer.unobserve(entry.target);
+				}
+			});
+		}, {
+			threshold: .12,
+			rootMargin: "0px 0px -40px 0px"
+		});
+		document.querySelectorAll(".reveal, .reveal-up, .reveal-fade, .reveal-left, .reveal-right, .reveal-scale, .reveal-stagger").forEach((el) => observer.observe(el));
+		return () => {
+			observer.disconnect();
+		};
+	}, []);
+}
 // src/App.jsx
 /** Returns true when the current pathname is the root page. */
 function isHomePath() {
@@ -1683,6 +1731,7 @@ function isHomePath() {
 }
 function App() {
 	const [isHome, setIsHome] = useState(isHomePath);
+	useScrollReveal();
 	useEffect(() => {
 		const onPop = () => setIsHome(isHomePath());
 		window.addEventListener("popstate", onPop);
