@@ -14,10 +14,10 @@ export default function About() {
             <span className="about__label-line" aria-hidden="true" />
           </div>
           <h2 className="about__heading" id="about-heading">
-            About JSR EV SPARE PARTS
+            About JSR EV Spare Parts
           </h2>
           <p className="about__copy">
-            Established in 2024, JSR EV SPARE PARTS is a trusted local shop in Sector 18, Rohini, Delhi, supplying genuine spare parts, expert repair and dependable fitting services for e-rickshaws and electric scooters. We cater to retail vehicle owners, independent mechanics and commercial fleet operators across North Delhi.
+            Established in 2024, JSR EV Spare Parts is a trusted local shop in Sector 18, Rohini, Delhi, supplying genuine spare parts, expert repair and dependable fitting services for e-rickshaws and electric scooters. We cater to retail vehicle owners, independent mechanics and commercial fleet operators across North Delhi.
           </p>
         </div>
 
@@ -36,7 +36,7 @@ export default function About() {
                 height="576"
               />
             </div>
-            <span className="about__photo-caption">JSR EV SPARE PARTS — Our Physical Shop in Sector 18, Rohini</span>
+            <span className="about__photo-caption">JSR EV Spare Parts — Our Physical Shop in Sector 18, Rohini</span>
           </div>
 
           {/* Right Column: Founder Feature Card */}
@@ -47,7 +47,7 @@ export default function About() {
                 <span className="founder-card__corner founder-card__corner--bottom" aria-hidden="true" />
                 <img
                   src={founderPortrait}
-                  alt="Deepak Choudhary, founder of JSR EV SPARE PARTS"
+                  alt="Deepak Choudhary, founder of JSR EV Spare Parts"
                   className="founder-card__img"
                   width="200"
                   height="200"
@@ -61,9 +61,9 @@ export default function About() {
               <h3 className="founder-card__name" id="founder-name">
                 Deepak Choudhary
               </h3>
-              <p className="founder-card__role">Founder, JSR EV SPARE PARTS</p>
+              <p className="founder-card__role">Founder, JSR EV Spare Parts</p>
               <p className="founder-card__bio">
-                Deepak Choudhary leads JSR EV SPARE PARTS, helping vehicle owners and mechanics find original, reliable spares and on-site fitting solutions.
+                Deepak Choudhary leads JSR EV Spare Parts, helping vehicle owners and mechanics find original, reliable spares and on-site fitting solutions.
               </p>
 
               <div className="founder-card__chips" role="list">
@@ -102,7 +102,7 @@ export default function About() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="founder-card__btn founder-card__btn--wa"
-                  aria-label="Chat with Deepak Choudhary on WhatsApp"
+                  aria-label="Chat with Deepak Choudhary on WhatsApp (opens in a new tab)"
                 >
                   <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />

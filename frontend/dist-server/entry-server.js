@@ -482,7 +482,7 @@ function Navbar() {
 								rel: "noopener noreferrer",
 								className: "mobile-menu-card__enquire-btn",
 								onClick: () => setMobileOpen(false),
-								"aria-label": "Enquire Now on WhatsApp",
+								"aria-label": "Enquire Now on WhatsApp (opens in a new tab)",
 								children: [/* @__PURE__ */ jsx("svg", {
 									width: "22",
 									height: "22",
@@ -615,7 +615,7 @@ function Hero() {
 						children: [/* @__PURE__ */ jsxs("a", {
 							href: "https://wa.me/919990120067?text=Hello%20JSR%20EV%20SPARE%20PARTS%2C%20I%20would%20like%20to%20enquire%20about%20spare%20parts%20or%20services.",
 							className: "hero__btn hero__btn--whatsapp",
-							"aria-label": "Send JSR EV SPARE PARTS a WhatsApp enquiry",
+							"aria-label": "Send JSR EV Spare Parts a WhatsApp enquiry (opens in a new tab)",
 							target: "_blank",
 							rel: "noopener noreferrer",
 							children: [/* @__PURE__ */ jsxs("svg", {
@@ -630,7 +630,7 @@ function Hero() {
 						}), /* @__PURE__ */ jsxs("a", {
 							href: "tel:+919990120067",
 							className: "hero__btn hero__btn--call",
-							"aria-label": "Call JSR EV SPARE PARTS",
+							"aria-label": "Call JSR EV Spare Parts",
 							children: [/* @__PURE__ */ jsx("svg", {
 								className: "hero__btn-icon",
 								width: "18",
@@ -818,7 +818,7 @@ function Services() {
 										target: "_blank",
 										rel: "noopener noreferrer",
 										className: "services__card-action",
-										"aria-label": "Check spare parts availability on WhatsApp",
+										"aria-label": "Check spare parts availability on WhatsApp (opens in a new tab)",
 										children: [/* @__PURE__ */ jsx("span", { children: "Check Availability" }), /* @__PURE__ */ jsx("svg", {
 											width: "14",
 											height: "14",
@@ -940,7 +940,7 @@ function Services() {
 										target: "_blank",
 										rel: "noopener noreferrer",
 										className: "services__card-action",
-										"aria-label": "Enquire about parts fitting charges on WhatsApp",
+										"aria-label": "Enquire about parts fitting charges on WhatsApp (opens in a new tab)",
 										children: [/* @__PURE__ */ jsx("span", { children: "Check Fitting Price" }), /* @__PURE__ */ jsx("svg", {
 											width: "14",
 											height: "14",
@@ -1291,9 +1291,13 @@ function StatsStrip() {
 							className: "stats-strip__label",
 							children: "Open Every Day"
 						}),
-						/* @__PURE__ */ jsx("span", {
+						/* @__PURE__ */ jsxs("span", {
 							className: "stats-strip__sub",
-							children: "8:00 AM – 8:00 PM"
+							children: [
+								/* @__PURE__ */ jsx("time", { children: "8:00 AM" }),
+								" – ",
+								/* @__PURE__ */ jsx("time", { children: "8:00 PM" })
+							]
 						})
 					]
 				})
@@ -1327,11 +1331,11 @@ function About() {
 					/* @__PURE__ */ jsx("h2", {
 						className: "about__heading",
 						id: "about-heading",
-						children: "About JSR EV SPARE PARTS"
+						children: "About JSR EV Spare Parts"
 					}),
 					/* @__PURE__ */ jsx("p", {
 						className: "about__copy",
-						children: "Established in 2024, JSR EV SPARE PARTS is a trusted local shop in Sector 18, Rohini, Delhi, supplying genuine spare parts, expert repair and dependable fitting services for e-rickshaws and electric scooters. We cater to retail vehicle owners, independent mechanics and commercial fleet operators across North Delhi."
+						children: "Established in 2024, JSR EV Spare Parts is a trusted local shop in Sector 18, Rohini, Delhi, supplying genuine spare parts, expert repair and dependable fitting services for e-rickshaws and electric scooters. We cater to retail vehicle owners, independent mechanics and commercial fleet operators across North Delhi."
 					})
 				]
 			}), /* @__PURE__ */ jsxs("div", {
@@ -1351,7 +1355,7 @@ function About() {
 						})
 					}), /* @__PURE__ */ jsx("span", {
 						className: "about__photo-caption",
-						children: "JSR EV SPARE PARTS — Our Physical Shop in Sector 18, Rohini"
+						children: "JSR EV Spare Parts — Our Physical Shop in Sector 18, Rohini"
 					})]
 				}), /* @__PURE__ */ jsxs("article", {
 					className: "founder-card reveal-up",
@@ -1371,7 +1375,7 @@ function About() {
 								}),
 								/* @__PURE__ */ jsx("img", {
 									src: founder_deepak_choudhary_default,
-									alt: "Deepak Choudhary, founder of JSR EV SPARE PARTS",
+									alt: "Deepak Choudhary, founder of JSR EV Spare Parts",
 									className: "founder-card__img",
 									width: "200",
 									height: "200",
@@ -1390,11 +1394,11 @@ function About() {
 							}),
 							/* @__PURE__ */ jsx("p", {
 								className: "founder-card__role",
-								children: "Founder, JSR EV SPARE PARTS"
+								children: "Founder, JSR EV Spare Parts"
 							}),
 							/* @__PURE__ */ jsx("p", {
 								className: "founder-card__bio",
-								children: "Deepak Choudhary leads JSR EV SPARE PARTS, helping vehicle owners and mechanics find original, reliable spares and on-site fitting solutions."
+								children: "Deepak Choudhary leads JSR EV Spare Parts, helping vehicle owners and mechanics find original, reliable spares and on-site fitting solutions."
 							}),
 							/* @__PURE__ */ jsxs("div", {
 								className: "founder-card__chips",
@@ -1484,7 +1488,7 @@ function About() {
 									target: "_blank",
 									rel: "noopener noreferrer",
 									className: "founder-card__btn founder-card__btn--wa",
-									"aria-label": "Chat with Deepak Choudhary on WhatsApp",
+									"aria-label": "Chat with Deepak Choudhary on WhatsApp (opens in a new tab)",
 									children: [/* @__PURE__ */ jsxs("svg", {
 										width: "17",
 										height: "17",
@@ -1507,7 +1511,7 @@ function About() {
 var faqItems = [
 	{
 		id: "location",
-		question: "Where is JSR EV SPARE PARTS located in Rohini?",
+		question: "Where is JSR EV Spare Parts located in Rohini?",
 		answer: "Our physical shop is located in Sector 18, Rohini, Delhi – 110089 (near Data Ram Apartment). You can visit our store directly for spare parts purchase, repair advice, and fitting services."
 	},
 	{
@@ -1659,7 +1663,7 @@ function Contact() {
 						children: [
 							/* @__PURE__ */ jsx("p", {
 								className: "contact__shop-name",
-								children: "JSR EV SPARE PARTS"
+								children: "JSR EV Spare Parts"
 							}),
 							/* @__PURE__ */ jsx("address", {
 								className: "contact__address",
@@ -1768,6 +1772,7 @@ function Contact() {
 									href: "https://wa.me/919990120067?text=Hello%20JSR%20EV%20SPARE%20PARTS%2C%20I%20would%20like%20to%20enquire%20about%20spare%20parts%20or%20services.",
 									target: "_blank",
 									rel: "noopener noreferrer",
+									"aria-label": "Chat with JSR EV Spare Parts on WhatsApp (opens in a new tab)",
 									children: "WhatsApp"
 								})]
 							})
@@ -1780,7 +1785,7 @@ function Contact() {
 						children: /* @__PURE__ */ jsx("iframe", {
 							className: "contact__map",
 							src: "https://maps.google.com/maps?q=28.730825,77.126488+(JSR%20EV%20SPARE%20PARTS%20Sector%2018%20Rohini%20Delhi)&t=&z=15&ie=UTF8&iwloc=B&output=embed",
-							title: "Google Maps location of JSR EV SPARE PARTS in Sector 18 Rohini",
+							title: "Google Maps location of JSR EV Spare Parts in Sector 18 Rohini",
 							loading: "lazy",
 							referrerPolicy: "no-referrer-when-downgrade"
 						})
@@ -1791,7 +1796,7 @@ function Contact() {
 							href: "https://www.google.com/maps/search/?api=1&query=Sector+18+Rohini+Delhi+110089+Near+Data+Ram+Apartment",
 							target: "_blank",
 							rel: "noopener noreferrer",
-							"aria-label": "Open shop location in Google Maps (opens in new tab)",
+							"aria-label": "Open shop location in Google Maps (opens in a new tab)",
 							children: [/* @__PURE__ */ jsxs("svg", {
 								width: "18",
 								height: "18",
@@ -1843,7 +1848,7 @@ function FloatingCTA() {
 				target: "_blank",
 				rel: "noopener noreferrer",
 				className: "floating-cta__mobile-btn floating-cta__mobile-btn--whatsapp floating-cta__pulse",
-				"aria-label": "Chat with JSR EV SPARE PARTS on WhatsApp",
+				"aria-label": "Chat with JSR EV Spare Parts on WhatsApp (opens in a new tab)",
 				children: [/* @__PURE__ */ jsxs("svg", {
 					width: "20",
 					height: "20",
@@ -1859,7 +1864,7 @@ function FloatingCTA() {
 			children: [/* @__PURE__ */ jsxs("a", {
 				href: telUrl,
 				className: "floating-cta__desktop-btn floating-cta__desktop-btn--call",
-				"aria-label": "Call JSR EV SPARE PARTS: +91 9990120067",
+				"aria-label": "Call JSR EV Spare Parts at +91 9990120067",
 				title: "Call Shop: +91 9990120067",
 				children: [/* @__PURE__ */ jsx("svg", {
 					width: "20",
@@ -1878,7 +1883,7 @@ function FloatingCTA() {
 				target: "_blank",
 				rel: "noopener noreferrer",
 				className: "floating-cta__desktop-btn floating-cta__desktop-btn--whatsapp floating-cta__pulse",
-				"aria-label": "Chat with JSR EV SPARE PARTS on WhatsApp",
+				"aria-label": "Chat with JSR EV Spare Parts on WhatsApp (opens in a new tab)",
 				title: "WhatsApp Enquiry",
 				children: [/* @__PURE__ */ jsxs("svg", {
 					width: "22",
@@ -2054,9 +2059,25 @@ var serviceHighlights = [
 ];
 var socialLinks = [
 	{
+		id: "facebook",
+		label: "Facebook",
+		href: "https://www.facebook.com/jsrevspareparts",
+		ariaLabel: "JSR EV Spare Parts on Facebook (opens in a new tab)",
+		icon: /* @__PURE__ */ jsx("svg", {
+			width: "20",
+			height: "20",
+			viewBox: "0 0 24 24",
+			fill: "currentColor",
+			"aria-hidden": "true",
+			focusable: "false",
+			children: /* @__PURE__ */ jsx("path", { d: "M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" })
+		})
+	},
+	{
 		id: "instagram",
 		label: "Instagram",
-		href: "https://instagram.com",
+		href: "https://www.instagram.com/jsrevspareparts",
+		ariaLabel: "JSR EV Spare Parts on Instagram (opens in a new tab)",
 		icon: /* @__PURE__ */ jsxs("svg", {
 			width: "20",
 			height: "20",
@@ -2067,6 +2088,7 @@ var socialLinks = [
 			strokeLinecap: "round",
 			strokeLinejoin: "round",
 			"aria-hidden": "true",
+			focusable: "false",
 			children: [
 				/* @__PURE__ */ jsx("rect", {
 					width: "20",
@@ -2087,35 +2109,32 @@ var socialLinks = [
 		})
 	},
 	{
-		id: "youtube",
-		label: "YouTube",
-		href: "https://youtube.com",
-		icon: /* @__PURE__ */ jsxs("svg", {
+		id: "google",
+		label: "Find us on Google",
+		href: "https://share.google/6Zp1shhSR81Sidhjp",
+		ariaLabel: "Find JSR EV Spare Parts on Google (opens in a new tab)",
+		icon: /* @__PURE__ */ jsx("svg", {
 			width: "20",
 			height: "20",
 			viewBox: "0 0 24 24",
-			fill: "none",
-			stroke: "currentColor",
-			strokeWidth: "2",
-			strokeLinecap: "round",
-			strokeLinejoin: "round",
+			fill: "currentColor",
 			"aria-hidden": "true",
-			children: [/* @__PURE__ */ jsx("path", { d: "M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" }), /* @__PURE__ */ jsx("path", {
-				d: "m10 15 5-3-5-3z",
-				fill: "currentColor"
-			})]
+			focusable: "false",
+			children: /* @__PURE__ */ jsx("path", { d: "M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" })
 		})
 	},
 	{
 		id: "whatsapp",
 		label: "WhatsApp",
 		href: "https://wa.me/919990120067",
+		ariaLabel: "Chat with JSR EV Spare Parts on WhatsApp (opens in a new tab)",
 		icon: /* @__PURE__ */ jsxs("svg", {
 			width: "20",
 			height: "20",
 			viewBox: "0 0 24 24",
 			fill: "currentColor",
 			"aria-hidden": "true",
+			focusable: "false",
 			children: [/* @__PURE__ */ jsx("path", { d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" }), /* @__PURE__ */ jsx("path", { d: "M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.531 5.845L0 24l6.335-1.51A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.374l-.36-.214-3.724.888.936-3.618-.235-.372A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182 17.43 2.182 21.818 6.57 21.818 12S17.43 21.818 12 21.818z" })]
 		})
 	}
@@ -2330,6 +2349,7 @@ function Footer() {
 												target: "_blank",
 												rel: "noopener noreferrer",
 												className: "site-footer__contact-link",
+												"aria-label": "Chat with JSR EV Spare Parts on WhatsApp at +91 9990120067 (opens in a new tab)",
 												children: "+91 9990120067"
 											})]
 										}),
@@ -2386,6 +2406,7 @@ function Footer() {
 												target: "_blank",
 												rel: "noopener noreferrer",
 												className: "site-footer__contact-text site-footer__contact-link",
+												"aria-label": "Open JSR EV Spare Parts address in Google Maps (opens in a new tab)",
 												children: [
 													"Sector 18, Rohini, Delhi – 110089",
 													/* @__PURE__ */ jsx("br", {}),
@@ -2442,7 +2463,7 @@ function Footer() {
 								children: socialLinks.map((item) => /* @__PURE__ */ jsx("a", {
 									href: item.href,
 									className: "site-footer__social-btn",
-									"aria-label": `JSR EV on ${item.label}`,
+									"aria-label": item.ariaLabel,
 									target: "_blank",
 									rel: "noopener noreferrer",
 									children: item.icon
@@ -2458,12 +2479,41 @@ function Footer() {
 						})]
 					})
 				]
-			}), /* @__PURE__ */ jsx("div", {
+			}), /* @__PURE__ */ jsxs("div", {
 				className: "site-footer__bottom reveal-up",
-				children: /* @__PURE__ */ jsx("p", {
+				children: [/* @__PURE__ */ jsx("p", {
 					className: "site-footer__copyright",
-					children: "© 2026 JSR EV SPARE PARTS. All rights reserved."
-				})
+					children: "© 2026 JSR EV Spare Parts. All rights reserved."
+				}), /* @__PURE__ */ jsxs("div", {
+					className: "site-footer__legal-links",
+					children: [
+						/* @__PURE__ */ jsx("a", {
+							href: "/privacy",
+							className: "site-footer__legal-link",
+							children: "Privacy Policy"
+						}),
+						/* @__PURE__ */ jsx("span", {
+							className: "site-footer__legal-divider",
+							"aria-hidden": "true",
+							children: "|"
+						}),
+						/* @__PURE__ */ jsx("a", {
+							href: "/terms",
+							className: "site-footer__legal-link",
+							children: "Terms & Conditions"
+						}),
+						/* @__PURE__ */ jsx("span", {
+							className: "site-footer__legal-divider",
+							"aria-hidden": "true",
+							children: "|"
+						}),
+						/* @__PURE__ */ jsx("a", {
+							href: "/refund",
+							className: "site-footer__legal-link",
+							children: "Refund Policy"
+						})
+					]
+				})]
 			})]
 		})]
 	});
@@ -2584,6 +2634,343 @@ function NotFound() {
 		})]
 	});
 }
+// src/PrivacyPolicy.jsx
+function PrivacyPolicy() {
+	return /* @__PURE__ */ jsx("main", {
+		className: "legal-page",
+		"aria-labelledby": "privacy-heading",
+		children: /* @__PURE__ */ jsxs("div", {
+			className: "container legal-page__container",
+			children: [
+				/* @__PURE__ */ jsxs("nav", {
+					className: "legal-page__breadcrumb",
+					"aria-label": "Breadcrumb",
+					children: [
+						/* @__PURE__ */ jsx("a", {
+							href: "/",
+							className: "legal-page__breadcrumb-link",
+							children: "Home"
+						}),
+						/* @__PURE__ */ jsx("span", {
+							"aria-hidden": "true",
+							className: "legal-page__breadcrumb-sep",
+							children: "/"
+						}),
+						/* @__PURE__ */ jsx("span", {
+							"aria-current": "page",
+							children: "Privacy Policy"
+						})
+					]
+				}),
+				/* @__PURE__ */ jsxs("header", {
+					className: "legal-page__header",
+					children: [/* @__PURE__ */ jsx("h1", {
+						id: "privacy-heading",
+						className: "legal-page__title",
+						children: "Privacy Policy"
+					}), /* @__PURE__ */ jsx("p", {
+						className: "legal-page__updated",
+						children: "Last Updated: November 2026"
+					})]
+				}),
+				/* @__PURE__ */ jsxs("section", {
+					className: "legal-page__content",
+					children: [
+						/* @__PURE__ */ jsxs("p", { children: [
+							"Welcome to ",
+							/* @__PURE__ */ jsx("strong", { children: "JSR EV Spare Parts" }),
+							" (“we”, “our”, or “us”). We operate a local retail and wholesale shop specializing in electric rickshaw (e-rickshaw) and electric scooter spare parts, located in Sector 18, Rohini, Delhi – 110089. We respect your privacy and are committed to protecting any personal information you share with us."
+						] }),
+						/* @__PURE__ */ jsx("h2", { children: "1. Information We Collect" }),
+						/* @__PURE__ */ jsx("p", { children: "Because we operate primarily as an in-person physical store and direct phone/WhatsApp contact business, we collect only the minimal information necessary to assist with your enquiries, orders, and fitting services:" }),
+						/* @__PURE__ */ jsxs("ul", { children: [
+							/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Contact Information:" }), " Your name, phone number, and location details when you contact us via telephone, WhatsApp (+91 9990120067), or walk into our shop."] }),
+							/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Order & Service Details:" }), " Inquiries regarding specific e-rickshaw or scooter spare parts, vehicle model details, quotes, and fitting service requests."] }),
+							/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Payment Information:" }), " For in-store or UPI purchases, transaction records required for billing, accounting, and tax compliance. We do not store card numbers or banking passwords on this website."] })
+						] }),
+						/* @__PURE__ */ jsx("h2", { children: "2. How We Use Your Information" }),
+						/* @__PURE__ */ jsx("p", { children: "We use your contact and enquiry details solely to:" }),
+						/* @__PURE__ */ jsxs("ul", { children: [
+							/* @__PURE__ */ jsx("li", { children: "Check part availability and provide price quotations." }),
+							/* @__PURE__ */ jsx("li", { children: "Process and fulfill orders placed in person or confirmed via WhatsApp/phone." }),
+							/* @__PURE__ */ jsx("li", { children: "Schedule on-site part fitting or repair assistance in Sector 18, Rohini." }),
+							/* @__PURE__ */ jsx("li", { children: "Provide customer support, warranty validation, and after-sales service." })
+						] }),
+						/* @__PURE__ */ jsx("h2", { children: "3. Information Sharing and Disclosure" }),
+						/* @__PURE__ */ jsx("p", { children: "We do not sell, rent, trade, or share your personal data with third-party marketers or brokers. We may share transaction information only when strictly necessary:" }),
+						/* @__PURE__ */ jsxs("ul", { children: [/* @__PURE__ */ jsx("li", { children: "With government, tax, or legal authorities when required by applicable laws of Delhi / India." }), /* @__PURE__ */ jsx("li", { children: "With authorized manufacturer service centres if needed to process an official warranty claim on your behalf." })] }),
+						/* @__PURE__ */ jsx("h2", { children: "4. Cookies & Tracking" }),
+						/* @__PURE__ */ jsx("p", { children: "This website does not use tracking cookies, analytics profiling cookies, or third-party advertising trackers. Standard web server logs may temporarily capture your IP address and browser type for security and server health maintenance." }),
+						/* @__PURE__ */ jsx("h2", { children: "5. Unconfirmed Business Details (Owner Verification Required)" }),
+						/* @__PURE__ */ jsxs("div", {
+							className: "legal-page__notice",
+							role: "note",
+							children: [/* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "Notice for Shop Owner:" }), " The following fields should be confirmed:"] }), /* @__PURE__ */ jsx("ul", { children: /* @__PURE__ */ jsxs("li", { children: ["Official Support Email: ", /* @__PURE__ */ jsx("em", { children: "admin@jsrevtech.in" })] }) })]
+						}),
+						/* @__PURE__ */ jsx("h2", { children: "6. Contact Us" }),
+						/* @__PURE__ */ jsx("p", { children: "If you have any questions about this Privacy Policy or wish to update your details, please contact us:" }),
+						/* @__PURE__ */ jsxs("address", {
+							className: "legal-page__contact-box",
+							children: [
+								/* @__PURE__ */ jsx("strong", { children: "JSR EV Spare Parts" }),
+								/* @__PURE__ */ jsx("br", {}),
+								"Proprietor: Deepak Choudhary",
+								/* @__PURE__ */ jsx("br", {}),
+								"Address: Sector 18, Rohini, Delhi – 110089 (Near Data Ram Apartment)",
+								/* @__PURE__ */ jsx("br", {}),
+								"Phone / WhatsApp: ",
+								/* @__PURE__ */ jsx("a", {
+									href: "tel:+919990120067",
+									children: "+91 9990120067"
+								}),
+								/* @__PURE__ */ jsx("br", {}),
+								"Business Hours: 8:00 AM – 8:00 PM (Open 7 Days)"
+							]
+						}),
+						/* @__PURE__ */ jsx("div", {
+							className: "legal-page__actions",
+							children: /* @__PURE__ */ jsx("a", {
+								href: "/",
+								className: "legal-page__btn",
+								children: "Back to Home"
+							})
+						})
+					]
+				})
+			]
+		})
+	});
+}
+// src/Terms.jsx
+function Terms() {
+	return /* @__PURE__ */ jsx("main", {
+		className: "legal-page",
+		"aria-labelledby": "terms-heading",
+		children: /* @__PURE__ */ jsxs("div", {
+			className: "container legal-page__container",
+			children: [
+				/* @__PURE__ */ jsxs("nav", {
+					className: "legal-page__breadcrumb",
+					"aria-label": "Breadcrumb",
+					children: [
+						/* @__PURE__ */ jsx("a", {
+							href: "/",
+							className: "legal-page__breadcrumb-link",
+							children: "Home"
+						}),
+						/* @__PURE__ */ jsx("span", {
+							"aria-hidden": "true",
+							className: "legal-page__breadcrumb-sep",
+							children: "/"
+						}),
+						/* @__PURE__ */ jsx("span", {
+							"aria-current": "page",
+							children: "Terms & Conditions"
+						})
+					]
+				}),
+				/* @__PURE__ */ jsxs("header", {
+					className: "legal-page__header",
+					children: [/* @__PURE__ */ jsx("h1", {
+						id: "terms-heading",
+						className: "legal-page__title",
+						children: "Terms & Conditions"
+					}), /* @__PURE__ */ jsx("p", {
+						className: "legal-page__updated",
+						children: "Last Updated: November 2026"
+					})]
+				}),
+				/* @__PURE__ */ jsxs("section", {
+					className: "legal-page__content",
+					children: [
+						/* @__PURE__ */ jsxs("p", { children: [
+							"These Terms & Conditions govern the sale of goods, fitting services, and use of information provided by ",
+							/* @__PURE__ */ jsx("strong", { children: "JSR EV Spare Parts" }),
+							", located at Sector 18, Rohini, Delhi – 110089. By purchasing spare parts, requesting repairs, or utilizing our services, you agree to comply with and be bound by these terms."
+						] }),
+						/* @__PURE__ */ jsx("h2", { children: "1. Business Scope & Offerings" }),
+						/* @__PURE__ */ jsx("p", { children: "JSR EV Spare Parts supplies genuine parts, accessories, and maintenance solutions for commercial electric rickshaws (e-rickshaws) and electric two-wheelers (e-scooters). Our catalog includes, but is not limited to: electric motors, motor controllers, differential gears, shockers, throttle grips, wiring harnesses, brake shoes, headlights, tyres, and chargers." }),
+						/* @__PURE__ */ jsx("h2", { children: "2. Quotes, Pricing & Payment" }),
+						/* @__PURE__ */ jsxs("ul", { children: [
+							/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Quotes:" }), " Prices quoted via telephone or WhatsApp are valid on the date issued and subject to market stock fluctuations."] }),
+							/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Pricing:" }), " All in-store purchases are billed at the prevailing retail or wholesale rate agreed at the time of sale."] }),
+							/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Payment Methods:" }), " We accept cash, UPI, and bank transfers as verified at our physical counter. Full payment is due upon delivery or installation of the parts."] })
+						] }),
+						/* @__PURE__ */ jsx("h2", { children: "3. Compatibility & Fitting Verification" }),
+						/* @__PURE__ */ jsx("p", { children: "Electric rickshaw specifications (voltage, wattage, connector pinouts, shaft dimensions) vary across manufacturers. Customers and mechanics are responsible for confirming part compatibility before installation. Our staff is available on-site at Sector 18, Rohini to inspect your existing sample part or vehicle to ensure a proper match." }),
+						/* @__PURE__ */ jsx("h2", { children: "4. Installation & Repair Services" }),
+						/* @__PURE__ */ jsx("p", { children: "Where fitting services are provided at our shop premises:" }),
+						/* @__PURE__ */ jsxs("ul", { children: [/* @__PURE__ */ jsx("li", { children: "Fitting is carried out with professional care based on standard industry practices." }), /* @__PURE__ */ jsx("li", { children: "We are not responsible for pre-existing vehicle electrical wiring faults, short circuits, or battery defects that may damage newly fitted electrical components." })] }),
+						/* @__PURE__ */ jsx("h2", { children: "5. Warranty & Limitation of Liability" }),
+						/* @__PURE__ */ jsxs("ul", { children: [
+							/* @__PURE__ */ jsx("li", { children: "Manufacturer warranties (if provided for specific items such as motors, controllers, or chargers) are governed strictly by the respective manufacturer’s warranty policy." }),
+							/* @__PURE__ */ jsx("li", { children: "Wear-and-tear items (such as brake shoes, tyres, bearings, cables, and cosmetic plastics) are not covered under warranty once used." }),
+							/* @__PURE__ */ jsx("li", { children: "To the maximum extent permitted by applicable law, our total liability is limited to the purchase price paid for the specific part." })
+						] }),
+						/* @__PURE__ */ jsx("h2", { children: "6. Governing Law & Jurisdiction" }),
+						/* @__PURE__ */ jsx("p", { children: "These terms shall be governed by and construed in accordance with the laws of India. Any disputes arising in connection with sales or services shall be subject to the exclusive jurisdiction of the competent courts in Delhi." }),
+						/* @__PURE__ */ jsx("h2", { children: "7. Contact Information" }),
+						/* @__PURE__ */ jsxs("address", {
+							className: "legal-page__contact-box",
+							children: [
+								/* @__PURE__ */ jsx("strong", { children: "JSR EV Spare Parts" }),
+								/* @__PURE__ */ jsx("br", {}),
+								"Founder: Deepak Choudhary",
+								/* @__PURE__ */ jsx("br", {}),
+								"Sector 18, Rohini, Delhi – 110089 (Near Data Ram Apartment)",
+								/* @__PURE__ */ jsx("br", {}),
+								"Phone: ",
+								/* @__PURE__ */ jsx("a", {
+									href: "tel:+919990120067",
+									children: "+91 9990120067"
+								}),
+								" ",
+								/* @__PURE__ */ jsx("br", {}),
+								"Email: ",
+								/* @__PURE__ */ jsx("a", {
+									href: "mailto:admin@jsrevtech.in",
+									children: "admin@jsrevtech.in"
+								})
+							]
+						}),
+						/* @__PURE__ */ jsx("div", {
+							className: "legal-page__actions",
+							children: /* @__PURE__ */ jsx("a", {
+								href: "/",
+								className: "legal-page__btn",
+								children: "Back to Home"
+							})
+						})
+					]
+				})
+			]
+		})
+	});
+}
+// src/RefundPolicy.jsx
+function RefundPolicy() {
+	return /* @__PURE__ */ jsx("main", {
+		className: "legal-page",
+		"aria-labelledby": "refund-heading",
+		children: /* @__PURE__ */ jsxs("div", {
+			className: "container legal-page__container",
+			children: [
+				/* @__PURE__ */ jsxs("nav", {
+					className: "legal-page__breadcrumb",
+					"aria-label": "Breadcrumb",
+					children: [
+						/* @__PURE__ */ jsx("a", {
+							href: "/",
+							className: "legal-page__breadcrumb-link",
+							children: "Home"
+						}),
+						/* @__PURE__ */ jsx("span", {
+							"aria-hidden": "true",
+							className: "legal-page__breadcrumb-sep",
+							children: "/"
+						}),
+						/* @__PURE__ */ jsx("span", {
+							"aria-current": "page",
+							children: "Refund & Return Policy"
+						})
+					]
+				}),
+				/* @__PURE__ */ jsxs("header", {
+					className: "legal-page__header",
+					children: [/* @__PURE__ */ jsx("h1", {
+						id: "refund-heading",
+						className: "legal-page__title",
+						children: "Refund & Return Policy"
+					}), /* @__PURE__ */ jsx("p", {
+						className: "legal-page__updated",
+						children: "Last Updated: November 2026"
+					})]
+				}),
+				/* @__PURE__ */ jsxs("section", {
+					className: "legal-page__content",
+					children: [
+						/* @__PURE__ */ jsxs("p", { children: [
+							"At ",
+							/* @__PURE__ */ jsx("strong", { children: "JSR EV Spare Parts" }),
+							" (Sector 18, Rohini, Delhi), we value our customers and strive to supply genuine, tested electric rickshaw and scooter components. Because electrical and automotive spares require specific installation safeguards, please review our refund, return, and exchange terms below."
+						] }),
+						/* @__PURE__ */ jsx("h2", { children: "1. Return & Exchange Eligibility Period" }),
+						/* @__PURE__ */ jsx("p", { children: "Non-electrical mechanical spare parts (such as bearings, metal brackets, suspensions, standard hardware) purchased in-store may be returned or exchanged within:" }),
+						/* @__PURE__ */ jsx("div", {
+							className: "legal-page__notice",
+							role: "note",
+							children: /* @__PURE__ */ jsxs("p", { children: [
+								/* @__PURE__ */ jsx("strong", { children: "Return Window:" }),
+								" ",
+								/* @__PURE__ */ jsx("em", { children: "[TODO: Owner to confirm return timeframe — standard recommendation: 3 to 7 business days from invoice date]" })
+							] })
+						}),
+						/* @__PURE__ */ jsx("p", { children: "To qualify for a return or exchange:" }),
+						/* @__PURE__ */ jsxs("ul", { children: [
+							/* @__PURE__ */ jsx("li", { children: "The item must be in its original, undamaged packaging." }),
+							/* @__PURE__ */ jsx("li", { children: "The item must show no signs of attempted installation, thread damage, scratches, oil, or tool marks." }),
+							/* @__PURE__ */ jsx("li", { children: "You must present the original cash memo / bill of purchase from JSR EV Spare Parts." })
+						] }),
+						/* @__PURE__ */ jsx("h2", { children: "2. Electrical Components Policy" }),
+						/* @__PURE__ */ jsx("p", { children: "Due to the sensitive nature of electric vehicle electronics:" }),
+						/* @__PURE__ */ jsxs("ul", { children: [
+							/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Testing at Counter:" }), " Electrical parts (including motors, controllers, digital meters, throttle sets, converters, and relays) are tested or verified at our counter at the time of purchase where feasible."] }),
+							/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Fitted/Burnt Items Non-Returnable:" }), " Any electrical component that has been connected to vehicle wiring, subjected to short circuits, over-voltage, improper polarity, or water ingress cannot be returned or refunded."] }),
+							/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Manufacturer Warranty:" }), " If an item carries an official manufacturer warranty, we will gladly assist in routing the unit through the manufacturer’s warranty procedure."] })
+						] }),
+						/* @__PURE__ */ jsx("h2", { children: "3. Non-Returnable Items" }),
+						/* @__PURE__ */ jsxs("ul", { children: [
+							/* @__PURE__ */ jsx("li", { children: "Consumables and wear-and-tear parts (tyres, brake pads/shoes, grease, rubber boots, wiring harnesses once cut/soldered)." }),
+							/* @__PURE__ */ jsx("li", { children: "Items sold under clearance, wholesale discount, or customized/ordered specifically on non-standard request." }),
+							/* @__PURE__ */ jsx("li", { children: "Parts missing original labels, seals, or batch numbers." })
+						] }),
+						/* @__PURE__ */ jsx("h2", { children: "4. Refund Method & Processing" }),
+						/* @__PURE__ */ jsxs("ul", { children: [
+							/* @__PURE__ */ jsxs("li", { children: [
+								"Approved returns are typically processed as an ",
+								/* @__PURE__ */ jsx("strong", { children: "Exchange" }),
+								" for the correct part or store credit."
+							] }),
+							/* @__PURE__ */ jsxs("li", { children: [
+								"Where a monetary refund is authorized by management, it will be issued via the original payment mode (cash or UPI) within ",
+								/* @__PURE__ */ jsx("em", { children: "[TODO: 1–3 business days]" }),
+								"."
+							] }),
+							/* @__PURE__ */ jsx("li", { children: "Fitting and labour charges are non-refundable once the service work has been performed." })
+						] }),
+						/* @__PURE__ */ jsx("h2", { children: "5. How to Initiate a Return or Exchange" }),
+						/* @__PURE__ */ jsx("p", { children: "Please bring the part along with your invoice directly to our shop counter:" }),
+						/* @__PURE__ */ jsxs("address", {
+							className: "legal-page__contact-box",
+							children: [
+								/* @__PURE__ */ jsx("strong", { children: "JSR EV Spare Parts" }),
+								/* @__PURE__ */ jsx("br", {}),
+								"Deepak Choudhary",
+								/* @__PURE__ */ jsx("br", {}),
+								"Sector 18, Rohini, Delhi – 110089 (Near Data Ram Apartment)",
+								/* @__PURE__ */ jsx("br", {}),
+								"Helpline: ",
+								/* @__PURE__ */ jsx("a", {
+									href: "tel:+919990120067",
+									children: "+91 9990120067"
+								}),
+								" (8:00 AM – 8:00 PM, 7 Days)"
+							]
+						}),
+						/* @__PURE__ */ jsx("div", {
+							className: "legal-page__actions",
+							children: /* @__PURE__ */ jsx("a", {
+								href: "/",
+								className: "legal-page__btn",
+								children: "Back to Home"
+							})
+						})
+					]
+				})
+			]
+		})
+	});
+}
 // src/useScrollReveal.js
 /**
 * High-performance, zero-dependency IntersectionObserver hook for smooth scroll-reveal animations.
@@ -2622,48 +3009,51 @@ function useScrollReveal() {
 	}, []);
 }
 // src/App.jsx
-/** Returns true when the current pathname is the root page. */
-function isHomePath() {
-	if (typeof window === "undefined") return true;
-	const p = window.location.pathname;
-	return p === "/" || p === "/index.html";
+/** Resolves current pathname cleanly. */
+function getPath(url) {
+	if (url) return url.replace(/\/$/, "") || "/";
+	if (typeof window === "undefined") return "/";
+	return window.location.pathname.replace(/\/$/, "") || "/";
 }
-function App() {
-	const [isHome, setIsHome] = useState(isHomePath);
+function App({ url }) {
+	const [currentPath, setCurrentPath] = useState(() => getPath(url));
 	useScrollReveal();
 	useEffect(() => {
-		const onPop = () => setIsHome(isHomePath());
+		const onPop = () => setCurrentPath(getPath());
 		window.addEventListener("popstate", onPop);
 		return () => window.removeEventListener("popstate", onPop);
 	}, []);
-	if (!isHome) return /* @__PURE__ */ jsxs(Fragment, { children: [
-		/* @__PURE__ */ jsx(Navbar, {}),
-		/* @__PURE__ */ jsx(NotFound, {}),
-		/* @__PURE__ */ jsx(BackToTop, {}),
-		/* @__PURE__ */ jsx(FloatingCTA, {}),
-		/* @__PURE__ */ jsx(Footer, {})
-	] });
+	const isHome = currentPath === "/" || currentPath === "/index.html";
+	const isPrivacy = currentPath === "/privacy" || currentPath === "/privacy.html";
+	const isTerms = currentPath === "/terms" || currentPath === "/terms.html";
+	const isRefund = currentPath === "/refund" || currentPath === "/refund.html";
+	let mainContent;
+	if (isHome) mainContent = /* @__PURE__ */ jsxs("main", {
+		"aria-label": "Main content",
+		children: [
+			/* @__PURE__ */ jsx(Hero, {}),
+			/* @__PURE__ */ jsx(Services, {}),
+			/* @__PURE__ */ jsx(WhyChooseUs, {}),
+			/* @__PURE__ */ jsx(StatsStrip, {}),
+			/* @__PURE__ */ jsx(About, {}),
+			/* @__PURE__ */ jsx(FAQ, {}),
+			/* @__PURE__ */ jsx(Contact, {})
+		]
+	});
+	else if (isPrivacy) mainContent = /* @__PURE__ */ jsx(PrivacyPolicy, {});
+	else if (isTerms) mainContent = /* @__PURE__ */ jsx(Terms, {});
+	else if (isRefund) mainContent = /* @__PURE__ */ jsx(RefundPolicy, {});
+	else mainContent = /* @__PURE__ */ jsx(NotFound, {});
 	return /* @__PURE__ */ jsxs(Fragment, { children: [
 		/* @__PURE__ */ jsx(Navbar, {}),
-		/* @__PURE__ */ jsxs("main", {
-			"aria-label": "Main content",
-			children: [
-				/* @__PURE__ */ jsx(Hero, {}),
-				/* @__PURE__ */ jsx(Services, {}),
-				/* @__PURE__ */ jsx(WhyChooseUs, {}),
-				/* @__PURE__ */ jsx(StatsStrip, {}),
-				/* @__PURE__ */ jsx(About, {}),
-				/* @__PURE__ */ jsx(FAQ, {}),
-				/* @__PURE__ */ jsx(Contact, {})
-			]
-		}),
+		mainContent,
 		/* @__PURE__ */ jsx(BackToTop, {}),
 		/* @__PURE__ */ jsx(FloatingCTA, {}),
 		/* @__PURE__ */ jsx(Footer, {})
 	] });
 }
 // src/entry-server.jsx
-function render() {
-	return renderToString(/* @__PURE__ */ jsx(StrictMode, { children: /* @__PURE__ */ jsx(App, {}) }));
+function render(url = "/") {
+	return renderToString(/* @__PURE__ */ jsx(StrictMode, { children: /* @__PURE__ */ jsx(App, { url }) }));
 }
 export { render };

@@ -106,7 +106,7 @@ export default function StatsStrip() {
             <span className="stats-strip__highlight">7 Days</span>
           </div>
           <p className="stats-strip__label">Open Every Day</p>
-          <span className="stats-strip__sub">8:00 AM – 8:00 PM</span>
+          <span className="stats-strip__sub"><time>8:00 AM</time> – <time>8:00 PM</time></span>
         </div>
       </div>
     </section>

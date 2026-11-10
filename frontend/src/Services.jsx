@@ -25,7 +25,7 @@ export default function Services() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="services__card-action"
-                aria-label="Check spare parts availability on WhatsApp"
+                aria-label="Check spare parts availability on WhatsApp (opens in a new tab)"
               >
                 <span>Check Availability</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -74,7 +74,7 @@ export default function Services() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="services__card-action"
-                aria-label="Enquire about parts fitting charges on WhatsApp"
+                aria-label="Enquire about parts fitting charges on WhatsApp (opens in a new tab)"
               >
                 <span>Check Fitting Price</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

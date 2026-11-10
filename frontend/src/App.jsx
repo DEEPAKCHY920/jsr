@@ -11,40 +11,37 @@ import FloatingCTA from "./FloatingCTA.jsx";
 import BackToTop from "./BackToTop.jsx";
 import Footer from "./Footer.jsx";
 import NotFound from "./NotFound.jsx";
+import PrivacyPolicy from "./PrivacyPolicy.jsx";
+import Terms from "./Terms.jsx";
+import RefundPolicy from "./RefundPolicy.jsx";
 import { useScrollReveal } from "./useScrollReveal.js";
 
-/** Returns true when the current pathname is the root page. */
-function isHomePath() {
-  if (typeof window === "undefined") return true; // SSR: always render home
-  const p = window.location.pathname;
-  return p === "/" || p === "/index.html";
+/** Resolves current pathname cleanly. */
+function getPath(url) {
+  if (url) return url.replace(/\/$/, "") || "/";
+  if (typeof window === "undefined") return "/";
+  return window.location.pathname.replace(/\/$/, "") || "/";
 }
 
-export default function App() {
-  const [isHome, setIsHome] = useState(isHomePath);
+export default function App({ url }) {
+  const [currentPath, setCurrentPath] = useState(() => getPath(url));
   useScrollReveal();
 
   useEffect(() => {
-    const onPop = () => setIsHome(isHomePath());
+    const onPop = () => setCurrentPath(getPath());
     window.addEventListener("popstate", onPop);
     return () => window.removeEventListener("popstate", onPop);
   }, []);
 
-  if (!isHome) {
-    return (
-      <>
-        <Navbar />
-        <NotFound />
-        <BackToTop />
-        <FloatingCTA />
-        <Footer />
-      </>
-    );
-  }
+  // Determine which page view to render
+  const isHome = currentPath === "/" || currentPath === "/index.html";
+  const isPrivacy = currentPath === "/privacy" || currentPath === "/privacy.html";
+  const isTerms = currentPath === "/terms" || currentPath === "/terms.html";
+  const isRefund = currentPath === "/refund" || currentPath === "/refund.html";
 
-  return (
-    <>
-      <Navbar />
+  let mainContent;
+  if (isHome) {
+    mainContent = (
       <main aria-label="Main content">
         <Hero />
         <Services />
@@ -54,6 +51,21 @@ export default function App() {
         <FAQ />
         <Contact />
       </main>
+    );
+  } else if (isPrivacy) {
+    mainContent = <PrivacyPolicy />;
+  } else if (isTerms) {
+    mainContent = <Terms />;
+  } else if (isRefund) {
+    mainContent = <RefundPolicy />;
+  } else {
+    mainContent = <NotFound />;
+  }
+
+  return (
+    <>
+      <Navbar />
+      {mainContent}
       <BackToTop />
       <FloatingCTA />
       <Footer />

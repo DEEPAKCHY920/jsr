@@ -3,7 +3,7 @@ import { useState } from "react";
 const faqItems = [
   {
     id: "location",
-    question: "Where is JSR EV SPARE PARTS located in Rohini?",
+    question: "Where is JSR EV Spare Parts located in Rohini?",
     answer:
       "Our physical shop is located in Sector 18, Rohini, Delhi – 110089 (near Data Ram Apartment). You can visit our store directly for spare parts purchase, repair advice, and fitting services.",
   },
