@@ -1018,6 +1018,10 @@ button {
   height: 52px;
 }
 
+.services__card-content {
+  min-width: 0;
+}
+
 .services__card-heading {
   margin-bottom: 12px;
   color: #101B3D;
@@ -1065,25 +1069,132 @@ button {
 
 @media (max-width: 899px) {
   .services {
-    padding: 40px 0;
+    padding: 44px 0 40px;
+    background-color: #FFFFFF;
   }
 
   .services__inner {
-    gap: 32px;
+    gap: 28px;
+  }
+
+  .services__accent {
+    width: 44px;
+    height: 3px;
+    margin: 8px auto 14px;
+  }
+
+  .services__heading {
+    font-size: clamp(26px, 6vw, 30px);
+    margin-bottom: 8px;
+  }
+
+  .services__subtitle {
+    font-size: 14.5px;
+    line-height: 1.5;
+    margin-top: 0;
+    max-width: 300px;
+    color: #475569;
   }
 
   .services__grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .services__card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 18px;
+    border-radius: 16px;
+    border: 1px solid #dce2ed;
+    box-shadow: 0 2px 10px rgba(16, 27, 61, 0.04);
+  }
+
+  .services__icon {
+    width: 60px;
+    height: 60px;
+    flex: 0 0 60px;
+    margin-bottom: 0;
+    border-radius: 14px;
+    background-color: #edf3ff;
+  }
+
+  .services__icon svg {
+    width: 38px;
+    height: 38px;
+  }
+
+  .services__card-content {
+    flex: 1;
+    min-width: 0;
+    border-left: 1px solid #e1e7f0;
+    padding-left: 16px;
+  }
+
+  .services__card-heading {
+    font-size: 17.5px;
+    font-weight: 800;
+    margin-bottom: 4px;
+    color: #101B3D;
+    line-height: 1.25;
+  }
+
+  .services__card-copy {
+    font-size: 13.5px;
+    color: #475569;
+    line-height: 1.45;
+  }
+
+  .services__actions {
+    margin-top: 8px;
+  }
+
+  .services__button {
+    width: 100%;
+    max-width: 340px;
+    min-height: 50px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: #1746CE;
+    box-shadow: 0 4px 14px rgba(23, 70, 206, 0.25);
   }
 }
 
 @media (max-width: 399px) {
-  .services__card {
-    padding: 24px 20px;
-  }
-
   .services__label {
     font-size: 12px;
+  }
+
+  .services__card {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .services__icon {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    border-radius: 12px;
+  }
+
+  .services__icon svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  .services__card-content {
+    padding-left: 12px;
+  }
+
+  .services__card-heading {
+    font-size: 16px;
+  }
+
+  .services__card-copy {
+    font-size: 12.5px;
   }
 }
 
