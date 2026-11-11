@@ -1,6 +1,8 @@
 import fs from "node:fs";
+import path from "node:path";
 
-const html = fs.readFileSync("frontend/dist/index.html", "utf8");
+const indexPath = path.resolve("frontend/dist/index.html");
+const html = fs.readFileSync(indexPath, "utf8");
 
 console.log("=== JSON-LD IN dist/index.html ===");
 const jsonMatch = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
@@ -22,4 +24,3 @@ linkMatches.forEach(m => {
     ariaLabel: ariaLabelMatch ? ariaLabelMatch[1] : null
   });
 });
-
