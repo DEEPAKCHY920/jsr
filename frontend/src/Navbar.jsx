@@ -5,7 +5,7 @@ const DESKTOP_QUERY = "(min-width: 900px)";
 const navLinks = [
   {
     id: "home",
-    href: "#home",
+    href: "/#home",
     label: "Home",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
@@ -15,7 +15,7 @@ const navLinks = [
   },
   {
     id: "services",
-    href: "#services",
+    href: "/#services",
     label: "Services",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
@@ -25,7 +25,7 @@ const navLinks = [
   },
   {
     id: "about",
-    href: "#about",
+    href: "/#about",
     label: "About",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
@@ -35,7 +35,7 @@ const navLinks = [
   },
   {
     id: "faq",
-    href: "#faq",
+    href: "/#faq",
     label: "FAQ",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
@@ -47,7 +47,7 @@ const navLinks = [
   },
   {
     id: "contact",
-    href: "#contact",
+    href: "/#contact",
     label: "Contact",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
@@ -61,7 +61,7 @@ const navLinks = [
 const mobileNavLinks = [
   {
     id: "home",
-    href: "#home",
+    href: "/#home",
     label: "Home",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
@@ -71,7 +71,7 @@ const mobileNavLinks = [
   },
   {
     id: "about",
-    href: "#about",
+    href: "/#about",
     label: "About Us",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
@@ -81,7 +81,7 @@ const mobileNavLinks = [
   },
   {
     id: "services",
-    href: "#services",
+    href: "/#services",
     label: "Parts Enquiry",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
@@ -91,7 +91,7 @@ const mobileNavLinks = [
   },
   {
     id: "contact",
-    href: "#contact",
+    href: "/#contact",
     label: "Contact",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
@@ -219,10 +219,10 @@ export default function Navbar() {
         <div className="container navbar__inner">
 
           {/* ── Logo ── */}
-          <a ref={logoRef} href="#home" className="logo" aria-label="JSR EV SPARE PARTS – home">
+          <a ref={logoRef} href="/" className="logo" aria-label="JSR EV SPARE PARTS – home">
             <img
               src="/jsr-logo.png"
-              alt="JSR EV SPARE PARTS"
+              alt="JSR EV Spare Parts logo"
               className="logo__img"
               width="180"
               height="60"
@@ -301,7 +301,7 @@ export default function Navbar() {
             {/* Header: Logo & Close Button */}
             <div className="mobile-menu-card__header">
               <a
-                href="#home"
+                href="/"
                 className="mobile-menu-card__logo"
                 aria-label="JSR EV SPARE PARTS – home"
                 onClick={() => handleMobileNavClick("home")}

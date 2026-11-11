@@ -1,3 +1,5 @@
+import { GOOGLE_REVIEW_URL } from "./config/reviews.js";
+
 export default function Contact() {
   const mapsSearchUrl =
     "https://www.google.com/maps/search/?api=1&query=Sector+18+Rohini+Delhi+110089+Near+Data+Ram+Apartment";
@@ -11,7 +13,7 @@ export default function Contact() {
             <span className="contact__eyebrow-line" aria-hidden="true" />
           </div>
           <h2 className="contact__heading" id="contact-heading">Visit or Contact Our Shop</h2>
-          <p className="contact__subtitle">Contact us for spare parts, repair and fitting enquiries.</p>
+          <p className="contact__subtitle">Contact us for spare parts availability, servicing, and installation enquiries.</p>
         </header>
 
         <div className="contact__layout">
@@ -29,8 +31,8 @@ export default function Contact() {
                   </span>
                   <div>
                     <span className="contact__detail-label">Address</span>
-                    <p>Sector 18, Rohini, Delhi – 110089</p>
-                    <p className="contact__muted">Near Data Ram Apartment</p>
+                    <p>Sector 18, Near Data Ram Apartment</p>
+                    <p className="contact__muted">Rohini, Delhi – 110089</p>
                   </div>
                 </div>
               </address>
@@ -64,6 +66,18 @@ export default function Contact() {
               <div className="contact__actions">
                 <a className="contact__button contact__button--primary" href="tel:+919990120067">Call Now</a>
                 <a className="contact__button contact__button--secondary" href="https://wa.me/919990120067?text=Hello%20JSR%20EV%20SPARE%20PARTS%2C%20I%20would%20like%20to%20enquire%20about%20spare%20parts%20or%20services." target="_blank" rel="noopener noreferrer" aria-label="Chat with JSR EV Spare Parts on WhatsApp (opens in a new tab)">WhatsApp</a>
+                <a
+                  className="contact__button contact__button--review"
+                  href={GOOGLE_REVIEW_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Leave a Google review for JSR EV Spare Parts (opens in a new tab)"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                  </svg>
+                  Leave a Google review
+                </a>
               </div>
             </div>
           </div>
@@ -79,7 +93,7 @@ export default function Contact() {
               />
             </div>
             <div className="contact__map-info">
-              <p>Located in Sector 18, Rohini near Data Ram Apartment. Call us for easy directions or on-site fitting assistance.</p>
+              <p>Located in Sector 18 near Data Ram Apartment, Rohini. Call us for easy directions or parts fitting assistance.</p>
               <a
                 className="contact__maps-link"
                 href={mapsSearchUrl}

@@ -35,7 +35,7 @@ const features = [
   {
     id: "visit-shop",
     title: "Visit Our Shop",
-    desc: "Sector 18, Rohini, Delhi.",
+    desc: "Sector 18, Near Data Ram Apartment.",
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2CA50D" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
         <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />

@@ -5,6 +5,7 @@ import Services from "./Services.jsx";
 import WhyChooseUs from "./WhyChooseUs.jsx";
 import StatsStrip from "./StatsStrip.jsx";
 import About from "./About.jsx";
+import Reviews from "./Reviews.jsx";
 import FAQ from "./FAQ.jsx";
 import Contact from "./Contact.jsx";
 import FloatingCTA from "./FloatingCTA.jsx";
@@ -48,6 +49,7 @@ export default function App({ url }) {
         <WhyChooseUs />
         <StatsStrip />
         <About />
+        <Reviews />
         <FAQ />
         <Contact />
       </main>

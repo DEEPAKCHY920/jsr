@@ -66,17 +66,28 @@ export default function StatsStrip() {
     <section className="stats-strip" ref={containerRef} aria-label="Key business facts">
       <div className="container stats-strip__inner">
         {/* Stat 1: Established Since 2024 */}
-        <div className="stats-strip__item reveal-up" aria-label="Since 2024 serving Rohini">
+        <div className="stats-strip__item reveal-up" aria-label="Since 2024 serving Delhi">
           <div className="stats-strip__number">
             <span className="stats-strip__highlight stats-strip__highlight--since">Since 2024</span>
           </div>
-          <p className="stats-strip__label">Serving Rohini</p>
-          <span className="stats-strip__sub">Sector 18, Rohini</span>
+          <p className="stats-strip__label">Serving Delhi</p>
+          <span className="stats-strip__sub">EV Spare Parts &amp; Service</span>
         </div>
 
         <div className="stats-strip__divider" aria-hidden="true" />
 
-        {/* Stat 2: Spares */}
+        {/* Stat 2: 3 Branches in Delhi */}
+        <div className="stats-strip__item reveal-up" aria-label="3 branches in Delhi, Rohini and Badli">
+          <div className="stats-strip__number">
+            <span className="stats-strip__highlight">3 Branches</span>
+          </div>
+          <p className="stats-strip__label">in Delhi</p>
+          <span className="stats-strip__sub">Rohini • Badli</span>
+        </div>
+
+        <div className="stats-strip__divider" aria-hidden="true" />
+
+        {/* Stat 3: EV Spare Parts */}
         <div className="stats-strip__item reveal-up" aria-label="300 plus EV spare parts">
           <div className="stats-strip__number" aria-hidden="true">
             <span className="stats-strip__val stats-strip__val--3dig">{counts.parts}</span>
@@ -88,7 +99,7 @@ export default function StatsStrip() {
 
         <div className="stats-strip__divider" aria-hidden="true" />
 
-        {/* Stat 3: Vehicles */}
+        {/* Stat 4: Vehicles Repaired */}
         <div className="stats-strip__item reveal-up" aria-label="800 plus vehicles repaired">
           <div className="stats-strip__number" aria-hidden="true">
             <span className="stats-strip__val stats-strip__val--3dig">{counts.vehicles}</span>
@@ -100,7 +111,7 @@ export default function StatsStrip() {
 
         <div className="stats-strip__divider" aria-hidden="true" />
 
-        {/* Stat 4: Timing & Availability */}
+        {/* Stat 5: Timing & Availability */}
         <div className="stats-strip__item reveal-up" aria-label="7 days open every day">
           <div className="stats-strip__number">
             <span className="stats-strip__highlight">7 Days</span>

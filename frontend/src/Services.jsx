@@ -6,7 +6,7 @@ export default function Services() {
           <p className="services__label">WHAT WE DO</p>
           <span className="services__accent" aria-hidden="true" />
           <h2 className="services__heading" id="services-heading">Our Services</h2>
-          <p className="services__subtitle">Spare parts, repair and fitting for your electric vehicle.</p>
+          <p className="services__subtitle">Spare parts, vehicle servicing and parts fitting for your electric vehicle.</p>
         </header>
 
         <div className="services__grid reveal-stagger">
@@ -83,6 +83,26 @@ export default function Services() {
               </a>
             </div>
           </article>
+        </div>
+
+        {/* Spare Parts We Stock Tag List (Confirmed Parts Only) */}
+        <div className="services__tags-wrap reveal-up" aria-label="Spare parts in stock">
+          <p className="services__tags-title">Spare Parts We Stock</p>
+          <ul className="services__tags-list">
+            <li className="services__tag-pill">Motor</li>
+            <li className="services__tag-pill">Controller</li>
+            <li className="services__tag-pill">Battery Charger</li>
+            <li className="services__tag-pill">Differential</li>
+            <li className="services__tag-pill">Brake Shoes</li>
+            <li className="services__tag-pill">Shocker</li>
+            <li className="services__tag-pill">Tyres</li>
+            <li className="services__tag-pill">Wiring Kit</li>
+            <li className="services__tag-pill">DC Converter</li>
+            <li className="services__tag-pill">Headlight</li>
+            <li className="services__tag-pill">Tail Light</li>
+            <li className="services__tag-pill">Accelerator</li>
+            <li className="services__tag-pill">Battery Packs</li>
+          </ul>
         </div>
 
         <div className="services__actions reveal-up">

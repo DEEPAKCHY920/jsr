@@ -1,12 +1,14 @@
 import { useState } from "react";
+import { GOOGLE_PROFILE_URL } from "./config/reviews.js";
 
 const quickLinks = [
-  { id: "home", href: "#home", label: "Home" },
-  { id: "services", href: "#services", label: "Our Services" },
-  { id: "why-us", href: "#why-choose-us", label: "Why Choose Us" },
-  { id: "about", href: "#about", label: "About Our Shop" },
-  { id: "faq", href: "#faq", label: "FAQ" },
-  { id: "contact", href: "#contact", label: "Contact" },
+  { id: "home", href: "/#home", label: "Home" },
+  { id: "services", href: "/#services", label: "Our Services" },
+  { id: "why-us", href: "/#why-choose-us", label: "Why Choose Us" },
+  { id: "about", href: "/#about", label: "About Our Shop" },
+  { id: "reviews", href: "/#reviews", label: "Customer Reviews" },
+  { id: "faq", href: "/#faq", label: "FAQ" },
+  { id: "contact", href: "/#contact", label: "Contact" },
 ];
 
 const serviceHighlights = [
@@ -81,7 +83,7 @@ const socialLinks = [
   {
     id: "google",
     label: "Find us on Google",
-    href: "https://share.google/6Zp1shhSR81Sidhjp",
+    href: GOOGLE_PROFILE_URL,
     ariaLabel: "Find JSR EV Spare Parts on Google (opens in a new tab)",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
@@ -150,7 +152,7 @@ export default function Footer() {
         <div className="site-footer__grid reveal-stagger">
           {/* Column 1 – Brand Information */}
           <div className="site-footer__col site-footer__col--brand reveal-up">
-            <a className="site-footer__logo" href="#home" aria-label="JSR EV SPARE PARTS — back to home">
+            <a className="site-footer__logo" href="/" aria-label="JSR EV SPARE PARTS — back to home">
               <svg className="site-footer__logo-car" viewBox="0 0 150 40" fill="none" aria-hidden="true">
                 {/* Green contour electric car silhouette with lightning bolt */}
                 <path d="M14 28l6-10h-5l9-12-3 8h5l-7 10h5z" fill="#65C91A" />
@@ -171,7 +173,7 @@ export default function Footer() {
             </a>
 
             <p className="site-footer__description">
-              Spare parts, repair and fitting services for e-rickshaws and electric scooters in Sector 18, Rohini, Delhi.
+              Genuine spare parts, maintenance and installation services for e-rickshaws and electric scooters in Rohini, Delhi.
             </p>
 
             {/* Service highlight cards */}
@@ -275,8 +277,8 @@ export default function Footer() {
                       className="site-footer__contact-text site-footer__contact-link"
                       aria-label="Open JSR EV Spare Parts address in Google Maps (opens in a new tab)"
                     >
-                      Sector 18, Rohini, Delhi – 110089<br />
-                      <span className="site-footer__text-muted">Near Data Ram Apartment</span>
+                      Sector 18, Near Data Ram Apartment<br />
+                      <span className="site-footer__text-muted">Rohini, Delhi – 110089</span>
                     </a>
                   </div>
 
@@ -318,7 +320,7 @@ export default function Footer() {
               </div>
               <img
                 src="/footer-mobile-rickshaw.png"
-                alt="JSR E-Rickshaw"
+                alt="JSR electric rickshaw illustration"
                 className="site-footer__social-rickshaw"
                 loading="lazy"
                 width="360"
@@ -330,6 +332,10 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="site-footer__bottom reveal-up">
+          <p className="site-footer__tagline-hi" lang="hi">
+            ई-रिक्शा और इलेक्ट्रिक स्कूटर स्पेयर पार्ट्स – सेक्टर 18, रोहिणी, दिल्ली
+          </p>
+
           <p className="site-footer__copyright">
             © 2026 JSR EV Spare Parts. All rights reserved.
           </p>

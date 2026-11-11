@@ -17,7 +17,7 @@ export default function About() {
             About JSR EV Spare Parts
           </h2>
           <p className="about__copy">
-            Established in 2024, JSR EV Spare Parts is a trusted local shop in Sector 18, Rohini, Delhi, supplying genuine spare parts, expert repair and dependable fitting services for e-rickshaws and electric scooters. We cater to retail vehicle owners, independent mechanics and commercial fleet operators across North Delhi.
+            Established in 2024, JSR EV Spare Parts is a trusted local shop in Sector 18, Rohini, Delhi, supplying genuine spare parts, vehicle repair and component fitting services for e-rickshaws and electric scooters. We supply EV spare parts to drivers, mechanics and dealers across Rohini, Badli and North Delhi.
           </p>
         </div>
 
@@ -36,7 +36,7 @@ export default function About() {
                 height="576"
               />
             </div>
-            <span className="about__photo-caption">JSR EV Spare Parts — Our Physical Shop in Sector 18, Rohini</span>
+            <span className="about__photo-caption">JSR EV Spare Parts — Our Physical Shop in Rohini, Delhi</span>
           </div>
 
           {/* Right Column: Founder Feature Card */}
@@ -63,7 +63,7 @@ export default function About() {
               </h3>
               <p className="founder-card__role">Founder, JSR EV Spare Parts</p>
               <p className="founder-card__bio">
-                Deepak Choudhary leads JSR EV Spare Parts, helping vehicle owners and mechanics find original, reliable spares and on-site fitting solutions.
+                Deepak Choudhary leads JSR EV Spare Parts, helping vehicle owners and mechanics find original, reliable spares and fitting solutions.
               </p>
 
               <div className="founder-card__chips" role="list">
@@ -81,7 +81,7 @@ export default function About() {
                     <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
                     <circle cx="12" cy="10" r="2.5" />
                   </svg>
-                  Sector 18, Rohini
+                  Rohini, Delhi
                 </span>
               </div>
 

@@ -64,20 +64,53 @@ for (const route of routes) {
     pageHtml = pageHtml.replace(/<meta name="description" content=".*?" \/>/, `<meta name="description" content="${route.description}" />`);
   }
 
+  // Remove FAQPage schema from non-homepage routes as FAQs only exist on "/"
+  if (route.path !== "/") {
+    pageHtml = pageHtml.replace(/<script type="application\/ld\+json">\s*\{\s*"@context":\s*"https:\/\/schema\.org",\s*"@type":\s*"FAQPage"[\s\S]*?<\/script>\s*/, "");
+  }
+
   // Canonical and OG
   if (productionUrl) {
     const canonicalUrl = route.path === "/" ? `${productionUrl}/` : `${productionUrl}${route.path}`;
     const socialImageUrl = socialImagePath ? new URL(socialImagePath, `${productionUrl}/`).href : "";
-    const metaTags = [
-      `<link rel="canonical" href="${canonicalUrl}" />`,
-      `<meta property="og:url" content="${canonicalUrl}" />`,
-      `<meta property="og:title" content="${route.title}" />`,
-      `<meta property="og:description" content="${route.description}" />`,
-      socialImageUrl ? `<meta property="og:image" content="${socialImageUrl}" />` : "",
-      socialImageUrl ? `<meta name="twitter:image" content="${socialImageUrl}" />` : "",
-    ].filter(Boolean).join("\n  ");
 
-    pageHtml = pageHtml.replace("</head>", `  ${metaTags}\n</head>`);
+    // Update or insert canonical
+    if (pageHtml.includes('<link rel="canonical"')) {
+      pageHtml = pageHtml.replace(/<link rel="canonical" href=".*?" \/>/, `<link rel="canonical" href="${canonicalUrl}" />`);
+    } else {
+      pageHtml = pageHtml.replace("</head>", `  <link rel="canonical" href="${canonicalUrl}" />\n</head>`);
+    }
+
+    // Update or insert og:url
+    if (pageHtml.includes('<meta property="og:url"')) {
+      pageHtml = pageHtml.replace(/<meta property="og:url" content=".*?" \/>/, `<meta property="og:url" content="${canonicalUrl}" />`);
+    } else {
+      pageHtml = pageHtml.replace("</head>", `  <meta property="og:url" content="${canonicalUrl}" />\n</head>`);
+    }
+
+    // Update og:title & og:description if route has custom title/description
+    if (route.title) {
+      pageHtml = pageHtml.replace(/<meta property="og:title" content=".*?" \/>/, `<meta property="og:title" content="${route.title}" />`);
+      pageHtml = pageHtml.replace(/<meta name="twitter:title" content=".*?" \/>/, `<meta name="twitter:title" content="${route.title}" />`);
+    }
+    if (route.description) {
+      pageHtml = pageHtml.replace(/<meta property="og:description" content=".*?" \/>/, `<meta property="og:description" content="${route.description}" />`);
+      pageHtml = pageHtml.replace(/<meta name="twitter:description" content=".*?" \/>/, `<meta name="twitter:description" content="${route.description}" />`);
+    }
+
+    // Update or insert og:image & twitter:image
+    if (socialImageUrl) {
+      if (pageHtml.includes('<meta property="og:image"')) {
+        pageHtml = pageHtml.replace(/<meta property="og:image" content=".*?" \/>/, `<meta property="og:image" content="${socialImageUrl}" />`);
+      } else {
+        pageHtml = pageHtml.replace("</head>", `  <meta property="og:image" content="${socialImageUrl}" />\n</head>`);
+      }
+      if (pageHtml.includes('<meta name="twitter:image"')) {
+        pageHtml = pageHtml.replace(/<meta name="twitter:image" content=".*?" \/>/, `<meta name="twitter:image" content="${socialImageUrl}" />`);
+      } else {
+        pageHtml = pageHtml.replace("</head>", `  <meta name="twitter:image" content="${socialImageUrl}" />\n</head>`);
+      }
+    }
   }
 
   if (route.outDir) {

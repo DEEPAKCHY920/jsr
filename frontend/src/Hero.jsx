@@ -29,7 +29,7 @@ export default function Hero() {
 
           {/* Subtitle */}
           <p className="hero__desc">
-            Genuine spare parts, repair and fitting services for e-rickshaws and electric scooters.
+            Genuine e-rickshaw spare parts in Rohini and electric scooter spare parts with repair and fitting services.
           </p>
 
           {/* Action Buttons */}
