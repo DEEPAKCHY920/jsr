@@ -153,23 +153,15 @@ export default function Footer() {
           {/* Column 1 – Brand Information */}
           <div className="site-footer__col site-footer__col--brand reveal-up">
             <a className="site-footer__logo" href="/" aria-label="JSR EV SPARE PARTS — back to home">
-              <svg className="site-footer__logo-car" viewBox="0 0 150 40" fill="none" aria-hidden="true">
-                {/* Green contour electric car silhouette with lightning bolt */}
-                <path d="M14 28l6-10h-5l9-12-3 8h5l-7 10h5z" fill="#65C91A" />
-                <path d="M26 22c10-12 32-17 56-17 26 0 46 5 56 17" stroke="#65C91A" strokeWidth="3.6" strokeLinecap="round" />
-              </svg>
-
-              <div className="site-footer__logo-text">
-                <div className="site-footer__logo-main">
-                  <span className="site-footer__logo-brand">JSR</span>
-                  <span className="site-footer__logo-ev">EV</span>
-                </div>
-                <div className="site-footer__logo-sub">
-                  <span className="site-footer__logo-line" aria-hidden="true" />
-                  <span className="site-footer__logo-tag">SPARE PARTS</span>
-                  <span className="site-footer__logo-line" aria-hidden="true" />
-                </div>
-              </div>
+              <img
+                src="/jsr-logo-footer.png"
+                alt="JSR EV Spare Parts logo"
+                className="site-footer__logo-img"
+                width="160"
+                height="100"
+                loading="lazy"
+                decoding="async"
+              />
             </a>
 
             <p className="site-footer__description">

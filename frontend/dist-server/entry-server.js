@@ -2474,53 +2474,19 @@ function Footer() {
 					/* @__PURE__ */ jsxs("div", {
 						className: "site-footer__col site-footer__col--brand reveal-up",
 						children: [
-							/* @__PURE__ */ jsxs("a", {
+							/* @__PURE__ */ jsx("a", {
 								className: "site-footer__logo",
 								href: "/",
 								"aria-label": "JSR EV SPARE PARTS — back to home",
-								children: [/* @__PURE__ */ jsxs("svg", {
-									className: "site-footer__logo-car",
-									viewBox: "0 0 150 40",
-									fill: "none",
-									"aria-hidden": "true",
-									children: [/* @__PURE__ */ jsx("path", {
-										d: "M14 28l6-10h-5l9-12-3 8h5l-7 10h5z",
-										fill: "#65C91A"
-									}), /* @__PURE__ */ jsx("path", {
-										d: "M26 22c10-12 32-17 56-17 26 0 46 5 56 17",
-										stroke: "#65C91A",
-										strokeWidth: "3.6",
-										strokeLinecap: "round"
-									})]
-								}), /* @__PURE__ */ jsxs("div", {
-									className: "site-footer__logo-text",
-									children: [/* @__PURE__ */ jsxs("div", {
-										className: "site-footer__logo-main",
-										children: [/* @__PURE__ */ jsx("span", {
-											className: "site-footer__logo-brand",
-											children: "JSR"
-										}), /* @__PURE__ */ jsx("span", {
-											className: "site-footer__logo-ev",
-											children: "EV"
-										})]
-									}), /* @__PURE__ */ jsxs("div", {
-										className: "site-footer__logo-sub",
-										children: [
-											/* @__PURE__ */ jsx("span", {
-												className: "site-footer__logo-line",
-												"aria-hidden": "true"
-											}),
-											/* @__PURE__ */ jsx("span", {
-												className: "site-footer__logo-tag",
-												children: "SPARE PARTS"
-											}),
-											/* @__PURE__ */ jsx("span", {
-												className: "site-footer__logo-line",
-												"aria-hidden": "true"
-											})
-										]
-									})]
-								})]
+								children: /* @__PURE__ */ jsx("img", {
+									src: "/jsr-logo-footer.png",
+									alt: "JSR EV Spare Parts logo",
+									className: "site-footer__logo-img",
+									width: "160",
+									height: "100",
+									loading: "lazy",
+									decoding: "async"
+								})
 							}),
 							/* @__PURE__ */ jsx("p", {
 								className: "site-footer__description",

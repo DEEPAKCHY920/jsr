@@ -72,3 +72,4 @@ for (const phrase of targetPhrases) {
   const count = (visibleText.match(reg) || []).length;
   console.log(`"${phrase}": ${count} times (<= 2: ${count <= 2})`);
 }
+
