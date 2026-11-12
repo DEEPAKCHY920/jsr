@@ -9,3 +9,4 @@ for ($y = 110; $y -lt 240; $y += 2) {
     Write-Output "y=$y : R=$($c.R) G=$($c.G) B=$($c.B)"
 }
 $img.Dispose()
+

@@ -145,7 +145,7 @@ export default function Footer() {
 
   return (
     <footer className="site-footer" role="contentinfo">
-      {/* Subtle E-Rickshaw photograph background on desktop right */}
+      {/* Full-width e-rickshaw background */}
       <div className="site-footer__bg-vehicle" aria-hidden="true" />
 
       <div className="container site-footer__inner">
@@ -310,14 +310,6 @@ export default function Footer() {
                   </a>
                 ))}
               </div>
-              <img
-                src="/footer-mobile-rickshaw.png"
-                alt="JSR electric rickshaw illustration"
-                className="site-footer__social-rickshaw"
-                loading="lazy"
-                width="360"
-                height="285"
-              />
             </div>
           </div>
         </div>
@@ -327,6 +319,7 @@ export default function Footer() {
           <p className="site-footer__tagline-hi" lang="hi">
             ई-रिक्शा और इलेक्ट्रिक स्कूटर स्पेयर पार्ट्स – सेक्टर 18, रोहिणी, दिल्ली
           </p>
+
 
           <p className="site-footer__copyright">
             © 2026 JSR EV Spare Parts. All rights reserved.

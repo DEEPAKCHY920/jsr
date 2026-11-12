@@ -8,3 +8,4 @@ for ($x = 0; $x -lt $img.Width; $x += 10) {
     Write-Output "x=$x y=59: R=$($c.R) G=$($c.G) B=$($c.B)"
 }
 $img.Dispose()
+

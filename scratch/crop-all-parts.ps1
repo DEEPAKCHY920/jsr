@@ -74,3 +74,4 @@ $rickshawBmp.Dispose()
 Write-Output "Saved $rickshawPath"
 
 $img.Dispose()
+

@@ -15,3 +15,4 @@ $g.Dispose()
 $cropBmp.Dispose()
 $img.Dispose()
 Write-Output "Rickshaw cropped."
+

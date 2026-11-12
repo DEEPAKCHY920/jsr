@@ -12,3 +12,4 @@ $bmp = New-Object System.Drawing.Bitmap($img)
 Write-Output "Image loaded successfully."
 $bmp.Dispose()
 $img.Dispose()
+

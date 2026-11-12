@@ -26,3 +26,4 @@ Crop "rickshaw" 730 90 280 230
 $bmp.Dispose()
 $img.Dispose()
 Write-Output "Strips cropped."
+

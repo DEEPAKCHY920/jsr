@@ -96,68 +96,6 @@ var navLinks = [
 		})
 	}
 ];
-var mobileNavLinks = [
-	{
-		id: "home",
-		href: "/#home",
-		label: "Home",
-		icon: /* @__PURE__ */ jsx("svg", {
-			width: "22",
-			height: "22",
-			viewBox: "0 0 24 24",
-			fill: "currentColor",
-			"aria-hidden": "true",
-			focusable: "false",
-			children: /* @__PURE__ */ jsx("path", { d: "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" })
-		})
-	},
-	{
-		id: "about",
-		href: "/#about",
-		label: "About Us",
-		icon: /* @__PURE__ */ jsx("svg", {
-			width: "22",
-			height: "22",
-			viewBox: "0 0 24 24",
-			fill: "currentColor",
-			"aria-hidden": "true",
-			focusable: "false",
-			children: /* @__PURE__ */ jsx("path", { d: "M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" })
-		})
-	},
-	{
-		id: "services",
-		href: "/#services",
-		label: "Parts Enquiry",
-		icon: /* @__PURE__ */ jsx("svg", {
-			width: "22",
-			height: "22",
-			viewBox: "0 0 24 24",
-			fill: "none",
-			stroke: "currentColor",
-			strokeWidth: "2.2",
-			strokeLinecap: "round",
-			strokeLinejoin: "round",
-			"aria-hidden": "true",
-			focusable: "false",
-			children: /* @__PURE__ */ jsx("path", { d: "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" })
-		})
-	},
-	{
-		id: "contact",
-		href: "/#contact",
-		label: "Contact",
-		icon: /* @__PURE__ */ jsx("svg", {
-			width: "22",
-			height: "22",
-			viewBox: "0 0 24 24",
-			fill: "currentColor",
-			"aria-hidden": "true",
-			focusable: "false",
-			children: /* @__PURE__ */ jsx("path", { d: "M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" })
-		})
-	}
-];
 function Navbar() {
 	const [mobileOpen, setMobileOpen] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
@@ -249,180 +187,147 @@ function Navbar() {
 		children: /* @__PURE__ */ jsxs("nav", {
 			className: `navbar${scrolled ? " navbar--scrolled" : ""}`,
 			"aria-label": "Main navigation",
-			children: [/* @__PURE__ */ jsxs("div", {
-				className: "container navbar__inner",
-				children: [
-					/* @__PURE__ */ jsx("a", {
-						ref: logoRef,
-						href: "/",
-						className: "logo",
-						"aria-label": "JSR EV SPARE PARTS – home",
-						children: /* @__PURE__ */ jsx("img", {
-							src: "/jsr-logo.png",
-							alt: "JSR EV Spare Parts logo",
-							className: "logo__img",
-							width: "180",
-							height: "60"
-						})
-					}),
-					/* @__PURE__ */ jsx("ul", {
-						className: "nav-links",
-						role: "list",
-						children: navLinks.map((link) => {
-							const isActive = activeSection === link.id;
-							return /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsxs("a", {
-								href: link.href,
-								className: `nav-link${isActive ? " nav-link--active" : ""}`,
-								"aria-current": isActive ? "page" : void 0,
-								onClick: () => setActiveSection(link.id),
-								children: [link.icon, link.label]
-							}) }, link.id);
-						})
-					}),
-					/* @__PURE__ */ jsxs("a", {
-						href: "tel:+919990120067",
-						className: "btn-enquire",
-						"aria-label": "Call JSR EV SPARE PARTS at +91 9990120067",
-						children: [/* @__PURE__ */ jsx("svg", {
-							width: "16",
-							height: "16",
-							viewBox: "0 0 24 24",
-							fill: "currentColor",
-							"aria-hidden": "true",
-							focusable: "false",
-							children: /* @__PURE__ */ jsx("path", { d: "M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" })
-						}), "Call Now"]
-					}),
-					/* @__PURE__ */ jsxs("button", {
-						ref: hamburgerRef,
-						type: "button",
-						className: `hamburger${mobileOpen ? " hamburger--open" : ""}`,
-						id: "hamburger-btn",
-						"aria-label": mobileOpen ? "Close navigation menu" : "Open navigation menu",
-						"aria-expanded": mobileOpen,
-						"aria-controls": "mobile-menu-modal",
-						onClick: () => setMobileOpen((open) => !open),
-						children: [/* @__PURE__ */ jsxs("svg", {
-							className: "hamburger__icon hamburger__icon--open",
-							width: "26",
-							height: "26",
-							viewBox: "0 0 24 24",
-							fill: "none",
-							stroke: "currentColor",
-							strokeWidth: "2.2",
-							strokeLinecap: "round",
-							"aria-hidden": "true",
-							focusable: "false",
-							children: [
-								/* @__PURE__ */ jsx("line", {
-									x1: "3",
-									y1: "6",
-									x2: "21",
-									y2: "6"
-								}),
-								/* @__PURE__ */ jsx("line", {
-									x1: "3",
-									y1: "12",
-									x2: "21",
-									y2: "12"
-								}),
-								/* @__PURE__ */ jsx("line", {
-									x1: "3",
-									y1: "18",
-									x2: "21",
-									y2: "18"
-								})
-							]
-						}), /* @__PURE__ */ jsxs("svg", {
-							className: "hamburger__icon hamburger__icon--close",
-							width: "26",
-							height: "26",
-							viewBox: "0 0 24 24",
-							fill: "none",
-							stroke: "currentColor",
-							strokeWidth: "2.2",
-							strokeLinecap: "round",
-							"aria-hidden": "true",
-							focusable: "false",
-							children: [/* @__PURE__ */ jsx("line", {
-								x1: "4",
-								y1: "4",
-								x2: "20",
-								y2: "20"
-							}), /* @__PURE__ */ jsx("line", {
-								x1: "20",
-								y1: "4",
-								x2: "4",
-								y2: "20"
+			children: [
+				/* @__PURE__ */ jsxs("div", {
+					className: "container navbar__inner",
+					children: [
+						/* @__PURE__ */ jsx("a", {
+							ref: logoRef,
+							href: "/",
+							className: "logo",
+							"aria-label": "JSR EV SPARE PARTS – home",
+							children: /* @__PURE__ */ jsx("img", {
+								src: "/jsr-logo.png",
+								alt: "JSR EV Spare Parts logo",
+								className: "logo__img",
+								width: "180",
+								height: "60"
+							})
+						}),
+						/* @__PURE__ */ jsx("ul", {
+							className: "nav-links",
+							role: "list",
+							children: navLinks.map((link) => {
+								const isActive = activeSection === link.id;
+								return /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsxs("a", {
+									href: link.href,
+									className: `nav-link${isActive ? " nav-link--active" : ""}`,
+									"aria-current": isActive ? "page" : void 0,
+									onClick: () => setActiveSection(link.id),
+									children: [link.icon, link.label]
+								}) }, link.id);
+							})
+						}),
+						/* @__PURE__ */ jsxs("a", {
+							href: "tel:+919990120067",
+							className: "btn-enquire",
+							"aria-label": "Call JSR EV SPARE PARTS at +91 9990120067",
+							children: [/* @__PURE__ */ jsx("svg", {
+								width: "16",
+								height: "16",
+								viewBox: "0 0 24 24",
+								fill: "currentColor",
+								"aria-hidden": "true",
+								focusable: "false",
+								children: /* @__PURE__ */ jsx("path", { d: "M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" })
+							}), "Call Now"]
+						}),
+						/* @__PURE__ */ jsxs("button", {
+							ref: hamburgerRef,
+							type: "button",
+							className: `hamburger${mobileOpen ? " hamburger--open" : ""}`,
+							id: "hamburger-btn",
+							"aria-label": mobileOpen ? "Close navigation menu" : "Open navigation menu",
+							"aria-expanded": mobileOpen,
+							"aria-controls": "mobile-side-nav",
+							onClick: () => setMobileOpen((open) => !open),
+							children: [/* @__PURE__ */ jsxs("svg", {
+								className: "hamburger__icon hamburger__icon--open",
+								width: "26",
+								height: "26",
+								viewBox: "0 0 24 24",
+								fill: "none",
+								stroke: "currentColor",
+								strokeWidth: "2.2",
+								strokeLinecap: "round",
+								"aria-hidden": "true",
+								focusable: "false",
+								children: [
+									/* @__PURE__ */ jsx("line", {
+										x1: "3",
+										y1: "6",
+										x2: "21",
+										y2: "6"
+									}),
+									/* @__PURE__ */ jsx("line", {
+										x1: "3",
+										y1: "12",
+										x2: "21",
+										y2: "12"
+									}),
+									/* @__PURE__ */ jsx("line", {
+										x1: "3",
+										y1: "18",
+										x2: "21",
+										y2: "18"
+									})
+								]
+							}), /* @__PURE__ */ jsxs("svg", {
+								className: "hamburger__icon hamburger__icon--close",
+								width: "26",
+								height: "26",
+								viewBox: "0 0 24 24",
+								fill: "none",
+								stroke: "currentColor",
+								strokeWidth: "2.2",
+								strokeLinecap: "round",
+								"aria-hidden": "true",
+								focusable: "false",
+								children: [/* @__PURE__ */ jsx("line", {
+									x1: "4",
+									y1: "4",
+									x2: "20",
+									y2: "20"
+								}), /* @__PURE__ */ jsx("line", {
+									x1: "20",
+									y1: "4",
+									x2: "4",
+									y2: "20"
+								})]
 							})]
-						})]
-					})
-				]
-			}), /* @__PURE__ */ jsx("div", {
-				className: `mobile-menu-overlay${mobileOpen ? " mobile-menu-overlay--open" : ""}`,
-				id: "mobile-menu-modal",
-				role: "dialog",
-				"aria-modal": "true",
-				"aria-label": "Mobile navigation",
-				"aria-hidden": !mobileOpen,
-				onClick: () => setMobileOpen(false),
-				children: /* @__PURE__ */ jsxs("div", {
-					className: "mobile-menu-card",
-					onClick: (e) => e.stopPropagation(),
+						})
+					]
+				}),
+				/* @__PURE__ */ jsx("div", {
+					className: `mobile-side-overlay${mobileOpen ? " mobile-side-overlay--open" : ""}`,
+					"aria-hidden": !mobileOpen,
+					onClick: () => setMobileOpen(false)
+				}),
+				/* @__PURE__ */ jsxs("aside", {
+					className: `mobile-side-drawer${mobileOpen ? " mobile-side-drawer--open" : ""}`,
+					id: "mobile-side-nav",
+					role: "dialog",
+					"aria-modal": "true",
+					"aria-label": "Mobile navigation",
+					"aria-hidden": !mobileOpen,
 					children: [
 						/* @__PURE__ */ jsxs("div", {
-							className: "mobile-menu-card__header",
-							children: [/* @__PURE__ */ jsxs("a", {
+							className: "mobile-side-drawer__header",
+							children: [/* @__PURE__ */ jsx("a", {
 								href: "/",
-								className: "mobile-menu-card__logo",
+								className: "mobile-side-drawer__logo",
 								"aria-label": "JSR EV SPARE PARTS – home",
 								onClick: () => handleMobileNavClick("home"),
-								children: [/* @__PURE__ */ jsxs("svg", {
-									className: "mobile-menu-card__logo-car",
-									viewBox: "0 0 150 40",
-									fill: "none",
-									"aria-hidden": "true",
-									children: [/* @__PURE__ */ jsx("path", {
-										d: "M14 28l6-10h-5l9-12-3 8h5l-7 10h5z",
-										fill: "#43A047"
-									}), /* @__PURE__ */ jsx("path", {
-										d: "M26 22c10-12 32-17 56-17 26 0 46 5 56 17",
-										stroke: "#43A047",
-										strokeWidth: "4",
-										strokeLinecap: "round"
-									})]
-								}), /* @__PURE__ */ jsxs("div", {
-									className: "mobile-menu-card__logo-text",
-									children: [/* @__PURE__ */ jsxs("div", {
-										className: "mobile-menu-card__logo-main",
-										children: [/* @__PURE__ */ jsx("span", {
-											className: "mobile-menu-card__logo-brand",
-											children: "JSR"
-										}), /* @__PURE__ */ jsx("span", {
-											className: "mobile-menu-card__logo-ev",
-											children: "EV"
-										})]
-									}), /* @__PURE__ */ jsxs("div", {
-										className: "mobile-menu-card__logo-sub",
-										children: [
-											/* @__PURE__ */ jsx("span", {
-												className: "mobile-menu-card__logo-line",
-												"aria-hidden": "true"
-											}),
-											/* @__PURE__ */ jsx("span", {
-												className: "mobile-menu-card__logo-tag",
-												children: "SPARE PARTS"
-											}),
-											/* @__PURE__ */ jsx("span", {
-												className: "mobile-menu-card__logo-line",
-												"aria-hidden": "true"
-											})
-										]
-									})]
-								})]
+								children: /* @__PURE__ */ jsx("img", {
+									src: "/jsr-logo.png",
+									alt: "JSR EV Spare Parts logo",
+									width: "140",
+									height: "46",
+									className: "mobile-side-drawer__logo-img"
+								})
 							}), /* @__PURE__ */ jsx("button", {
 								type: "button",
-								className: "mobile-menu-card__close-btn",
+								className: "mobile-side-drawer__close-btn",
 								"aria-label": "Close navigation menu",
 								onClick: () => setMobileOpen(false),
 								children: /* @__PURE__ */ jsxs("svg", {
@@ -430,8 +335,8 @@ function Navbar() {
 									height: "22",
 									viewBox: "0 0 24 24",
 									fill: "none",
-									stroke: "#1746CE",
-									strokeWidth: "2.5",
+									stroke: "currentColor",
+									strokeWidth: "2.4",
 									strokeLinecap: "round",
 									strokeLinejoin: "round",
 									"aria-hidden": "true",
@@ -450,53 +355,74 @@ function Navbar() {
 								})
 							})]
 						}),
-						/* @__PURE__ */ jsx("div", { className: "mobile-menu-card__divider" }),
+						/* @__PURE__ */ jsx("div", { className: "mobile-side-drawer__divider" }),
 						/* @__PURE__ */ jsx("ul", {
-							className: "mobile-menu-card__nav",
+							className: "mobile-side-drawer__nav",
 							role: "list",
-							children: mobileNavLinks.map((link) => {
+							children: navLinks.map((link) => {
 								const isActive = activeSection === link.id;
 								return /* @__PURE__ */ jsx("li", {
-									className: "mobile-menu-card__item",
+									className: "mobile-side-drawer__item",
 									children: /* @__PURE__ */ jsxs("a", {
 										href: link.href,
-										className: `mobile-menu-card__link${isActive ? " mobile-menu-card__link--active" : ""}`,
+										className: `mobile-side-drawer__link${isActive ? " mobile-side-drawer__link--active" : ""}`,
 										"aria-current": isActive ? "page" : void 0,
 										onClick: () => handleMobileNavClick(link.id),
 										children: [/* @__PURE__ */ jsx("span", {
-											className: "mobile-menu-card__icon",
+											className: "mobile-side-drawer__icon",
 											children: link.icon
 										}), /* @__PURE__ */ jsx("span", {
-											className: "mobile-menu-card__label",
+											className: "mobile-side-drawer__label",
 											children: link.label
 										})]
 									})
 								}, link.id);
 							})
 						}),
-						/* @__PURE__ */ jsx("div", {
-							className: "mobile-menu-card__actions",
-							children: /* @__PURE__ */ jsxs("a", {
-								href: "https://wa.me/919990120067?text=Hello%20JSR%20EV%20SPARE%20PARTS%2C%20I%20would%20like%20to%20enquire%20about%20spare%20parts%20or%20services.",
-								target: "_blank",
-								rel: "noopener noreferrer",
-								className: "mobile-menu-card__enquire-btn",
-								onClick: () => setMobileOpen(false),
-								"aria-label": "Enquire Now on WhatsApp (opens in a new tab)",
-								children: [/* @__PURE__ */ jsx("svg", {
-									width: "22",
-									height: "22",
-									viewBox: "0 0 24 24",
-									fill: "currentColor",
-									"aria-hidden": "true",
-									focusable: "false",
-									children: /* @__PURE__ */ jsx("path", { d: "M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" })
-								}), /* @__PURE__ */ jsx("span", { children: "Enquire Now" })]
-							})
+						/* @__PURE__ */ jsxs("div", {
+							className: "mobile-side-drawer__footer",
+							children: [
+								/* @__PURE__ */ jsxs("a", {
+									href: "https://wa.me/919990120067?text=Hello%20JSR%20EV%20SPARE%20PARTS%2C%20I%20would%20like%20to%20enquire%20about%20spare%20parts%20or%20services.",
+									target: "_blank",
+									rel: "noopener noreferrer",
+									className: "mobile-side-drawer__whatsapp-btn",
+									onClick: () => setMobileOpen(false),
+									"aria-label": "Chat on WhatsApp (opens in a new tab)",
+									children: [/* @__PURE__ */ jsx("svg", {
+										width: "20",
+										height: "20",
+										viewBox: "0 0 24 24",
+										fill: "currentColor",
+										"aria-hidden": "true",
+										focusable: "false",
+										children: /* @__PURE__ */ jsx("path", { d: "M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.531 5.845L0 24l6.335-1.51A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.374l-.36-.214-3.724.888.936-3.618-.235-.372A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182 17.43 2.182 21.818 6.57 21.818 12S17.43 21.818 12 21.818z" })
+									}), /* @__PURE__ */ jsx("span", { children: "WhatsApp Enquiry" })]
+								}),
+								/* @__PURE__ */ jsxs("a", {
+									href: "tel:+919990120067",
+									className: "mobile-side-drawer__call-btn",
+									onClick: () => setMobileOpen(false),
+									"aria-label": "Call shop at +91 9990120067",
+									children: [/* @__PURE__ */ jsx("svg", {
+										width: "18",
+										height: "18",
+										viewBox: "0 0 24 24",
+										fill: "currentColor",
+										"aria-hidden": "true",
+										focusable: "false",
+										children: /* @__PURE__ */ jsx("path", { d: "M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" })
+									}), /* @__PURE__ */ jsx("span", { children: "Call +91 9990120067" })]
+								}),
+								/* @__PURE__ */ jsx("p", {
+									className: "mobile-side-drawer__shop-info",
+									children: "Rohini Sector 18, Delhi • 8:00 AM – 8:00 PM"
+								})
+							]
 						})
 					]
 				})
-			})]
+			]
 		})
 	})] });
 }
@@ -746,6 +672,205 @@ function Hero() {
 	});
 }
 // src/Services.jsx
+var stockParts = [
+	{
+		id: "motor",
+		name: "Motor",
+		img: "/parts/motor.png",
+		width: 70,
+		height: 50,
+		alt: "Electric rickshaw motor"
+	},
+	{
+		id: "controller",
+		name: "Controller",
+		img: "/parts/controller.png",
+		width: 70,
+		height: 50,
+		alt: "E-rickshaw speed controller"
+	},
+	{
+		id: "battery-charger",
+		name: "Battery Charger",
+		img: "/parts/battery-charger.png",
+		width: 70,
+		height: 50,
+		alt: "E-rickshaw battery charger"
+	},
+	{
+		id: "differential",
+		name: "Differential",
+		img: "/parts/differential.png",
+		width: 70,
+		height: 50,
+		alt: "E-rickshaw rear axle differential gear"
+	},
+	{
+		id: "brake-shoes",
+		name: "Brake Shoes",
+		img: "/parts/brake-shoes.png",
+		width: 70,
+		height: 50,
+		alt: "E-rickshaw brake shoes"
+	},
+	{
+		id: "shocker",
+		name: "Shocker",
+		img: "/parts/shocker.png",
+		width: 70,
+		height: 50,
+		alt: "E-rickshaw suspension shocker"
+	},
+	{
+		id: "tyres",
+		name: "Tyres",
+		img: "/parts/tyres.png",
+		width: 70,
+		height: 50,
+		alt: "Electric rickshaw durable tyres"
+	},
+	{
+		id: "wiring-kit",
+		name: "Wiring Kit",
+		img: "/parts/wiring-kit.png",
+		width: 70,
+		height: 46,
+		alt: "E-rickshaw full wiring harness kit"
+	},
+	{
+		id: "dc-converter",
+		name: "DC Converter",
+		img: "/parts/dc-converter.png",
+		width: 70,
+		height: 46,
+		alt: "E-rickshaw DC to DC converter"
+	},
+	{
+		id: "headlight",
+		name: "Headlight",
+		img: "/parts/headlight.png",
+		width: 70,
+		height: 46,
+		alt: "E-rickshaw bright LED headlight"
+	},
+	{
+		id: "tail-light",
+		name: "Tail Light",
+		img: "/parts/tail-light.png",
+		width: 70,
+		height: 46,
+		alt: "E-rickshaw tail light lamp"
+	},
+	{
+		id: "accelerator",
+		name: "Accelerator",
+		img: "/parts/accelerator.png",
+		width: 70,
+		height: 46,
+		alt: "E-rickshaw accelerator pedal throttle"
+	},
+	{
+		id: "battery-packs",
+		name: "Battery Packs",
+		img: "/parts/battery-packs.png",
+		width: 70,
+		height: 46,
+		alt: "E-rickshaw heavy duty battery pack"
+	}
+];
+var trustFeatures = [
+	{
+		id: "genuine-parts",
+		title: "Genuine Parts",
+		sub: "100% Original & Reliable",
+		icon: /* @__PURE__ */ jsxs("svg", {
+			width: "22",
+			height: "22",
+			viewBox: "0 0 24 24",
+			fill: "none",
+			stroke: "currentColor",
+			strokeWidth: "2.2",
+			strokeLinecap: "round",
+			strokeLinejoin: "round",
+			"aria-hidden": "true",
+			focusable: "false",
+			children: [/* @__PURE__ */ jsx("path", { d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" }), /* @__PURE__ */ jsx("path", { d: "m9 12 2 2 4-4" })]
+		})
+	},
+	{
+		id: "repair-fitting",
+		title: "Repair & Fitting",
+		sub: "Expert Service Support",
+		icon: /* @__PURE__ */ jsx("svg", {
+			width: "22",
+			height: "22",
+			viewBox: "0 0 24 24",
+			fill: "none",
+			stroke: "currentColor",
+			strokeWidth: "2.2",
+			strokeLinecap: "round",
+			strokeLinejoin: "round",
+			"aria-hidden": "true",
+			focusable: "false",
+			children: /* @__PURE__ */ jsx("path", { d: "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" })
+		})
+	},
+	{
+		id: "fast-service",
+		title: "Fast Service",
+		sub: "Quick Turnaround Time",
+		icon: /* @__PURE__ */ jsxs("svg", {
+			width: "22",
+			height: "22",
+			viewBox: "0 0 24 24",
+			fill: "none",
+			stroke: "currentColor",
+			strokeWidth: "2.2",
+			strokeLinecap: "round",
+			strokeLinejoin: "round",
+			"aria-hidden": "true",
+			focusable: "false",
+			children: [
+				/* @__PURE__ */ jsx("rect", {
+					x: "1",
+					y: "3",
+					width: "15",
+					height: "13",
+					rx: "1"
+				}),
+				/* @__PURE__ */ jsx("polygon", { points: "16 8 20 8 23 11 23 16 16 16 16 8" }),
+				/* @__PURE__ */ jsx("circle", {
+					cx: "5.5",
+					cy: "18.5",
+					r: "2.5"
+				}),
+				/* @__PURE__ */ jsx("circle", {
+					cx: "18.5",
+					cy: "18.5",
+					r: "2.5"
+				})
+			]
+		})
+	},
+	{
+		id: "trusted-shop",
+		title: "Trusted Shop",
+		sub: "In Rohini, Delhi",
+		icon: /* @__PURE__ */ jsxs("svg", {
+			width: "22",
+			height: "22",
+			viewBox: "0 0 24 24",
+			fill: "none",
+			stroke: "currentColor",
+			strokeWidth: "2.2",
+			strokeLinecap: "round",
+			strokeLinejoin: "round",
+			"aria-hidden": "true",
+			focusable: "false",
+			children: [/* @__PURE__ */ jsx("path", { d: "M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" }), /* @__PURE__ */ jsx("polyline", { points: "9 22 9 12 15 12 15 22" })]
+		})
+	}
+];
 function Services() {
 	return /* @__PURE__ */ jsx("section", {
 		className: "services",
@@ -959,89 +1084,172 @@ function Services() {
 						})
 					]
 				}),
-				/* @__PURE__ */ jsxs("div", {
-					className: "services__tags-wrap reveal-up",
-					"aria-label": "Spare parts in stock",
-					children: [/* @__PURE__ */ jsx("p", {
-						className: "services__tags-title",
-						children: "Spare Parts We Stock"
-					}), /* @__PURE__ */ jsxs("ul", {
-						className: "services__tags-list",
-						children: [
-							/* @__PURE__ */ jsx("li", {
-								className: "services__tag-pill",
-								children: "Motor"
-							}),
-							/* @__PURE__ */ jsx("li", {
-								className: "services__tag-pill",
-								children: "Controller"
-							}),
-							/* @__PURE__ */ jsx("li", {
-								className: "services__tag-pill",
-								children: "Battery Charger"
-							}),
-							/* @__PURE__ */ jsx("li", {
-								className: "services__tag-pill",
-								children: "Differential"
-							}),
-							/* @__PURE__ */ jsx("li", {
-								className: "services__tag-pill",
-								children: "Brake Shoes"
-							}),
-							/* @__PURE__ */ jsx("li", {
-								className: "services__tag-pill",
-								children: "Shocker"
-							}),
-							/* @__PURE__ */ jsx("li", {
-								className: "services__tag-pill",
-								children: "Tyres"
-							}),
-							/* @__PURE__ */ jsx("li", {
-								className: "services__tag-pill",
-								children: "Wiring Kit"
-							}),
-							/* @__PURE__ */ jsx("li", {
-								className: "services__tag-pill",
-								children: "DC Converter"
-							}),
-							/* @__PURE__ */ jsx("li", {
-								className: "services__tag-pill",
-								children: "Headlight"
-							}),
-							/* @__PURE__ */ jsx("li", {
-								className: "services__tag-pill",
-								children: "Tail Light"
-							}),
-							/* @__PURE__ */ jsx("li", {
-								className: "services__tag-pill",
-								children: "Accelerator"
-							}),
-							/* @__PURE__ */ jsx("li", {
-								className: "services__tag-pill",
-								children: "Battery Packs"
+				/* @__PURE__ */ jsxs("section", {
+					className: "stock-parts reveal-up",
+					id: "spare-parts",
+					"aria-labelledby": "stock-parts-heading",
+					children: [
+						/* @__PURE__ */ jsxs("div", {
+							className: "stock-parts__brand-tag",
+							children: [
+								/* @__PURE__ */ jsx("span", {
+									className: "stock-parts__brand-line",
+									"aria-hidden": "true"
+								}),
+								/* @__PURE__ */ jsxs("div", {
+									className: "stock-parts__brand-badge",
+									children: [/* @__PURE__ */ jsx("span", {
+										className: "stock-parts__brand-name",
+										children: "JSR EV"
+									}), /* @__PURE__ */ jsx("span", {
+										className: "stock-parts__brand-sub",
+										children: "SPARE PARTS"
+									})]
+								}),
+								/* @__PURE__ */ jsx("span", {
+									className: "stock-parts__brand-line",
+									"aria-hidden": "true"
+								})
+							]
+						}),
+						/* @__PURE__ */ jsxs("h3", {
+							className: "stock-parts__heading",
+							id: "stock-parts-heading",
+							children: [
+								/* @__PURE__ */ jsx("span", {
+									className: "stock-parts__heading-main",
+									children: "Spare Parts"
+								}),
+								" ",
+								/* @__PURE__ */ jsxs("span", {
+									className: "stock-parts__heading-highlight",
+									children: ["We Stock", /* @__PURE__ */ jsx("svg", {
+										className: "stock-parts__swoosh",
+										viewBox: "0 0 140 16",
+										fill: "none",
+										"aria-hidden": "true",
+										focusable: "false",
+										children: /* @__PURE__ */ jsx("path", {
+											d: "M4 12C45 3 95 3 136 12",
+											stroke: "#63D817",
+											strokeWidth: "4",
+											strokeLinecap: "round"
+										})
+									})]
+								})
+							]
+						}),
+						/* @__PURE__ */ jsx("p", {
+							className: "stock-parts__subtitle",
+							children: "A complete range of genuine spare parts for e-rickshaws – repair, replacement and upgrade, all in one place."
+						}),
+						/* @__PURE__ */ jsxs("div", {
+							className: "stock-parts__showcase",
+							children: [/* @__PURE__ */ jsx("div", {
+								className: "stock-parts__cards-col",
+								children: /* @__PURE__ */ jsx("div", {
+									className: "stock-parts__grid",
+									role: "list",
+									"aria-label": "Spare parts in stock",
+									children: stockParts.map((part) => /* @__PURE__ */ jsxs("div", {
+										className: "stock-parts__card",
+										role: "listitem",
+										children: [
+											/* @__PURE__ */ jsx("div", {
+												className: "stock-parts__img-wrap",
+												children: /* @__PURE__ */ jsx("img", {
+													src: part.img,
+													alt: part.alt,
+													width: part.width,
+													height: part.height,
+													loading: "lazy",
+													className: "stock-parts__img"
+												})
+											}),
+											/* @__PURE__ */ jsx("span", {
+												className: "stock-parts__name",
+												children: part.name
+											}),
+											/* @__PURE__ */ jsx("span", {
+												className: "stock-parts__bar",
+												"aria-hidden": "true"
+											})
+										]
+									}, part.id))
+								})
+							}), /* @__PURE__ */ jsx("div", {
+								className: "stock-parts__vehicle-col",
+								children: /* @__PURE__ */ jsx("img", {
+									src: "/parts/blue-erickshaw.png",
+									alt: "Modern blue electric rickshaw for spare parts and fitting",
+									width: "275",
+									height: "225",
+									loading: "lazy",
+									className: "stock-parts__vehicle-img"
+								})
+							})]
+						}),
+						/* @__PURE__ */ jsx("div", {
+							className: "stock-parts__cta-wrap",
+							children: /* @__PURE__ */ jsxs("a", {
+								href: "#contact",
+								className: "stock-parts__cta-btn",
+								"aria-label": "Contact JSR EV for service",
+								children: [
+									/* @__PURE__ */ jsx("svg", {
+										className: "stock-parts__cta-icon-left",
+										width: "18",
+										height: "18",
+										viewBox: "0 0 24 24",
+										fill: "none",
+										stroke: "currentColor",
+										strokeWidth: "2.4",
+										strokeLinecap: "round",
+										strokeLinejoin: "round",
+										"aria-hidden": "true",
+										focusable: "false",
+										children: /* @__PURE__ */ jsx("path", { d: "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" })
+									}),
+									/* @__PURE__ */ jsx("span", { children: "Contact Us for Service" }),
+									/* @__PURE__ */ jsx("svg", {
+										className: "stock-parts__cta-icon-right",
+										width: "18",
+										height: "18",
+										viewBox: "0 0 24 24",
+										fill: "none",
+										stroke: "currentColor",
+										strokeWidth: "2.4",
+										strokeLinecap: "round",
+										strokeLinejoin: "round",
+										"aria-hidden": "true",
+										focusable: "false",
+										children: /* @__PURE__ */ jsx("path", { d: "M5 12h14M13 6l6 6-6 6" })
+									})
+								]
 							})
-						]
-					})]
-				}),
-				/* @__PURE__ */ jsx("div", {
-					className: "services__actions reveal-up",
-					children: /* @__PURE__ */ jsxs("a", {
-						className: "services__button",
-						href: "#contact",
-						children: ["Contact Us for Service", /* @__PURE__ */ jsx("svg", {
-							viewBox: "0 0 24 24",
-							fill: "none",
-							"aria-hidden": "true",
-							focusable: "false",
-							children: /* @__PURE__ */ jsx("path", {
-								d: "M5 12h14M13 6l6 6-6 6",
-								stroke: "currentColor",
-								strokeWidth: "2",
-								strokeLinecap: "round",
-								strokeLinejoin: "round"
-							})
-						})]
-					})
+						}),
+						/* @__PURE__ */ jsx("div", {
+							className: "stock-parts__trust-strip",
+							"aria-label": "Shop guarantees and service features",
+							children: trustFeatures.map((item) => /* @__PURE__ */ jsxs("div", {
+								className: "stock-parts__trust-item",
+								children: [/* @__PURE__ */ jsx("div", {
+									className: "stock-parts__trust-icon",
+									"aria-hidden": "true",
+									children: item.icon
+								}), /* @__PURE__ */ jsxs("div", {
+									className: "stock-parts__trust-text",
+									children: [/* @__PURE__ */ jsx("strong", {
+										className: "stock-parts__trust-title",
+										children: item.title
+									}), /* @__PURE__ */ jsx("span", {
+										className: "stock-parts__trust-sub",
+										children: item.sub
+									})]
+								})]
+							}, item.id))
+						})
+					]
 				})
 			]
 		})
@@ -1887,6 +2095,7 @@ function FAQ() {
 }
 // src/Contact.jsx
 function Contact() {
+	const mapsSearchUrl = "https://www.google.com/maps/search/?api=1&query=Sector+18+Rohini+Delhi+110089+Near+Data+Ram+Apartment";
 	return /* @__PURE__ */ jsx("section", {
 		className: "contact",
 		id: "contact",
@@ -2045,15 +2254,18 @@ function Contact() {
 										target: "_blank",
 										rel: "noopener noreferrer",
 										"aria-label": "Leave a Google review for JSR EV Spare Parts (opens in a new tab)",
-										children: [/* @__PURE__ */ jsx("svg", {
-											width: "18",
-											height: "18",
-											viewBox: "0 0 24 24",
-											fill: "currentColor",
+										children: [/* @__PURE__ */ jsx("span", {
+											className: "contact__review-stars",
 											"aria-hidden": "true",
-											focusable: "false",
-											children: /* @__PURE__ */ jsx("path", { d: "M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" })
-										}), "Leave a Google review"]
+											children: [...Array(5)].map((_, i) => /* @__PURE__ */ jsx("svg", {
+												width: "16",
+												height: "16",
+												viewBox: "0 0 24 24",
+												fill: "#f59e0b",
+												focusable: "false",
+												children: /* @__PURE__ */ jsx("path", { d: "M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" })
+											}, i))
+										}), /* @__PURE__ */ jsx("span", { children: "Leave a Google review" })]
 									})
 								]
 							})
@@ -2074,7 +2286,7 @@ function Contact() {
 						className: "contact__map-info",
 						children: [/* @__PURE__ */ jsx("p", { children: "Located in Sector 18 near Data Ram Apartment, Rohini. Call us for easy directions or parts fitting assistance." }), /* @__PURE__ */ jsxs("a", {
 							className: "contact__maps-link",
-							href: "https://www.google.com/maps/search/?api=1&query=Sector+18+Rohini+Delhi+110089+Near+Data+Ram+Apartment",
+							href: mapsSearchUrl,
 							target: "_blank",
 							rel: "noopener noreferrer",
 							"aria-label": "Open shop location in Google Maps (opens in a new tab)",
@@ -2104,82 +2316,25 @@ function Contact() {
 }
 // src/FloatingCTA.jsx
 function FloatingCTA() {
-	const whatsappUrl = "https://wa.me/919990120067?text=Hi%2C%20I%20need%20an%20e-rickshaw%20spare%20part";
-	const telUrl = "tel:+919990120067";
-	return /* @__PURE__ */ jsxs("aside", {
-		className: "floating-cta",
-		"aria-label": "Direct contact options",
-		children: [/* @__PURE__ */ jsxs("div", {
-			className: "floating-cta__mobile-bar",
-			children: [/* @__PURE__ */ jsxs("a", {
-				href: telUrl,
-				className: "floating-cta__mobile-btn floating-cta__mobile-btn--call",
-				"aria-label": "Call JSR EV SPARE PARTS at +91 9990120067",
-				children: [/* @__PURE__ */ jsx("svg", {
-					width: "18",
-					height: "18",
-					viewBox: "0 0 24 24",
-					fill: "currentColor",
-					"aria-hidden": "true",
-					focusable: "false",
-					children: /* @__PURE__ */ jsx("path", { d: "M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" })
-				}), /* @__PURE__ */ jsx("span", { children: "Call Shop" })]
-			}), /* @__PURE__ */ jsxs("a", {
-				href: whatsappUrl,
-				target: "_blank",
-				rel: "noopener noreferrer",
-				className: "floating-cta__mobile-btn floating-cta__mobile-btn--whatsapp floating-cta__pulse",
-				"aria-label": "Chat with JSR EV Spare Parts on WhatsApp (opens in a new tab)",
-				children: [/* @__PURE__ */ jsxs("svg", {
-					width: "20",
-					height: "20",
-					viewBox: "0 0 24 24",
-					fill: "currentColor",
-					"aria-hidden": "true",
-					focusable: "false",
-					children: [/* @__PURE__ */ jsx("path", { d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" }), /* @__PURE__ */ jsx("path", { d: "M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.531 5.845L0 24l6.335-1.51A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.374l-.36-.214-3.724.888.936-3.618-.235-.372A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182 17.43 2.182 21.818 6.57 21.818 12S17.43 21.818 12 21.818z" })]
-				}), /* @__PURE__ */ jsx("span", { children: "WhatsApp" })]
-			})]
-		}), /* @__PURE__ */ jsxs("div", {
-			className: "floating-cta__desktop-wrap",
-			children: [/* @__PURE__ */ jsxs("a", {
-				href: telUrl,
-				className: "floating-cta__desktop-btn floating-cta__desktop-btn--call",
-				"aria-label": "Call JSR EV Spare Parts at +91 9990120067",
-				title: "Call Shop: +91 9990120067",
-				children: [/* @__PURE__ */ jsx("svg", {
-					width: "20",
-					height: "20",
-					viewBox: "0 0 24 24",
-					fill: "currentColor",
-					"aria-hidden": "true",
-					focusable: "false",
-					children: /* @__PURE__ */ jsx("path", { d: "M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" })
-				}), /* @__PURE__ */ jsx("span", {
-					className: "floating-cta__label",
-					children: "Call Shop"
-				})]
-			}), /* @__PURE__ */ jsxs("a", {
-				href: whatsappUrl,
-				target: "_blank",
-				rel: "noopener noreferrer",
-				className: "floating-cta__desktop-btn floating-cta__desktop-btn--whatsapp floating-cta__pulse",
-				"aria-label": "Chat with JSR EV Spare Parts on WhatsApp (opens in a new tab)",
-				title: "WhatsApp Enquiry",
-				children: [/* @__PURE__ */ jsxs("svg", {
-					width: "22",
-					height: "22",
-					viewBox: "0 0 24 24",
-					fill: "currentColor",
-					"aria-hidden": "true",
-					focusable: "false",
-					children: [/* @__PURE__ */ jsx("path", { d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" }), /* @__PURE__ */ jsx("path", { d: "M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.531 5.845L0 24l6.335-1.51A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.374l-.36-.214-3.724.888.936-3.618-.235-.372A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182 17.43 2.182 21.818 6.57 21.818 12S17.43 21.818 12 21.818z" })]
-				}), /* @__PURE__ */ jsx("span", {
-					className: "floating-cta__label",
-					children: "WhatsApp"
-				})]
-			})]
-		})]
+	return /* @__PURE__ */ jsx("aside", {
+		"aria-label": "WhatsApp quick contact",
+		children: /* @__PURE__ */ jsx("a", {
+			href: "https://wa.me/919990120067?text=Hi%2C%20I%20need%20an%20e-rickshaw%20spare%20part",
+			target: "_blank",
+			rel: "noopener noreferrer",
+			className: "whatsapp-float",
+			"aria-label": "Chat with JSR EV Spare Parts on WhatsApp (opens in a new tab)",
+			title: "Chat on WhatsApp",
+			children: /* @__PURE__ */ jsxs("svg", {
+				width: "32",
+				height: "32",
+				viewBox: "0 0 24 24",
+				fill: "currentColor",
+				"aria-hidden": "true",
+				focusable: "false",
+				children: [/* @__PURE__ */ jsx("path", { d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" }), /* @__PURE__ */ jsx("path", { d: "M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.531 5.845L0 24l6.335-1.51A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.374l-.36-.214-3.724.888.936-3.618-.235-.372A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182 17.43 2.182 21.818 6.57 21.818 12S17.43 21.818 12 21.818z" })]
+			})
+		})
 	});
 }
 // src/BackToTop.jsx
@@ -2708,9 +2863,9 @@ function Footer() {
 					}),
 					/* @__PURE__ */ jsxs("div", {
 						className: "site-footer__col site-footer__col--social reveal-up",
-						children: [/* @__PURE__ */ jsx(FooterHeading, { title: "Follow Us" }), /* @__PURE__ */ jsxs("div", {
+						children: [/* @__PURE__ */ jsx(FooterHeading, { title: "Follow Us" }), /* @__PURE__ */ jsx("div", {
 							className: "site-footer__social-wrap",
-							children: [/* @__PURE__ */ jsx("div", {
+							children: /* @__PURE__ */ jsx("div", {
 								className: "site-footer__social-row",
 								children: socialLinks.map((item) => /* @__PURE__ */ jsx("a", {
 									href: item.href,
@@ -2720,14 +2875,7 @@ function Footer() {
 									rel: "noopener noreferrer",
 									children: item.icon
 								}, item.id))
-							}), /* @__PURE__ */ jsx("img", {
-								src: "/footer-mobile-rickshaw.png",
-								alt: "JSR electric rickshaw illustration",
-								className: "site-footer__social-rickshaw",
-								loading: "lazy",
-								width: "360",
-								height: "285"
-							})]
+							})
 						})]
 					})
 				]
