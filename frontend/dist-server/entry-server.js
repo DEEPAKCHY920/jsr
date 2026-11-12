@@ -2418,7 +2418,7 @@ var quickLinks = [
 var serviceHighlights = [
 	{
 		id: "erickshaw",
-		label: "E-Rickshaw Parts",
+		label: "E-Rickshaw\nParts",
 		icon: /* @__PURE__ */ jsxs("svg", {
 			width: "22",
 			height: "22",
@@ -2447,7 +2447,7 @@ var serviceHighlights = [
 	},
 	{
 		id: "scooter",
-		label: "Scooter Parts",
+		label: "Scooter\nParts",
 		icon: /* @__PURE__ */ jsxs("svg", {
 			width: "22",
 			height: "22",
@@ -2478,7 +2478,7 @@ var serviceHighlights = [
 	},
 	{
 		id: "repair",
-		label: "Repair & Fitting",
+		label: "Repair &\nFitting",
 		icon: /* @__PURE__ */ jsx("svg", {
 			width: "22",
 			height: "22",
@@ -2494,7 +2494,7 @@ var serviceHighlights = [
 	},
 	{
 		id: "wholesale",
-		label: "Wholesale & Retail",
+		label: "Wholesale\n& Retail",
 		icon: /* @__PURE__ */ jsxs("svg", {
 			width: "22",
 			height: "22",
@@ -2600,10 +2600,38 @@ var socialLinks = [
 		})
 	}
 ];
-function FooterHeading({ title }) {
+function FooterHeading({ title, isAccordion, isOpen, onToggle, panelId }) {
 	return /* @__PURE__ */ jsx("div", {
 		className: "site-footer__heading-group",
-		children: /* @__PURE__ */ jsxs("div", {
+		children: isAccordion ? /* @__PURE__ */ jsxs("button", {
+			type: "button",
+			className: "site-footer__heading-btn",
+			onClick: onToggle,
+			"aria-expanded": isOpen,
+			"aria-controls": panelId,
+			children: [/* @__PURE__ */ jsxs("div", {
+				className: "site-footer__heading-title-wrap",
+				children: [/* @__PURE__ */ jsx("h3", {
+					className: "site-footer__heading",
+					children: title
+				}), /* @__PURE__ */ jsx("span", {
+					className: "site-footer__heading-bar",
+					"aria-hidden": "true"
+				})]
+			}), /* @__PURE__ */ jsx("svg", {
+				className: `site-footer__chevron ${isOpen ? "site-footer__chevron--open" : ""}`,
+				width: "20",
+				height: "20",
+				viewBox: "0 0 24 24",
+				fill: "none",
+				stroke: "currentColor",
+				strokeWidth: "2.5",
+				strokeLinecap: "round",
+				strokeLinejoin: "round",
+				"aria-hidden": "true",
+				children: /* @__PURE__ */ jsx("polyline", { points: "6 9 12 15 18 9" })
+			})]
+		}) : /* @__PURE__ */ jsxs("div", {
 			className: "site-footer__heading-title-wrap",
 			children: [/* @__PURE__ */ jsx("h3", {
 				className: "site-footer__heading",
@@ -2616,6 +2644,16 @@ function FooterHeading({ title }) {
 	});
 }
 function Footer() {
+	const [openAccordions, setOpenAccordions] = useState({
+		links: false,
+		contact: true
+	});
+	const toggleAccordion = (key) => {
+		setOpenAccordions((prev) => ({
+			...prev,
+			[key]: !prev[key]
+		}));
+	};
 	return /* @__PURE__ */ jsxs("footer", {
 		className: "site-footer",
 		role: "contentinfo",
@@ -2623,6 +2661,97 @@ function Footer() {
 			/* @__PURE__ */ jsx("div", {
 				className: "site-footer__bg-vehicle",
 				"aria-hidden": "true"
+			}),
+			/* @__PURE__ */ jsxs("div", {
+				className: "site-footer__bg-typography",
+				"aria-hidden": "true",
+				children: [/* @__PURE__ */ jsxs("div", {
+					className: "site-footer__bg-text",
+					children: [/* @__PURE__ */ jsx("span", {
+						className: "site-footer__bg-text-desktop",
+						children: "JSR EV SPARE PARTS"
+					}), /* @__PURE__ */ jsxs("span", {
+						className: "site-footer__bg-text-mobile",
+						children: [/* @__PURE__ */ jsx("span", { children: "JSR EV" }), /* @__PURE__ */ jsx("span", { children: "SPARE PARTS" })]
+					})]
+				}), /* @__PURE__ */ jsxs("svg", {
+					className: "site-footer__bg-curves",
+					viewBox: "0 0 1440 280",
+					fill: "none",
+					preserveAspectRatio: "none",
+					"aria-hidden": "true",
+					children: [
+						/* @__PURE__ */ jsxs("defs", { children: [/* @__PURE__ */ jsxs("linearGradient", {
+							id: "footerSwooshLeft",
+							x1: "0%",
+							y1: "100%",
+							x2: "100%",
+							y2: "0%",
+							children: [
+								/* @__PURE__ */ jsx("stop", {
+									offset: "0%",
+									stopColor: "#39D000",
+									stopOpacity: "0"
+								}),
+								/* @__PURE__ */ jsx("stop", {
+									offset: "35%",
+									stopColor: "#39D000",
+									stopOpacity: "0.9"
+								}),
+								/* @__PURE__ */ jsx("stop", {
+									offset: "85%",
+									stopColor: "#39D000",
+									stopOpacity: "0.45"
+								}),
+								/* @__PURE__ */ jsx("stop", {
+									offset: "100%",
+									stopColor: "#39D000",
+									stopOpacity: "0"
+								})
+							]
+						}), /* @__PURE__ */ jsxs("linearGradient", {
+							id: "footerSwooshRight",
+							x1: "0%",
+							y1: "0%",
+							x2: "100%",
+							y2: "100%",
+							children: [
+								/* @__PURE__ */ jsx("stop", {
+									offset: "0%",
+									stopColor: "#39D000",
+									stopOpacity: "0"
+								}),
+								/* @__PURE__ */ jsx("stop", {
+									offset: "45%",
+									stopColor: "#39D000",
+									stopOpacity: "0.9"
+								}),
+								/* @__PURE__ */ jsx("stop", {
+									offset: "90%",
+									stopColor: "#39D000",
+									stopOpacity: "0.35"
+								}),
+								/* @__PURE__ */ jsx("stop", {
+									offset: "100%",
+									stopColor: "#39D000",
+									stopOpacity: "0"
+								})
+							]
+						})] }),
+						/* @__PURE__ */ jsx("path", {
+							d: "M -40 220 C 140 185, 310 245, 520 180",
+							stroke: "url(#footerSwooshLeft)",
+							strokeWidth: "3.5",
+							strokeLinecap: "round"
+						}),
+						/* @__PURE__ */ jsx("path", {
+							d: "M 920 115 C 1110 65, 1280 155, 1480 120",
+							stroke: "url(#footerSwooshRight)",
+							strokeWidth: "3.5",
+							strokeLinecap: "round"
+						})
+					]
+				})]
 			}),
 			/* @__PURE__ */ jsx("div", {
 				className: "site-footer__overlay",
@@ -2659,209 +2788,234 @@ function Footer() {
 									children: "Spare parts, repair and fitting services for e-rickshaws and electric scooters in Sector 18, Rohini, Delhi."
 								}),
 								/* @__PURE__ */ jsx("div", {
-									className: "site-footer__highlights",
+									className: "site-footer__services-grid",
 									role: "list",
-									children: serviceHighlights.map((item) => /* @__PURE__ */ jsxs("div", {
-										className: "site-footer__highlight-item",
+									"aria-label": "Our core offerings",
+									children: serviceHighlights.map((service) => /* @__PURE__ */ jsxs("div", {
+										className: "site-footer__service-card",
 										role: "listitem",
-										children: [/* @__PURE__ */ jsx("span", {
-											className: "site-footer__highlight-icon",
-											children: item.icon
+										children: [/* @__PURE__ */ jsx("div", {
+											className: "site-footer__service-icon",
+											"aria-hidden": "true",
+											children: service.icon
 										}), /* @__PURE__ */ jsx("span", {
-											className: "site-footer__highlight-label",
-											children: item.label
+											className: "site-footer__service-label",
+											children: service.label.split("\n").map((line, i) => /* @__PURE__ */ jsx("span", {
+												className: "site-footer__service-line",
+												children: line
+											}, i))
 										})]
-									}, item.id))
+									}, service.id))
 								})
 							]
 						}),
-						/* @__PURE__ */ jsx("div", {
-							className: "site-footer__divider-col",
-							"aria-hidden": "true"
-						}),
 						/* @__PURE__ */ jsxs("div", {
-							className: "site-footer__col site-footer__col--links reveal-up",
-							children: [/* @__PURE__ */ jsx(FooterHeading, { title: "Quick Links" }), /* @__PURE__ */ jsx("nav", {
-								className: "site-footer__nav",
-								"aria-label": "Quick Links",
-								children: /* @__PURE__ */ jsx("ul", {
-									className: "site-footer__links",
-									role: "list",
-									children: quickLinks.map((link) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsxs("a", {
-										href: link.href,
-										className: "site-footer__link",
-										children: [/* @__PURE__ */ jsx("svg", {
-											className: "site-footer__link-arrow",
-											width: "14",
-											height: "14",
-											viewBox: "0 0 24 24",
-											fill: "none",
-											stroke: "currentColor",
-											strokeWidth: "2.5",
-											strokeLinecap: "round",
-											strokeLinejoin: "round",
-											"aria-hidden": "true",
-											children: /* @__PURE__ */ jsx("polyline", { points: "9 18 15 12 9 6" })
-										}), /* @__PURE__ */ jsx("span", { children: link.label })]
-									}) }, link.id))
+							className: "site-footer__accordion-card",
+							children: [
+								/* @__PURE__ */ jsxs("div", {
+									className: "site-footer__col site-footer__col--links site-footer__accordion-section reveal-up",
+									children: [/* @__PURE__ */ jsx(FooterHeading, {
+										title: "Quick Links",
+										isAccordion: true,
+										isOpen: openAccordions.links,
+										onToggle: () => toggleAccordion("links"),
+										panelId: "footer-panel-links"
+									}), /* @__PURE__ */ jsx("div", {
+										id: "footer-panel-links",
+										className: `site-footer__accordion-content ${openAccordions.links ? "site-footer__accordion-content--open" : ""}`,
+										children: /* @__PURE__ */ jsx("nav", {
+											className: "site-footer__links-nav",
+											"aria-label": "Quick Links",
+											children: /* @__PURE__ */ jsx("ul", {
+												className: "site-footer__links-list",
+												children: quickLinks.map((link) => /* @__PURE__ */ jsx("li", {
+													className: "site-footer__link-item",
+													children: /* @__PURE__ */ jsxs("a", {
+														href: link.href,
+														className: "site-footer__link",
+														children: [/* @__PURE__ */ jsx("span", {
+															className: "site-footer__link-arrow",
+															"aria-hidden": "true",
+															children: "›"
+														}), /* @__PURE__ */ jsx("span", {
+															className: "site-footer__link-text",
+															children: link.label
+														})]
+													})
+												}, link.id))
+											})
+										})
+									})]
+								}),
+								/* @__PURE__ */ jsx("div", {
+									className: "site-footer__accordion-divider",
+									"aria-hidden": "true"
+								}),
+								/* @__PURE__ */ jsxs("div", {
+									className: "site-footer__col site-footer__col--contact site-footer__accordion-section reveal-up",
+									children: [/* @__PURE__ */ jsx(FooterHeading, {
+										title: "Contact & Timings",
+										isAccordion: true,
+										isOpen: openAccordions.contact,
+										onToggle: () => toggleAccordion("contact"),
+										panelId: "footer-panel-contact"
+									}), /* @__PURE__ */ jsx("div", {
+										id: "footer-panel-contact",
+										className: `site-footer__accordion-content ${openAccordions.contact ? "site-footer__accordion-content--open" : ""}`,
+										children: /* @__PURE__ */ jsxs("address", {
+											className: "site-footer__contact-info",
+											children: [
+												/* @__PURE__ */ jsxs("div", {
+													className: "site-footer__contact-row",
+													children: [/* @__PURE__ */ jsx("span", {
+														className: "site-footer__icon-badge site-footer__icon-badge--blue",
+														"aria-hidden": "true",
+														children: /* @__PURE__ */ jsx("svg", {
+															width: "15",
+															height: "15",
+															viewBox: "0 0 24 24",
+															fill: "none",
+															stroke: "currentColor",
+															strokeWidth: "2.2",
+															strokeLinecap: "round",
+															strokeLinejoin: "round",
+															children: /* @__PURE__ */ jsx("path", { d: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" })
+														})
+													}), /* @__PURE__ */ jsx("a", {
+														href: "tel:+919990120067",
+														className: "site-footer__contact-link site-footer__contact-link--tel",
+														children: "Call: +91 9990120067"
+													})]
+												}),
+												/* @__PURE__ */ jsxs("div", {
+													className: "site-footer__contact-row",
+													children: [/* @__PURE__ */ jsx("span", {
+														className: "site-footer__icon-badge site-footer__icon-badge--green",
+														"aria-hidden": "true",
+														children: /* @__PURE__ */ jsxs("svg", {
+															width: "15",
+															height: "15",
+															viewBox: "0 0 24 24",
+															fill: "currentColor",
+															children: [/* @__PURE__ */ jsx("path", { d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" }), /* @__PURE__ */ jsx("path", { d: "M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.531 5.845L0 24l6.335-1.51A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.374l-.36-.214-3.724.888.936-3.618-.235-.372A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182 17.43 2.182 21.818 6.57 21.818 12S17.43 21.818 12 21.818z" })]
+														})
+													}), /* @__PURE__ */ jsx("a", {
+														href: "https://wa.me/919990120067?text=Hi%2C%20I%20need%20an%20e-rickshaw%20spare%20part",
+														target: "_blank",
+														rel: "noopener noreferrer",
+														className: "site-footer__contact-link site-footer__contact-link--whatsapp",
+														"aria-label": "Chat with JSR EV Spare Parts on WhatsApp",
+														children: "WhatsApp: +91 9990120067"
+													})]
+												}),
+												/* @__PURE__ */ jsxs("div", {
+													className: "site-footer__contact-row",
+													children: [/* @__PURE__ */ jsx("span", {
+														className: "site-footer__icon-badge site-footer__icon-badge--blue",
+														"aria-hidden": "true",
+														children: /* @__PURE__ */ jsxs("svg", {
+															width: "15",
+															height: "15",
+															viewBox: "0 0 24 24",
+															fill: "none",
+															stroke: "currentColor",
+															strokeWidth: "2.2",
+															strokeLinecap: "round",
+															strokeLinejoin: "round",
+															children: [/* @__PURE__ */ jsx("rect", {
+																width: "20",
+																height: "16",
+																x: "2",
+																y: "4",
+																rx: "2"
+															}), /* @__PURE__ */ jsx("path", { d: "m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" })]
+														})
+													}), /* @__PURE__ */ jsx("a", {
+														href: "mailto:admin@jsrevtech.in",
+														className: "site-footer__contact-link site-footer__contact-link--email",
+														children: "admin@jsrevtech.in"
+													})]
+												}),
+												/* @__PURE__ */ jsxs("div", {
+													className: "site-footer__contact-row",
+													children: [/* @__PURE__ */ jsx("span", {
+														className: "site-footer__icon-badge site-footer__icon-badge--blue",
+														"aria-hidden": "true",
+														children: /* @__PURE__ */ jsxs("svg", {
+															width: "15",
+															height: "15",
+															viewBox: "0 0 24 24",
+															fill: "none",
+															stroke: "currentColor",
+															strokeWidth: "2.2",
+															strokeLinecap: "round",
+															strokeLinejoin: "round",
+															children: [/* @__PURE__ */ jsx("path", { d: "M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" }), /* @__PURE__ */ jsx("circle", {
+																cx: "12",
+																cy: "10",
+																r: "3"
+															})]
+														})
+													}), /* @__PURE__ */ jsxs("a", {
+														href: "https://maps.google.com/?q=Sector+18+Rohini+Delhi",
+														target: "_blank",
+														rel: "noopener noreferrer",
+														className: "site-footer__contact-text site-footer__contact-link",
+														"aria-label": "Open JSR EV Spare Parts address in Google Maps",
+														children: [
+															"Sector 18, Near Data Ram Apartment",
+															/* @__PURE__ */ jsx("br", {}),
+															/* @__PURE__ */ jsx("span", {
+																className: "site-footer__text-muted",
+																children: "Rohini, Delhi – 110089"
+															})
+														]
+													})]
+												}),
+												/* @__PURE__ */ jsxs("div", {
+													className: "site-footer__contact-row",
+													children: [/* @__PURE__ */ jsx("span", {
+														className: "site-footer__icon-badge site-footer__icon-badge--blue",
+														"aria-hidden": "true",
+														children: /* @__PURE__ */ jsxs("svg", {
+															width: "15",
+															height: "15",
+															viewBox: "0 0 24 24",
+															fill: "none",
+															stroke: "currentColor",
+															strokeWidth: "2.2",
+															strokeLinecap: "round",
+															strokeLinejoin: "round",
+															children: [/* @__PURE__ */ jsx("circle", {
+																cx: "12",
+																cy: "12",
+																r: "10"
+															}), /* @__PURE__ */ jsx("polyline", { points: "12 6 12 12 16 14" })]
+														})
+													}), /* @__PURE__ */ jsxs("div", {
+														className: "site-footer__contact-text",
+														children: [
+															/* @__PURE__ */ jsx("span", { children: "8:00 AM – 8:00 PM" }),
+															/* @__PURE__ */ jsx("br", {}),
+															/* @__PURE__ */ jsx("span", {
+																className: "site-footer__text-accent",
+																children: "Open every day"
+															})
+														]
+													})]
+												})
+											]
+										})
+									})]
 								})
-							})]
-						}),
-						/* @__PURE__ */ jsx("div", {
-							className: "site-footer__divider-col",
-							"aria-hidden": "true"
+							]
 						}),
 						/* @__PURE__ */ jsxs("div", {
-							className: "site-footer__col site-footer__col--contact reveal-up",
-							children: [/* @__PURE__ */ jsx(FooterHeading, { title: "Contact & Timings" }), /* @__PURE__ */ jsxs("address", {
-								className: "site-footer__contact-list",
-								children: [
-									/* @__PURE__ */ jsxs("div", {
-										className: "site-footer__contact-row",
-										children: [/* @__PURE__ */ jsx("span", {
-											className: "site-footer__icon-badge site-footer__icon-badge--blue",
-											"aria-hidden": "true",
-											children: /* @__PURE__ */ jsx("svg", {
-												width: "15",
-												height: "15",
-												viewBox: "0 0 24 24",
-												fill: "currentColor",
-												children: /* @__PURE__ */ jsx("path", { d: "M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" })
-											})
-										}), /* @__PURE__ */ jsx("a", {
-											href: "tel:+919990120067",
-											className: "site-footer__contact-link",
-											"aria-label": "Call +91 9990120067",
-											children: "Call: +91 9990120067"
-										})]
-									}),
-									/* @__PURE__ */ jsxs("div", {
-										className: "site-footer__contact-row",
-										children: [/* @__PURE__ */ jsx("span", {
-											className: "site-footer__icon-badge site-footer__icon-badge--green",
-											"aria-hidden": "true",
-											children: /* @__PURE__ */ jsxs("svg", {
-												width: "15",
-												height: "15",
-												viewBox: "0 0 24 24",
-												fill: "currentColor",
-												children: [/* @__PURE__ */ jsx("path", { d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" }), /* @__PURE__ */ jsx("path", { d: "M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.531 5.845L0 24l6.335-1.51A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.374l-.36-.214-3.724.888.936-3.618-.235-.372A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182 17.43 2.182 21.818 6.57 21.818 12S17.43 21.818 12 21.818z" })]
-											})
-										}), /* @__PURE__ */ jsx("a", {
-											href: "https://wa.me/919990120067?text=Hi%2C%20I%20need%20an%20e-rickshaw%20spare%20part",
-											target: "_blank",
-											rel: "noopener noreferrer",
-											className: "site-footer__contact-link",
-											"aria-label": "WhatsApp JSR EV Spare Parts at +91 9990120067",
-											children: "WhatsApp: +91 9990120067"
-										})]
-									}),
-									/* @__PURE__ */ jsxs("div", {
-										className: "site-footer__contact-row",
-										children: [/* @__PURE__ */ jsx("span", {
-											className: "site-footer__icon-badge site-footer__icon-badge--blue",
-											"aria-hidden": "true",
-											children: /* @__PURE__ */ jsxs("svg", {
-												width: "15",
-												height: "15",
-												viewBox: "0 0 24 24",
-												fill: "none",
-												stroke: "currentColor",
-												strokeWidth: "2.2",
-												strokeLinecap: "round",
-												strokeLinejoin: "round",
-												children: [/* @__PURE__ */ jsx("rect", {
-													width: "20",
-													height: "16",
-													x: "2",
-													y: "4",
-													rx: "2"
-												}), /* @__PURE__ */ jsx("path", { d: "m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" })]
-											})
-										}), /* @__PURE__ */ jsx("a", {
-											href: "mailto:admin@jsrevtech.in",
-											className: "site-footer__contact-link site-footer__contact-link--email",
-											children: "admin@jsrevtech.in"
-										})]
-									}),
-									/* @__PURE__ */ jsxs("div", {
-										className: "site-footer__contact-row",
-										children: [/* @__PURE__ */ jsx("span", {
-											className: "site-footer__icon-badge site-footer__icon-badge--blue",
-											"aria-hidden": "true",
-											children: /* @__PURE__ */ jsxs("svg", {
-												width: "15",
-												height: "15",
-												viewBox: "0 0 24 24",
-												fill: "none",
-												stroke: "currentColor",
-												strokeWidth: "2.2",
-												strokeLinecap: "round",
-												strokeLinejoin: "round",
-												children: [/* @__PURE__ */ jsx("path", { d: "M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" }), /* @__PURE__ */ jsx("circle", {
-													cx: "12",
-													cy: "10",
-													r: "3"
-												})]
-											})
-										}), /* @__PURE__ */ jsxs("a", {
-											href: "https://maps.google.com/?q=Sector+18+Rohini+Delhi",
-											target: "_blank",
-											rel: "noopener noreferrer",
-											className: "site-footer__contact-text site-footer__contact-link",
-											"aria-label": "Open JSR EV Spare Parts address in Google Maps",
-											children: [
-												"Sector 18, Near Data Ram Apartment",
-												/* @__PURE__ */ jsx("br", {}),
-												/* @__PURE__ */ jsx("span", {
-													className: "site-footer__text-muted",
-													children: "Rohini, Delhi – 110089"
-												})
-											]
-										})]
-									}),
-									/* @__PURE__ */ jsxs("div", {
-										className: "site-footer__contact-row",
-										children: [/* @__PURE__ */ jsx("span", {
-											className: "site-footer__icon-badge site-footer__icon-badge--blue",
-											"aria-hidden": "true",
-											children: /* @__PURE__ */ jsxs("svg", {
-												width: "15",
-												height: "15",
-												viewBox: "0 0 24 24",
-												fill: "none",
-												stroke: "currentColor",
-												strokeWidth: "2.2",
-												strokeLinecap: "round",
-												strokeLinejoin: "round",
-												children: [/* @__PURE__ */ jsx("circle", {
-													cx: "12",
-													cy: "12",
-													r: "10"
-												}), /* @__PURE__ */ jsx("polyline", { points: "12 6 12 12 16 14" })]
-											})
-										}), /* @__PURE__ */ jsxs("div", {
-											className: "site-footer__contact-text",
-											children: [
-												/* @__PURE__ */ jsx("span", { children: "8:00 AM – 8:00 PM" }),
-												/* @__PURE__ */ jsx("br", {}),
-												/* @__PURE__ */ jsx("span", {
-													className: "site-footer__text-accent",
-													children: "Open every day"
-												})
-											]
-										})]
-									})
-								]
-							})]
-						}),
-						/* @__PURE__ */ jsx("div", {
-							className: "site-footer__divider-col",
-							"aria-hidden": "true"
-						}),
-						/* @__PURE__ */ jsxs("div", {
-							className: "site-footer__col site-footer__col--social reveal-up",
-							children: [/* @__PURE__ */ jsx(FooterHeading, { title: "Follow Us" }), /* @__PURE__ */ jsx("nav", {
+							className: "site-footer__col site-footer__col--social site-footer__social-card reveal-up",
+							children: [/* @__PURE__ */ jsx(FooterHeading, {
+								title: "Follow Us",
+								isAccordion: false
+							}), /* @__PURE__ */ jsx("nav", {
 								className: "site-footer__social-wrap",
 								"aria-label": "Follow Us",
 								children: /* @__PURE__ */ jsx("div", {
