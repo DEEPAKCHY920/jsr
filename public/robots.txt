@@ -19,4 +19,4 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
-Sitemap: https://jsrevtech.in/sitemap.xml
+Sitemap: https://rohini.jsrevtech.in/sitemap.xml
