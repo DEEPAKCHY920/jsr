@@ -76,29 +76,42 @@ for (const route of routes) {
         "/refund": "Refund Policy"
       };
       const subpageName = pageNames[route.path] || "Page";
-      const subpageBreadcrumbJson = JSON.stringify({
-        "@type": "BreadcrumbList",
-        "@id": `${productionUrl}${route.path}#breadcrumb`,
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": `${productionUrl}/`
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": subpageName,
-            "item": `${productionUrl}${route.path}`
+      
+      pageHtml = pageHtml.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/, (match, jsonContent) => {
+        try {
+          const schema = JSON.parse(jsonContent);
+          if (schema['@graph'] && Array.isArray(schema['@graph'])) {
+            const breadcrumbIndex = schema['@graph'].findIndex(item => item['@type'] === 'BreadcrumbList');
+            const newBreadcrumbs = {
+              "@type": "BreadcrumbList",
+              "@id": `${productionUrl}${route.path}#breadcrumb`,
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": `${productionUrl}/`
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": subpageName,
+                  "item": `${productionUrl}${route.path}`
+                }
+              ]
+            };
+            if (breadcrumbIndex !== -1) {
+              schema['@graph'][breadcrumbIndex] = newBreadcrumbs;
+            } else {
+              schema['@graph'].push(newBreadcrumbs);
+            }
+            return `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n  </script>`;
           }
-        ]
-      }, null, 8);
-
-      pageHtml = pageHtml.replace(
-        /\{\s*"@type":\s*"BreadcrumbList"[\s\S]*?\}\s*,\s*\{\s*"@type":\s*"ItemList"/,
-        `${subpageBreadcrumbJson},\n        {\n          "@type": "ItemList"`
-      );
+        } catch (err) {
+          console.error("Error updating subpage breadcrumbs JSON-LD:", err);
+        }
+        return match;
+      });
     }
   }
 
