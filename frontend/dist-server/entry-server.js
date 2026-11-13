@@ -4936,7 +4936,7 @@ function App({ url }) {
 			"/404": "404 – Page Not Found | JSR EV SPARE PARTS"
 		};
 		const descriptions = {
-			"/": "Looking for genuine e-rickshaw spare parts in Rohini, Delhi? Visit JSR EV SPARE PARTS for motors, controllers, brakes, batteries and accessories. Call 9990120067.",
+			"/": "Buy e-rickshaw spare parts in Rohini, Delhi at JSR EV SPARE PARTS. Motors, controllers, batteries and repair services. Call 9990120067.",
 			"/privacy": "Privacy policy for JSR EV Spare Parts in Sector 18, Rohini, Delhi. Explains how customer enquiries, orders, and contact details are handled securely.",
 			"/terms": "Terms and conditions of sale, component compatibility checks, and in-shop repair services for JSR EV Spare Parts in Rohini, Delhi.",
 			"/refund": "Return, exchange, and refund guidelines for electrical and mechanical e-rickshaw spare parts at JSR EV Spare Parts in Rohini, Delhi.",

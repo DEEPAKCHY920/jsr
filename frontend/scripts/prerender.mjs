@@ -30,7 +30,7 @@ const routes = [
     path: "/",
     outFile: indexPath,
     title: "E-Rickshaw Spare Parts in Rohini, Delhi | JSR EV SPARE PARTS",
-    description: "Looking for genuine e-rickshaw spare parts in Rohini, Delhi? Visit JSR EV SPARE PARTS for motors, controllers, brakes, batteries and accessories. Call 9990120067."
+    description: "Buy e-rickshaw spare parts in Rohini, Delhi at JSR EV SPARE PARTS. Motors, controllers, batteries and repair services. Call 9990120067."
   },
   ...productRoutes,
   {
