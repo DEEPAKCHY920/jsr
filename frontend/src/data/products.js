@@ -355,3 +355,4 @@ export const productsData = [
 export function getProductBySlug(slug) {
   return productsData.find((p) => p.slug === slug);
 }
+
