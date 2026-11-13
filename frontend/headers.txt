@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+Age: 495
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline; filename="sitemap.xml"
+Content-Length: 507
+Content-Type: application/xml; charset=utf-8
+Date: Fri, 13 Nov 2026 13:32:34 GMT
+Etag: "6f39802b5ac15dfa45b4c15f8a6df5e8"
+Last-Modified: Fri, 13 Nov 2026 13:24:19 GMT
+Server: Vercel
+Strict-Transport-Security: max-age=63072000
+X-Robots-Tag: all
+X-Vercel-Cache: HIT
+X-Vercel-Id: bom1::5kph8-1794576754714-508958416df4
+
