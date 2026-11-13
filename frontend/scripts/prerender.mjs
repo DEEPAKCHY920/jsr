@@ -264,4 +264,10 @@ await writeFile(path.join(projectRoot, "public", "robots.txt"), robotsTxt);
 await writeFile(path.join(projectRoot, "..", "public", "robots.txt"), robotsTxt).catch(() => {});
 await writeFile(path.join(projectRoot, "..", "public", "sitemap.xml"), sitemapXml).catch(() => {});
 
+const llmsContent = await readFile(path.join(projectRoot, "public", "llms.txt"), "utf8").catch(() => null);
+if (llmsContent) {
+  await writeFile(path.join(distDirectory, "llms.txt"), llmsContent);
+  await writeFile(path.join(projectRoot, "..", "public", "llms.txt"), llmsContent).catch(() => {});
+}
+
 console.log("Prerender complete. Routes rendered:", routes.map(r => r.path).join(", "));

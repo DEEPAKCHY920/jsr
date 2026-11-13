@@ -201,7 +201,8 @@ function Navbar() {
 								alt: "JSR EV Spare Parts logo",
 								className: "logo__img",
 								width: "180",
-								height: "60"
+								height: "60",
+								decoding: "async"
 							})
 						}),
 						/* @__PURE__ */ jsx("ul", {
@@ -323,6 +324,7 @@ function Navbar() {
 									alt: "JSR EV Spare Parts logo",
 									width: "140",
 									height: "46",
+									decoding: "async",
 									className: "mobile-side-drawer__logo-img"
 								})
 							}), /* @__PURE__ */ jsx("button", {

@@ -34,6 +34,17 @@ export default defineConfig({
             return res.end(robotsContent);
           }
         }
+        if (cleanUrl === "/llms.txt") {
+          const llmsPath = path.resolve(__dirname, "public/llms.txt");
+          if (fs.existsSync(llmsPath)) {
+            const llmsContent = fs.readFileSync(llmsPath, "utf8").trim();
+            res.setHeader("Content-Type", "text/plain; charset=utf-8");
+            res.setHeader("X-Content-Type-Options", "nosniff");
+            res.setHeader("Cache-Control", "no-cache");
+            res.statusCode = 200;
+            return res.end(llmsContent);
+          }
+        }
         next();
       });
     }

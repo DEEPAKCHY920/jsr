@@ -182,6 +182,7 @@ export default function Navbar() {
               className="logo__img"
               width="180"
               height="60"
+              decoding="async"
             />
           </a>
 
@@ -268,6 +269,7 @@ export default function Navbar() {
                 alt="JSR EV Spare Parts logo"
                 width="140"
                 height="46"
+                decoding="async"
                 className="mobile-side-drawer__logo-img"
               />
             </a>
