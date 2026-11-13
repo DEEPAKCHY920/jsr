@@ -15,6 +15,8 @@ import NotFound from "./NotFound.jsx";
 import PrivacyPolicy from "./PrivacyPolicy.jsx";
 import Terms from "./Terms.jsx";
 import RefundPolicy from "./RefundPolicy.jsx";
+import ProductCategory from "./ProductCategory.jsx";
+import { getProductBySlug } from "./data/products.js";
 import { useScrollReveal } from "./useScrollReveal.js";
 
 /** Resolves current pathname cleanly. */
@@ -47,12 +49,25 @@ export default function App({ url }) {
     };
 
     const descriptions = {
-      "/": "Looking for genuine e-rickshaw spare parts in Rohini, Delhi? JSR EV SPARE PARTS supplies BLDC motors, speed controllers, battery chargers, brake shoes, wiring kits & repair services in Sector 18.",
+      "/": "Looking for genuine e-rickshaw spare parts in Rohini, Delhi? Visit JSR EV SPARE PARTS for motors, controllers, brakes, batteries and accessories. Call 9990120067.",
       "/privacy": "Privacy policy for JSR EV Spare Parts in Sector 18, Rohini, Delhi. Explains how customer enquiries, orders, and contact details are handled securely.",
       "/terms": "Terms and conditions of sale, component compatibility checks, and in-shop repair services for JSR EV Spare Parts in Rohini, Delhi.",
       "/refund": "Return, exchange, and refund guidelines for electrical and mechanical e-rickshaw spare parts at JSR EV Spare Parts in Rohini, Delhi.",
       "/404": "The page you are looking for does not exist. Browse genuine e-rickshaw spare parts and repair services at JSR EV Spare Parts in Rohini, Delhi."
     };
+
+    const isProd = currentPath.startsWith("/products/");
+    const slug = isProd ? currentPath.replace("/products/", "").replace(/\.html$/, "") : null;
+    const prod = slug ? getProductBySlug(slug) : null;
+
+    if (prod) {
+      document.title = prod.title;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.setAttribute("content", prod.description);
+      }
+      return;
+    }
 
     const cleanPath = currentPath === "/index.html" ? "/" : currentPath.replace(/\.html$/, "");
     if (titles[cleanPath]) {
@@ -69,6 +84,9 @@ export default function App({ url }) {
   const isPrivacy = currentPath === "/privacy" || currentPath === "/privacy.html";
   const isTerms = currentPath === "/terms" || currentPath === "/terms.html";
   const isRefund = currentPath === "/refund" || currentPath === "/refund.html";
+  const isProductRoute = currentPath.startsWith("/products/");
+  const productSlug = isProductRoute ? currentPath.replace("/products/", "").replace(/\.html$/, "") : null;
+  const product = productSlug ? getProductBySlug(productSlug) : null;
 
   let mainContent;
   if (isHome) {
@@ -90,6 +108,8 @@ export default function App({ url }) {
     mainContent = <Terms />;
   } else if (isRefund) {
     mainContent = <RefundPolicy />;
+  } else if (isProductRoute && product) {
+    mainContent = <ProductCategory product={product} />;
   } else {
     mainContent = <NotFound />;
   }

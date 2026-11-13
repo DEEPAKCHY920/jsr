@@ -2,6 +2,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { render } from "../dist-server/entry-server.js";
+import { productsData } from "../src/data/products.js";
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const distDirectory = path.join(projectRoot, "dist");
@@ -14,13 +15,24 @@ const productionUrl = config.productionUrl.trim().replace(/\/$/, "");
 const socialImagePath = config.socialImagePath.trim();
 const baseHtml = await readFile(indexPath, "utf8");
 
+const productRoutes = productsData.map((p) => ({
+  path: `/products/${p.slug}`,
+  outDir: path.join(distDirectory, "products", p.slug),
+  outFile: path.join(distDirectory, "products", p.slug, "index.html"),
+  altFile: path.join(distDirectory, "products", `${p.slug}.html`),
+  title: p.title,
+  description: p.description,
+  product: p,
+}));
+
 const routes = [
   {
     path: "/",
     outFile: indexPath,
     title: "E-Rickshaw Spare Parts in Rohini, Delhi | JSR EV SPARE PARTS",
-    description: "Looking for genuine e-rickshaw spare parts in Rohini, Delhi? JSR EV SPARE PARTS supplies BLDC motors, speed controllers, battery chargers, brake shoes, wiring kits & repair services in Sector 18."
+    description: "Looking for genuine e-rickshaw spare parts in Rohini, Delhi? Visit JSR EV SPARE PARTS for motors, controllers, brakes, batteries and accessories. Call 9990120067."
   },
+  ...productRoutes,
   {
     path: "/privacy",
     outDir: path.join(distDirectory, "privacy"),
@@ -68,37 +80,61 @@ for (const route of routes) {
   if (route.path !== "/") {
     pageHtml = pageHtml.replace(/<script type="application\/ld\+json">\s*\{\s*"@context":\s*"https:\/\/schema\.org",\s*"@type":\s*"FAQPage"[\s\S]*?<\/script>\s*/, "");
     
-    // Update breadcrumbs for subpages
+    // Update breadcrumbs for subpages & product category pages
     if (route.path !== "/404") {
       const pageNames = {
         "/privacy": "Privacy Policy",
         "/terms": "Terms & Conditions",
         "/refund": "Refund Policy"
       };
-      const subpageName = pageNames[route.path] || "Page";
+      const subpageName = pageNames[route.path] || route.product?.name || "Page";
       
       pageHtml = pageHtml.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/, (match, jsonContent) => {
         try {
           const schema = JSON.parse(jsonContent);
           if (schema['@graph'] && Array.isArray(schema['@graph'])) {
             const breadcrumbIndex = schema['@graph'].findIndex(item => item['@type'] === 'BreadcrumbList');
+            
+            const itemListElement = route.product
+              ? [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": `${productionUrl}/`
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Spare Parts",
+                    "item": `${productionUrl}/#spare-parts`
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": route.product.name,
+                    "item": `${productionUrl}${route.path}`
+                  }
+                ]
+              : [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": `${productionUrl}/`
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": subpageName,
+                    "item": `${productionUrl}${route.path}`
+                  }
+                ];
+
             const newBreadcrumbs = {
               "@type": "BreadcrumbList",
               "@id": `${productionUrl}${route.path}#breadcrumb`,
-              "itemListElement": [
-                {
-                  "@type": "ListItem",
-                  "position": 1,
-                  "name": "Home",
-                  "item": `${productionUrl}/`
-                },
-                {
-                  "@type": "ListItem",
-                  "position": 2,
-                  "name": subpageName,
-                  "item": `${productionUrl}${route.path}`
-                }
-              ]
+              itemListElement
             };
             if (breadcrumbIndex !== -1) {
               schema['@graph'][breadcrumbIndex] = newBreadcrumbs;
@@ -125,7 +161,9 @@ for (const route of routes) {
   // Canonical and OG
   if (productionUrl && route.path !== "/404") {
     const canonicalUrl = route.path === "/" ? `${productionUrl}/` : `${productionUrl}${route.path}`;
-    const socialImageUrl = socialImagePath ? new URL(socialImagePath, `${productionUrl}/`).href : "";
+    const socialImageUrl = route.product
+      ? new URL(route.product.image, `${productionUrl}/`).href
+      : (socialImagePath ? new URL(socialImagePath, `${productionUrl}/`).href : "");
 
     // Update or insert canonical
     if (pageHtml.includes('<link rel="canonical"')) {
@@ -178,7 +216,13 @@ for (const route of routes) {
 
 // Valid XML Sitemap with reliable lastmod for actual public pages (no fake changefreq/priority)
 const today = new Date().toISOString().split("T")[0];
-const sitemapUrls = ["/", "/privacy", "/terms", "/refund"];
+const sitemapUrls = [
+  "/",
+  ...productsData.map(p => `/products/${p.slug}`),
+  "/privacy",
+  "/terms",
+  "/refund"
+];
 
 const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

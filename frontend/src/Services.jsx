@@ -1,17 +1,17 @@
 const stockParts = [
-  { id: "motor", name: "Motor", img: "/parts/motor.png", width: 70, height: 50, alt: "E-Rickshaw 48V/60V BLDC Motor - High Torque Copper Wound" },
-  { id: "controller", name: "Controller", img: "/parts/controller.png", width: 70, height: 50, alt: "E-Rickshaw 48V/60V Intelligent Brushless Speed Controller" },
-  { id: "battery-charger", name: "Battery Charger", img: "/parts/battery-charger.png", width: 70, height: 50, alt: "Automatic SMPS E-Rickshaw Battery Charger with Voltage Cut-off" },
-  { id: "differential", name: "Differential", img: "/parts/differential.png", width: 70, height: 50, alt: "Heavy-Duty E-Rickshaw Rear Axle Differential Gear Assembly" },
-  { id: "brake-shoes", name: "Brake Shoes", img: "/parts/brake-shoes.png", width: 70, height: 50, alt: "High-Grip Heat-Resistant E-Rickshaw Brake Shoes Front and Rear" },
-  { id: "shocker", name: "Shocker", img: "/parts/shocker.png", width: 70, height: 50, alt: "Heavy-Duty Hydraulic E-Rickshaw Suspension Shock Absorber" },
-  { id: "tyres", name: "Tyres", img: "/parts/tyres.png", width: 70, height: 50, alt: "Commercial Heavy-Duty E-Rickshaw Tyres & Tubes" },
-  { id: "wiring-kit", name: "Wiring Kit", img: "/parts/wiring-kit.png", width: 70, height: 46, alt: "Complete Full-Copper Wiring Harness Kit for E-Rickshaws" },
-  { id: "dc-converter", name: "DC Converter", img: "/parts/dc-converter.png", width: 70, height: 46, alt: "48V to 12V Step-Down DC-DC Converter for E-Rickshaw Accessories" },
-  { id: "headlight", name: "Headlight", img: "/parts/headlight.png", width: 70, height: 46, alt: "High-Lumen Energy-Saving LED Headlight Assembly for E-Rickshaws" },
-  { id: "tail-light", name: "Tail Light", img: "/parts/tail-light.png", width: 70, height: 46, alt: "High-Visibility E-Rickshaw Brake and Indicator Tail Light Lamp" },
-  { id: "accelerator", name: "Accelerator", img: "/parts/accelerator.png", width: 70, height: 46, alt: "Ergonomic E-Rickshaw Accelerator Throttle Grip with Forward-Reverse Switch" },
-  { id: "battery-packs", name: "Battery Packs", img: "/parts/battery-packs.png", width: 70, height: 46, alt: "Commercial Heavy-Duty E-Rickshaw Battery Pack with Long Mileage" },
+  { id: "motor", slug: "erickshaw-motors", name: "Motor", img: "/parts/motor.png", width: 70, height: 50, alt: "E-Rickshaw 48V/60V BLDC Motor - High Torque Copper Wound" },
+  { id: "controller", slug: "controllers", name: "Controller", img: "/parts/controller.png", width: 70, height: 50, alt: "E-Rickshaw 48V/60V Intelligent Brushless Speed Controller" },
+  { id: "battery-charger", slug: "battery-chargers", name: "Battery Charger", img: "/parts/battery-charger.png", width: 70, height: 50, alt: "Automatic SMPS E-Rickshaw Battery Charger with Voltage Cut-off" },
+  { id: "differential", slug: "differentials", name: "Differential", img: "/parts/differential.png", width: 70, height: 50, alt: "Heavy-Duty E-Rickshaw Rear Axle Differential Gear Assembly" },
+  { id: "brake-shoes", slug: "brake-shoes", name: "Brake Shoes", img: "/parts/brake-shoes.png", width: 70, height: 50, alt: "High-Grip Heat-Resistant E-Rickshaw Brake Shoes Front and Rear" },
+  { id: "shocker", slug: "shock-absorbers", name: "Shocker", img: "/parts/shocker.png", width: 70, height: 50, alt: "Heavy-Duty Hydraulic E-Rickshaw Suspension Shock Absorber" },
+  { id: "tyres", slug: "tyres", name: "Tyres", img: "/parts/tyres.png", width: 70, height: 50, alt: "Commercial Heavy-Duty E-Rickshaw Tyres & Tubes" },
+  { id: "wiring-kit", slug: "wiring-kits", name: "Wiring Kit", img: "/parts/wiring-kit.png", width: 70, height: 46, alt: "Complete Full-Copper Wiring Harness Kit for E-Rickshaws" },
+  { id: "dc-converter", slug: "dc-converters", name: "DC Converter", img: "/parts/dc-converter.png", width: 70, height: 46, alt: "48V to 12V Step-Down DC-DC Converter for E-Rickshaw Accessories" },
+  { id: "headlight", slug: "headlights", name: "Headlight", img: "/parts/headlight.png", width: 70, height: 46, alt: "High-Lumen Energy-Saving LED Headlight Assembly for E-Rickshaws" },
+  { id: "tail-light", slug: "tail-lights", name: "Tail Light", img: "/parts/tail-light.png", width: 70, height: 46, alt: "High-Visibility E-Rickshaw Brake and Indicator Tail Light Lamp" },
+  { id: "accelerator", slug: "accelerators", name: "Accelerator", img: "/parts/accelerator.png", width: 70, height: 46, alt: "Ergonomic E-Rickshaw Accelerator Throttle Grip with Forward-Reverse Switch" },
+  { id: "battery-packs", slug: "battery-packs", name: "Battery Packs", img: "/parts/battery-packs.png", width: 70, height: 46, alt: "Commercial Heavy-Duty E-Rickshaw Battery Pack with Long Mileage" },
 ];
 
 const trustFeatures = [
@@ -161,7 +161,7 @@ export default function Services() {
             <span className="stock-parts__brand-line" aria-hidden="true" />
           </div>
 
-          <h3 className="stock-parts__heading" id="stock-parts-heading">
+          <h2 className="stock-parts__heading" id="stock-parts-heading">
             <span className="stock-parts__heading-main">E-Rickshaw Spare Parts</span>{" "}
             <span className="stock-parts__heading-highlight">
               We Stock
@@ -169,7 +169,7 @@ export default function Services() {
                 <path d="M4 12C45 3 95 3 136 12" stroke="#63D817" strokeWidth="4" strokeLinecap="round" />
               </svg>
             </span>
-          </h3>
+          </h2>
 
           <p className="stock-parts__subtitle">
             A complete range of genuine spare parts for e-rickshaws – repair, replacement and upgrade, all in one place.
@@ -180,7 +180,13 @@ export default function Services() {
             <div className="stock-parts__cards-col">
               <div className="stock-parts__grid" role="list" aria-label="Spare parts in stock">
                 {stockParts.map((part) => (
-                  <div key={part.id} className="stock-parts__card" role="listitem">
+                  <a
+                    key={part.id}
+                    href={`/products/${part.slug}`}
+                    className="stock-parts__card"
+                    role="listitem"
+                    aria-label={`View ${part.name} specifications and details`}
+                  >
                     <div className="stock-parts__img-wrap">
                       <img
                         src={part.img}
@@ -194,7 +200,7 @@ export default function Services() {
                     </div>
                     <span className="stock-parts__name">{part.name}</span>
                     <span className="stock-parts__bar" aria-hidden="true" />
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
@@ -242,42 +248,42 @@ export default function Services() {
 
           {/* Detailed Category Guide for Customers & AI Search Discovery */}
           <div className="stock-parts__categories-guide" aria-label="E-Rickshaw Spare Parts Categories and Specifications">
-            <h4 className="stock-parts__categories-title">
+            <h3 className="stock-parts__categories-title">
               E-Rickshaw Parts &amp; Service Categories
-            </h4>
+            </h3>
             <div className="stock-parts__categories-grid">
               <article className="stock-parts__category-card">
-                <h4 className="stock-parts__category-heading">Motors &amp; Drivetrain</h4>
+                <h3 className="stock-parts__category-heading">Motors &amp; Drivetrain</h3>
                 <p className="stock-parts__category-text">
                   Heavy-duty copper-wound BLDC motors (48V / 60V) and precision-machined rear axle differential gears engineered for superior torque, hill-climbing power, and heavy passenger loads in Delhi.
                 </p>
               </article>
               <article className="stock-parts__category-card">
-                <h4 className="stock-parts__category-heading">Controllers &amp; Converters</h4>
+                <h3 className="stock-parts__category-heading">Controllers &amp; Converters</h3>
                 <p className="stock-parts__category-text">
                   Intelligent brushless speed controllers with heat-sink protection and 48V/60V-to-12V step-down DC converters powering lighting, horn, and electronic accessories with zero fluctuations.
                 </p>
               </article>
               <article className="stock-parts__category-card">
-                <h4 className="stock-parts__category-heading">Battery Chargers &amp; Packs</h4>
+                <h3 className="stock-parts__category-heading">Battery Chargers &amp; Packs</h3>
                 <p className="stock-parts__category-text">
                   Automatic micro-controlled SMPS battery chargers with voltage cut-off, short-circuit protection, and durable battery packs designed for prolonged daily commercial operation.
                 </p>
               </article>
               <article className="stock-parts__category-card">
-                <h4 className="stock-parts__category-heading">Suspension, Brakes &amp; Tyres</h4>
+                <h3 className="stock-parts__category-heading">Suspension, Brakes &amp; Tyres</h3>
                 <p className="stock-parts__category-text">
                   Heavy-duty hydraulic front and rear shockers, heat-resistant brake shoes for quick emergency stopping, and high-ply commercial tyres offering high durability on rough urban roads.
                 </p>
               </article>
               <article className="stock-parts__category-card">
-                <h4 className="stock-parts__category-heading">Wiring Kits &amp; Accessories</h4>
+                <h3 className="stock-parts__category-heading">Wiring Kits &amp; Accessories</h3>
                 <p className="stock-parts__category-text">
                   Complete copper wiring harness kits, bright energy-saving LED headlights, high-visibility tail lamps, and ergonomic accelerator throttle grips with forward-reverse toggles.
                 </p>
               </article>
               <article className="stock-parts__category-card">
-                <h4 className="stock-parts__category-heading">Rohini Repair &amp; Fitting</h4>
+                <h3 className="stock-parts__category-heading">Rohini Repair &amp; Fitting</h3>
                 <p className="stock-parts__category-text">
                   Professional in-shop component diagnostics, motor servicing, axle alignment, and fast same-day parts replacement by skilled technicians in Sector 18, Rohini, Delhi.
                 </p>
