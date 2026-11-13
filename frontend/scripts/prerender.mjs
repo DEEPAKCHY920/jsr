@@ -19,37 +19,37 @@ const routes = [
     path: "/",
     outFile: indexPath,
     title: "E-Rickshaw Spare Parts in Rohini, Delhi | JSR EV SPARE PARTS",
-    description: "Looking for genuine e-rickshaw spare parts in Rohini, Delhi? Visit JSR EV SPARE PARTS for EV components, accessories, repair and fitting services."
+    description: "Looking for genuine e-rickshaw spare parts in Rohini, Delhi? JSR EV SPARE PARTS supplies BLDC motors, speed controllers, battery chargers, brake shoes, wiring kits & repair services in Sector 18."
   },
   {
     path: "/privacy",
     outDir: path.join(distDirectory, "privacy"),
     outFile: path.join(distDirectory, "privacy", "index.html"),
     altFile: path.join(distDirectory, "privacy.html"),
-    title: "Privacy Policy | JSR EV Spare Parts",
-    description: "Privacy policy for JSR EV Spare Parts, Sector 18, Rohini, Delhi. Explains how customer enquiries, orders, and contact details are handled."
+    title: "Privacy Policy | JSR EV SPARE PARTS – Rohini, Delhi",
+    description: "Privacy policy for JSR EV Spare Parts in Sector 18, Rohini, Delhi. Explains how customer enquiries, orders, and contact details are handled securely."
   },
   {
     path: "/terms",
     outDir: path.join(distDirectory, "terms"),
     outFile: path.join(distDirectory, "terms", "index.html"),
     altFile: path.join(distDirectory, "terms.html"),
-    title: "Terms & Conditions | JSR EV Spare Parts",
-    description: "Terms and conditions of sale, compatibility checks, and repair services for JSR EV Spare Parts in Rohini, Delhi."
+    title: "Terms & Conditions | JSR EV SPARE PARTS – Rohini, Delhi",
+    description: "Terms and conditions of sale, component compatibility checks, and in-shop repair services for JSR EV Spare Parts in Rohini, Delhi."
   },
   {
     path: "/refund",
     outDir: path.join(distDirectory, "refund"),
     outFile: path.join(distDirectory, "refund", "index.html"),
     altFile: path.join(distDirectory, "refund.html"),
-    title: "Refund & Return Policy | JSR EV Spare Parts",
-    description: "Return, exchange, and refund guidelines for electrical and mechanical e-rickshaw spare parts at JSR EV Spare Parts."
+    title: "Refund & Return Policy | JSR EV SPARE PARTS – Rohini, Delhi",
+    description: "Return, exchange, and refund guidelines for electrical and mechanical e-rickshaw spare parts at JSR EV Spare Parts in Rohini, Delhi."
   },
   {
     path: "/404",
     outFile: path.join(distDirectory, "404.html"),
-    title: "404 – Page Not Found | JSR EV Spare Parts",
-    description: "The page you are looking for does not exist. Browse our genuine EV spare parts in Rohini, Delhi."
+    title: "404 – Page Not Found | JSR EV SPARE PARTS",
+    description: "The page you are looking for does not exist. Browse genuine e-rickshaw spare parts and repair services at JSR EV Spare Parts in Rohini, Delhi."
   }
 ];
 

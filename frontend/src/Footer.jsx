@@ -3,6 +3,7 @@ import { GOOGLE_PROFILE_URL } from "./config/reviews.js";
 
 const quickLinks = [
   { id: "home", href: "/#home", label: "Home" },
+  { id: "spare-parts", href: "/#spare-parts", label: "Spare Parts Catalog" },
   { id: "services", href: "/#services", label: "Our Services" },
   { id: "why-us", href: "/#why-choose-us", label: "Why Choose Us" },
   { id: "about", href: "/#about", label: "About Our Shop" },
@@ -14,6 +15,7 @@ const quickLinks = [
 const serviceHighlights = [
   {
     id: "erickshaw",
+    href: "/#spare-parts",
     lines: ["E-Rickshaw", "Parts"],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#39D000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -26,6 +28,7 @@ const serviceHighlights = [
   },
   {
     id: "scooter",
+    href: "/#services",
     lines: ["Scooter", "Parts"],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#39D000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -40,6 +43,7 @@ const serviceHighlights = [
   },
   {
     id: "repair",
+    href: "/#services",
     lines: ["Repair &", "Fitting"],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#39D000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -49,6 +53,7 @@ const serviceHighlights = [
   },
   {
     id: "wholesale",
+    href: "/#about",
     lines: ["Wholesale", "& Retail"],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#39D000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -241,7 +246,13 @@ export default function Footer() {
             {/* 4 Service Cards in a single row */}
             <div className="site-footer__services-grid" role="list" aria-label="Our core offerings">
               {serviceHighlights.map((service) => (
-                <div key={service.id} className="site-footer__service-card" role="listitem">
+                <a
+                  key={service.id}
+                  href={service.href}
+                  className="site-footer__service-card"
+                  role="listitem"
+                  aria-label={`${service.lines.join(" ")} at JSR EV Spare Parts`}
+                >
                   <div className="site-footer__service-icon" aria-hidden="true">
                     {service.icon}
                   </div>
@@ -250,7 +261,7 @@ export default function Footer() {
                       <span key={i} className="site-footer__service-line">{line}</span>
                     ))}
                   </span>
-                </div>
+                </a>
               ))}
             </div>
           </div>

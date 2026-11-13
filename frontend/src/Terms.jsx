@@ -76,6 +76,12 @@ export default function Terms() {
 
           <div className="legal-page__actions">
             <a href="/" className="legal-page__btn">Back to Home</a>
+            <div className="legal-page__related-links">
+              <span className="legal-page__related-label">Related Policies:</span>
+              <a href="/privacy" className="legal-page__related-link">Privacy Policy</a>
+              <span className="legal-page__related-sep" aria-hidden="true">&bull;</span>
+              <a href="/refund" className="legal-page__related-link">Refund &amp; Return Policy</a>
+            </div>
           </div>
         </section>
       </div>

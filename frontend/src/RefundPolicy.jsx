@@ -71,6 +71,12 @@ export default function RefundPolicy() {
 
           <div className="legal-page__actions">
             <a href="/" className="legal-page__btn">Back to Home</a>
+            <div className="legal-page__related-links">
+              <span className="legal-page__related-label">Related Policies:</span>
+              <a href="/privacy" className="legal-page__related-link">Privacy Policy</a>
+              <span className="legal-page__related-sep" aria-hidden="true">&bull;</span>
+              <a href="/terms" className="legal-page__related-link">Terms &amp; Conditions</a>
+            </div>
           </div>
         </section>
       </div>

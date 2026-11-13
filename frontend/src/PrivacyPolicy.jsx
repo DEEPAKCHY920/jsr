@@ -74,6 +74,12 @@ export default function PrivacyPolicy() {
 
           <div className="legal-page__actions">
             <a href="/" className="legal-page__btn">Back to Home</a>
+            <div className="legal-page__related-links">
+              <span className="legal-page__related-label">Related Policies:</span>
+              <a href="/terms" className="legal-page__related-link">Terms &amp; Conditions</a>
+              <span className="legal-page__related-sep" aria-hidden="true">&bull;</span>
+              <a href="/refund" className="legal-page__related-link">Refund &amp; Return Policy</a>
+            </div>
           </div>
         </section>
       </div>

@@ -18,9 +18,9 @@ export default function Hero() {
 
           {/* Main Heading with curved underline */}
           <h1 className="hero__heading" id="hero-heading">
-            <span className="hero__heading-sub">Your Destination for</span>
+            <span className="hero__heading-sub">E-Rickshaw Spare Parts</span>
             <span className="hero__heading-highlight">
-              E-Rickshaw Spare Parts
+              in Rohini, Delhi
               <svg className="hero__heading-curve" viewBox="0 0 260 14" fill="none" aria-hidden="true" focusable="false">
                 <path d="M3 10C65 3 175 3 257 10" stroke="#65D510" strokeWidth="4.5" strokeLinecap="round" />
               </svg>
@@ -29,7 +29,7 @@ export default function Hero() {
 
           {/* Subtitle */}
           <p className="hero__desc">
-            Genuine e-rickshaw spare parts in Rohini and electric scooter spare parts with repair and fitting services.
+            Genuine e-rickshaw spare parts in Rohini, Delhi and electric scooter components with expert repair and fitting services.
           </p>
 
           {/* Action Buttons */}
@@ -98,7 +98,7 @@ export default function Hero() {
           <div className="hero__glow-accent" aria-hidden="true" />
           <img
             src="/hero-ev-banner.png"
-            alt="Blue e-rickshaw with motor, controller, brake shoes and tyre spare parts"
+            alt="Commercial blue e-rickshaw with electric motor, speed controller, brake shoes, and tyre spare parts in Rohini Delhi"
             className="hero__banner-img"
             width="552"
             height="402"

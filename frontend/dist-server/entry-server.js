@@ -514,10 +514,10 @@ function Hero() {
 						id: "hero-heading",
 						children: [/* @__PURE__ */ jsx("span", {
 							className: "hero__heading-sub",
-							children: "Your Destination for"
+							children: "Your Trusted Shop for"
 						}), /* @__PURE__ */ jsxs("span", {
 							className: "hero__heading-highlight",
-							children: ["E-Rickshaw Spare Parts", /* @__PURE__ */ jsx("svg", {
+							children: ["E-Rickshaw Spare Parts in Rohini", /* @__PURE__ */ jsx("svg", {
 								className: "hero__heading-curve",
 								viewBox: "0 0 260 14",
 								fill: "none",
@@ -534,7 +534,7 @@ function Hero() {
 					}),
 					/* @__PURE__ */ jsx("p", {
 						className: "hero__desc",
-						children: "Genuine e-rickshaw spare parts in Rohini and electric scooter spare parts with repair and fitting services."
+						children: "Genuine e-rickshaw spare parts in Rohini, Delhi and electric scooter components with expert repair and fitting services."
 					}),
 					/* @__PURE__ */ jsxs("div", {
 						className: "hero__actions",
@@ -659,7 +659,7 @@ function Hero() {
 					"aria-hidden": "true"
 				}), /* @__PURE__ */ jsx("img", {
 					src: "/hero-ev-banner.png",
-					alt: "Blue e-rickshaw with motor, controller, brake shoes and tyre spare parts",
+					alt: "Commercial blue e-rickshaw with electric motor, speed controller, brake shoes, and tyre spare parts in Rohini Delhi",
 					className: "hero__banner-img",
 					width: "552",
 					height: "402",
@@ -679,7 +679,7 @@ var stockParts = [
 		img: "/parts/motor.png",
 		width: 70,
 		height: 50,
-		alt: "Electric rickshaw motor"
+		alt: "E-Rickshaw 48V/60V BLDC Motor - High Torque Copper Wound"
 	},
 	{
 		id: "controller",
@@ -687,7 +687,7 @@ var stockParts = [
 		img: "/parts/controller.png",
 		width: 70,
 		height: 50,
-		alt: "E-rickshaw speed controller"
+		alt: "E-Rickshaw 48V/60V Intelligent Brushless Speed Controller"
 	},
 	{
 		id: "battery-charger",
@@ -695,7 +695,7 @@ var stockParts = [
 		img: "/parts/battery-charger.png",
 		width: 70,
 		height: 50,
-		alt: "E-rickshaw battery charger"
+		alt: "Automatic SMPS E-Rickshaw Battery Charger with Voltage Cut-off"
 	},
 	{
 		id: "differential",
@@ -703,7 +703,7 @@ var stockParts = [
 		img: "/parts/differential.png",
 		width: 70,
 		height: 50,
-		alt: "E-rickshaw rear axle differential gear"
+		alt: "Heavy-Duty E-Rickshaw Rear Axle Differential Gear Assembly"
 	},
 	{
 		id: "brake-shoes",
@@ -711,7 +711,7 @@ var stockParts = [
 		img: "/parts/brake-shoes.png",
 		width: 70,
 		height: 50,
-		alt: "E-rickshaw brake shoes"
+		alt: "High-Grip Heat-Resistant E-Rickshaw Brake Shoes Front and Rear"
 	},
 	{
 		id: "shocker",
@@ -719,7 +719,7 @@ var stockParts = [
 		img: "/parts/shocker.png",
 		width: 70,
 		height: 50,
-		alt: "E-rickshaw suspension shocker"
+		alt: "Heavy-Duty Hydraulic E-Rickshaw Suspension Shock Absorber"
 	},
 	{
 		id: "tyres",
@@ -727,7 +727,7 @@ var stockParts = [
 		img: "/parts/tyres.png",
 		width: 70,
 		height: 50,
-		alt: "Electric rickshaw durable tyres"
+		alt: "Commercial Heavy-Duty E-Rickshaw Tyres & Tubes"
 	},
 	{
 		id: "wiring-kit",
@@ -735,7 +735,7 @@ var stockParts = [
 		img: "/parts/wiring-kit.png",
 		width: 70,
 		height: 46,
-		alt: "E-rickshaw full wiring harness kit"
+		alt: "Complete Full-Copper Wiring Harness Kit for E-Rickshaws"
 	},
 	{
 		id: "dc-converter",
@@ -743,7 +743,7 @@ var stockParts = [
 		img: "/parts/dc-converter.png",
 		width: 70,
 		height: 46,
-		alt: "E-rickshaw DC to DC converter"
+		alt: "48V to 12V Step-Down DC-DC Converter for E-Rickshaw Accessories"
 	},
 	{
 		id: "headlight",
@@ -751,7 +751,7 @@ var stockParts = [
 		img: "/parts/headlight.png",
 		width: 70,
 		height: 46,
-		alt: "E-rickshaw bright LED headlight"
+		alt: "High-Lumen Energy-Saving LED Headlight Assembly for E-Rickshaws"
 	},
 	{
 		id: "tail-light",
@@ -759,7 +759,7 @@ var stockParts = [
 		img: "/parts/tail-light.png",
 		width: 70,
 		height: 46,
-		alt: "E-rickshaw tail light lamp"
+		alt: "High-Visibility E-Rickshaw Brake and Indicator Tail Light Lamp"
 	},
 	{
 		id: "accelerator",
@@ -767,7 +767,7 @@ var stockParts = [
 		img: "/parts/accelerator.png",
 		width: 70,
 		height: 46,
-		alt: "E-rickshaw accelerator pedal throttle"
+		alt: "Ergonomic E-Rickshaw Accelerator Throttle Grip with Forward-Reverse Switch"
 	},
 	{
 		id: "battery-packs",
@@ -775,7 +775,7 @@ var stockParts = [
 		img: "/parts/battery-packs.png",
 		width: 70,
 		height: 46,
-		alt: "E-rickshaw heavy duty battery pack"
+		alt: "Commercial Heavy-Duty E-Rickshaw Battery Pack with Long Mileage"
 	}
 ];
 var trustFeatures = [
@@ -893,11 +893,11 @@ function Services() {
 						/* @__PURE__ */ jsx("h2", {
 							className: "services__heading",
 							id: "services-heading",
-							children: "Our Services"
+							children: "Our Services & Spare Parts"
 						}),
 						/* @__PURE__ */ jsx("p", {
 							className: "services__subtitle",
-							children: "Spare parts, vehicle servicing and parts fitting for your electric vehicle."
+							children: "Genuine EV spare parts, vehicle servicing, and in-shop parts fitting in Sector 18, Rohini, Delhi."
 						})
 					]
 				}),
@@ -932,11 +932,11 @@ function Services() {
 								children: [
 									/* @__PURE__ */ jsx("h3", {
 										className: "services__card-heading",
-										children: "Spare Parts Sales"
+										children: "Spare Parts Supply"
 									}),
 									/* @__PURE__ */ jsx("p", {
 										className: "services__card-copy",
-										children: "Spare parts for e-rickshaws and electric scooters."
+										children: "Genuine spare parts for commercial e-rickshaws and electric scooters."
 									}),
 									/* @__PURE__ */ jsxs("a", {
 										href: "https://wa.me/919990120067?text=Hi%20JSR%20EV%2C%20I%20want%20to%20check%20availability%20of%20spare%20parts.",
@@ -989,11 +989,11 @@ function Services() {
 								children: [
 									/* @__PURE__ */ jsx("h3", {
 										className: "services__card-heading",
-										children: "Repair Services"
+										children: "E-Rickshaw Repair in Rohini"
 									}),
 									/* @__PURE__ */ jsx("p", {
 										className: "services__card-copy",
-										children: "Visit our shop to discuss your vehicle’s repair requirements."
+										children: "Diagnostics, motor repairs, wiring fixes, and fast vehicle troubleshooting in Sector 18."
 									}),
 									/* @__PURE__ */ jsxs("a", {
 										href: "tel:+919990120067",
@@ -1054,11 +1054,11 @@ function Services() {
 								children: [
 									/* @__PURE__ */ jsx("h3", {
 										className: "services__card-heading",
-										children: "Parts Fitting"
+										children: "Parts Fitting & Installation"
 									}),
 									/* @__PURE__ */ jsx("p", {
 										className: "services__card-copy",
-										children: "Get fitting services for your e-rickshaw and electric scooter parts."
+										children: "Precise on-site parts fitting and installation by skilled e-rickshaw mechanics."
 									}),
 									/* @__PURE__ */ jsxs("a", {
 										href: "https://wa.me/919990120067?text=Hello%20JSR%20EV%2C%20I%20would%20like%20to%20enquire%20about%20fitting%20charges%20for%20my%20electric%20vehicle.",
@@ -1118,7 +1118,7 @@ function Services() {
 							children: [
 								/* @__PURE__ */ jsx("span", {
 									className: "stock-parts__heading-main",
-									children: "Spare Parts"
+									children: "E-Rickshaw Spare Parts"
 								}),
 								" ",
 								/* @__PURE__ */ jsxs("span", {
@@ -1163,6 +1163,7 @@ function Services() {
 													width: part.width,
 													height: part.height,
 													loading: "lazy",
+													decoding: "async",
 													className: "stock-parts__img"
 												})
 											}),
@@ -1181,10 +1182,11 @@ function Services() {
 								className: "stock-parts__vehicle-col",
 								children: /* @__PURE__ */ jsx("img", {
 									src: "/parts/blue-erickshaw.png",
-									alt: "Modern blue electric rickshaw for spare parts and fitting",
+									alt: "Modern commercial blue electric rickshaw for genuine spare parts and fitting in Rohini, Delhi",
 									width: "275",
 									height: "225",
 									loading: "lazy",
+									decoding: "async",
 									className: "stock-parts__vehicle-img"
 								})
 							})]
@@ -1260,7 +1262,7 @@ function Services() {
 								children: [
 									/* @__PURE__ */ jsxs("article", {
 										className: "stock-parts__category-card",
-										children: [/* @__PURE__ */ jsx("h5", {
+										children: [/* @__PURE__ */ jsx("h4", {
 											className: "stock-parts__category-heading",
 											children: "Motors & Drivetrain"
 										}), /* @__PURE__ */ jsx("p", {
@@ -1270,7 +1272,7 @@ function Services() {
 									}),
 									/* @__PURE__ */ jsxs("article", {
 										className: "stock-parts__category-card",
-										children: [/* @__PURE__ */ jsx("h5", {
+										children: [/* @__PURE__ */ jsx("h4", {
 											className: "stock-parts__category-heading",
 											children: "Controllers & Converters"
 										}), /* @__PURE__ */ jsx("p", {
@@ -1280,7 +1282,7 @@ function Services() {
 									}),
 									/* @__PURE__ */ jsxs("article", {
 										className: "stock-parts__category-card",
-										children: [/* @__PURE__ */ jsx("h5", {
+										children: [/* @__PURE__ */ jsx("h4", {
 											className: "stock-parts__category-heading",
 											children: "Battery Chargers & Packs"
 										}), /* @__PURE__ */ jsx("p", {
@@ -1290,7 +1292,7 @@ function Services() {
 									}),
 									/* @__PURE__ */ jsxs("article", {
 										className: "stock-parts__category-card",
-										children: [/* @__PURE__ */ jsx("h5", {
+										children: [/* @__PURE__ */ jsx("h4", {
 											className: "stock-parts__category-heading",
 											children: "Suspension, Brakes & Tyres"
 										}), /* @__PURE__ */ jsx("p", {
@@ -1300,7 +1302,7 @@ function Services() {
 									}),
 									/* @__PURE__ */ jsxs("article", {
 										className: "stock-parts__category-card",
-										children: [/* @__PURE__ */ jsx("h5", {
+										children: [/* @__PURE__ */ jsx("h4", {
 											className: "stock-parts__category-heading",
 											children: "Wiring Kits & Accessories"
 										}), /* @__PURE__ */ jsx("p", {
@@ -1310,7 +1312,7 @@ function Services() {
 									}),
 									/* @__PURE__ */ jsxs("article", {
 										className: "stock-parts__category-card",
-										children: [/* @__PURE__ */ jsx("h5", {
+										children: [/* @__PURE__ */ jsx("h4", {
 											className: "stock-parts__category-heading",
 											children: "Rohini Repair & Fitting"
 										}), /* @__PURE__ */ jsx("p", {
@@ -2206,11 +2208,11 @@ function StoreLocation() {
 					/* @__PURE__ */ jsx("h2", {
 						className: "store-location__heading",
 						id: "store-location-heading",
-						children: "Visit Our Store"
+						children: "Visit Our Store in Sector 18, Rohini"
 					}),
 					/* @__PURE__ */ jsx("p", {
 						className: "store-location__subtitle",
-						children: "Find genuine E-Rickshaw spare parts at JSR EV SPARE PARTS."
+						children: "Find genuine e-rickshaw spare parts and get fast repair and fitting support in Rohini, Delhi."
 					})
 				]
 			}), /* @__PURE__ */ jsxs("div", {
@@ -2586,6 +2588,11 @@ var quickLinks = [
 		label: "Home"
 	},
 	{
+		id: "spare-parts",
+		href: "/#spare-parts",
+		label: "Spare Parts Catalog"
+	},
+	{
 		id: "services",
 		href: "/#services",
 		label: "Our Services"
@@ -2619,6 +2626,7 @@ var quickLinks = [
 var serviceHighlights = [
 	{
 		id: "erickshaw",
+		href: "/#spare-parts",
 		lines: ["E-Rickshaw", "Parts"],
 		icon: /* @__PURE__ */ jsxs("svg", {
 			width: "22",
@@ -2648,6 +2656,7 @@ var serviceHighlights = [
 	},
 	{
 		id: "scooter",
+		href: "/#services",
 		lines: ["Scooter", "Parts"],
 		icon: /* @__PURE__ */ jsxs("svg", {
 			width: "22",
@@ -2679,6 +2688,7 @@ var serviceHighlights = [
 	},
 	{
 		id: "repair",
+		href: "/#services",
 		lines: ["Repair &", "Fitting"],
 		icon: /* @__PURE__ */ jsx("svg", {
 			width: "22",
@@ -2695,6 +2705,7 @@ var serviceHighlights = [
 	},
 	{
 		id: "wholesale",
+		href: "/#about",
 		lines: ["Wholesale", "& Retail"],
 		icon: /* @__PURE__ */ jsxs("svg", {
 			width: "22",
@@ -2993,9 +3004,11 @@ function Footer() {
 										className: "site-footer__services-grid",
 										role: "list",
 										"aria-label": "Our core offerings",
-										children: serviceHighlights.map((service) => /* @__PURE__ */ jsxs("div", {
+										children: serviceHighlights.map((service) => /* @__PURE__ */ jsxs("a", {
+											href: service.href,
 											className: "site-footer__service-card",
 											role: "listitem",
+											"aria-label": `${service.lines.join(" ")} at JSR EV Spare Parts`,
 											children: [/* @__PURE__ */ jsx("div", {
 												className: "site-footer__service-icon",
 												"aria-hidden": "true",
@@ -3581,13 +3594,36 @@ function PrivacyPolicy() {
 								"Business Hours: 8:00 AM – 8:00 PM (Open 7 Days)"
 							]
 						}),
-						/* @__PURE__ */ jsx("div", {
+						/* @__PURE__ */ jsxs("div", {
 							className: "legal-page__actions",
-							children: /* @__PURE__ */ jsx("a", {
+							children: [/* @__PURE__ */ jsx("a", {
 								href: "/",
 								className: "legal-page__btn",
 								children: "Back to Home"
-							})
+							}), /* @__PURE__ */ jsxs("div", {
+								className: "legal-page__related-links",
+								children: [
+									/* @__PURE__ */ jsx("span", {
+										className: "legal-page__related-label",
+										children: "Related Policies:"
+									}),
+									/* @__PURE__ */ jsx("a", {
+										href: "/terms",
+										className: "legal-page__related-link",
+										children: "Terms & Conditions"
+									}),
+									/* @__PURE__ */ jsx("span", {
+										className: "legal-page__related-sep",
+										"aria-hidden": "true",
+										children: "•"
+									}),
+									/* @__PURE__ */ jsx("a", {
+										href: "/refund",
+										className: "legal-page__related-link",
+										children: "Refund & Return Policy"
+									})
+								]
+							})]
 						})
 					]
 				})
@@ -3687,13 +3723,36 @@ function Terms() {
 								})
 							]
 						}),
-						/* @__PURE__ */ jsx("div", {
+						/* @__PURE__ */ jsxs("div", {
 							className: "legal-page__actions",
-							children: /* @__PURE__ */ jsx("a", {
+							children: [/* @__PURE__ */ jsx("a", {
 								href: "/",
 								className: "legal-page__btn",
 								children: "Back to Home"
-							})
+							}), /* @__PURE__ */ jsxs("div", {
+								className: "legal-page__related-links",
+								children: [
+									/* @__PURE__ */ jsx("span", {
+										className: "legal-page__related-label",
+										children: "Related Policies:"
+									}),
+									/* @__PURE__ */ jsx("a", {
+										href: "/privacy",
+										className: "legal-page__related-link",
+										children: "Privacy Policy"
+									}),
+									/* @__PURE__ */ jsx("span", {
+										className: "legal-page__related-sep",
+										"aria-hidden": "true",
+										children: "•"
+									}),
+									/* @__PURE__ */ jsx("a", {
+										href: "/refund",
+										className: "legal-page__related-link",
+										children: "Refund & Return Policy"
+									})
+								]
+							})]
 						})
 					]
 				})
@@ -3811,13 +3870,36 @@ function RefundPolicy() {
 								" (8:00 AM – 8:00 PM, 7 Days)"
 							]
 						}),
-						/* @__PURE__ */ jsx("div", {
+						/* @__PURE__ */ jsxs("div", {
 							className: "legal-page__actions",
-							children: /* @__PURE__ */ jsx("a", {
+							children: [/* @__PURE__ */ jsx("a", {
 								href: "/",
 								className: "legal-page__btn",
 								children: "Back to Home"
-							})
+							}), /* @__PURE__ */ jsxs("div", {
+								className: "legal-page__related-links",
+								children: [
+									/* @__PURE__ */ jsx("span", {
+										className: "legal-page__related-label",
+										children: "Related Policies:"
+									}),
+									/* @__PURE__ */ jsx("a", {
+										href: "/privacy",
+										className: "legal-page__related-link",
+										children: "Privacy Policy"
+									}),
+									/* @__PURE__ */ jsx("span", {
+										className: "legal-page__related-sep",
+										"aria-hidden": "true",
+										children: "•"
+									}),
+									/* @__PURE__ */ jsx("a", {
+										href: "/terms",
+										className: "legal-page__related-link",
+										children: "Terms & Conditions"
+									})
+								]
+							})]
 						})
 					]
 				})
@@ -3877,6 +3959,27 @@ function App({ url }) {
 		window.addEventListener("popstate", onPop);
 		return () => window.removeEventListener("popstate", onPop);
 	}, []);
+	useEffect(() => {
+		if (typeof document === "undefined") return;
+		const titles = {
+			"/": "E-Rickshaw Spare Parts in Rohini, Delhi | JSR EV SPARE PARTS",
+			"/privacy": "Privacy Policy | JSR EV SPARE PARTS – Rohini, Delhi",
+			"/terms": "Terms & Conditions | JSR EV SPARE PARTS – Rohini, Delhi",
+			"/refund": "Refund & Return Policy | JSR EV SPARE PARTS – Rohini, Delhi",
+			"/404": "404 – Page Not Found | JSR EV SPARE PARTS"
+		};
+		const descriptions = {
+			"/": "Looking for genuine e-rickshaw spare parts in Rohini, Delhi? JSR EV SPARE PARTS supplies BLDC motors, speed controllers, battery chargers, brake shoes, wiring kits & repair services in Sector 18.",
+			"/privacy": "Privacy policy for JSR EV Spare Parts in Sector 18, Rohini, Delhi. Explains how customer enquiries, orders, and contact details are handled securely.",
+			"/terms": "Terms and conditions of sale, component compatibility checks, and in-shop repair services for JSR EV Spare Parts in Rohini, Delhi.",
+			"/refund": "Return, exchange, and refund guidelines for electrical and mechanical e-rickshaw spare parts at JSR EV Spare Parts in Rohini, Delhi.",
+			"/404": "The page you are looking for does not exist. Browse genuine e-rickshaw spare parts and repair services at JSR EV Spare Parts in Rohini, Delhi."
+		};
+		const cleanPath = currentPath === "/index.html" ? "/" : currentPath.replace(/\.html$/, "");
+		if (titles[cleanPath]) document.title = titles[cleanPath];
+		const metaDesc = document.querySelector("meta[name=\"description\"]");
+		if (metaDesc && descriptions[cleanPath]) metaDesc.setAttribute("content", descriptions[cleanPath]);
+	}, [currentPath]);
 	const isHome = currentPath === "/" || currentPath === "/index.html";
 	const isPrivacy = currentPath === "/privacy" || currentPath === "/privacy.html";
 	const isTerms = currentPath === "/terms" || currentPath === "/terms.html";

@@ -21,10 +21,10 @@ export default function StoreLocation() {
             <span className="store-location__eyebrow-line" aria-hidden="true" />
           </div>
           <h2 className="store-location__heading" id="store-location-heading">
-            Visit Our Store
+            Visit Our Store in Sector 18, Rohini
           </h2>
           <p className="store-location__subtitle">
-            Find genuine E-Rickshaw spare parts at JSR EV SPARE PARTS.
+            Find genuine e-rickshaw spare parts and get fast repair and fitting support in Rohini, Delhi.
           </p>
         </header>
 

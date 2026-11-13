@@ -34,6 +34,36 @@ export default function App({ url }) {
     return () => window.removeEventListener("popstate", onPop);
   }, []);
 
+  // Synchronize document.title and meta description on client-side route changes
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+
+    const titles = {
+      "/": "E-Rickshaw Spare Parts in Rohini, Delhi | JSR EV SPARE PARTS",
+      "/privacy": "Privacy Policy | JSR EV SPARE PARTS – Rohini, Delhi",
+      "/terms": "Terms & Conditions | JSR EV SPARE PARTS – Rohini, Delhi",
+      "/refund": "Refund & Return Policy | JSR EV SPARE PARTS – Rohini, Delhi",
+      "/404": "404 – Page Not Found | JSR EV SPARE PARTS"
+    };
+
+    const descriptions = {
+      "/": "Looking for genuine e-rickshaw spare parts in Rohini, Delhi? JSR EV SPARE PARTS supplies BLDC motors, speed controllers, battery chargers, brake shoes, wiring kits & repair services in Sector 18.",
+      "/privacy": "Privacy policy for JSR EV Spare Parts in Sector 18, Rohini, Delhi. Explains how customer enquiries, orders, and contact details are handled securely.",
+      "/terms": "Terms and conditions of sale, component compatibility checks, and in-shop repair services for JSR EV Spare Parts in Rohini, Delhi.",
+      "/refund": "Return, exchange, and refund guidelines for electrical and mechanical e-rickshaw spare parts at JSR EV Spare Parts in Rohini, Delhi.",
+      "/404": "The page you are looking for does not exist. Browse genuine e-rickshaw spare parts and repair services at JSR EV Spare Parts in Rohini, Delhi."
+    };
+
+    const cleanPath = currentPath === "/index.html" ? "/" : currentPath.replace(/\.html$/, "");
+    if (titles[cleanPath]) {
+      document.title = titles[cleanPath];
+    }
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc && descriptions[cleanPath]) {
+      metaDesc.setAttribute("content", descriptions[cleanPath]);
+    }
+  }, [currentPath]);
+
   // Determine which page view to render
   const isHome = currentPath === "/" || currentPath === "/index.html";
   const isPrivacy = currentPath === "/privacy" || currentPath === "/privacy.html";

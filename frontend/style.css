@@ -5147,6 +5147,39 @@ a:active,
   margin-top: 40px;
   padding-top: 24px;
   border-top: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.legal-page__related-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+  color: #5A6B82;
+}
+
+.legal-page__related-label {
+  font-weight: 700;
+  color: #071B35;
+}
+
+.legal-page__related-link {
+  color: #1746CE;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.legal-page__related-link:hover {
+  color: #0a2d8f;
+}
+
+.legal-page__related-sep {
+  color: #94a3b8;
 }
 
 .legal-page__btn {
