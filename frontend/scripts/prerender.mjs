@@ -18,8 +18,8 @@ const routes = [
   {
     path: "/",
     outFile: indexPath,
-    title: "JSR EV SPARE PARTS – E-Rickshaw & Scooter Spare Parts in Rohini, Delhi",
-    description: "Wholesale & retail supplier of genuine e-rickshaw and scooter spare parts in Sector 18, Rohini, Delhi. Motor, controller, throttle, battery charger & repair services. Open every day."
+    title: "E-Rickshaw Spare Parts in Rohini, Delhi | JSR EV SPARE PARTS",
+    description: "Looking for genuine e-rickshaw spare parts in Rohini, Delhi? Visit JSR EV SPARE PARTS for EV components, accessories, repair and fitting services."
   },
   {
     path: "/privacy",
@@ -67,10 +67,50 @@ for (const route of routes) {
   // Remove FAQPage schema from non-homepage routes as FAQs only exist on "/"
   if (route.path !== "/") {
     pageHtml = pageHtml.replace(/<script type="application\/ld\+json">\s*\{\s*"@context":\s*"https:\/\/schema\.org",\s*"@type":\s*"FAQPage"[\s\S]*?<\/script>\s*/, "");
+    
+    // Update breadcrumbs for subpages
+    if (route.path !== "/404") {
+      const pageNames = {
+        "/privacy": "Privacy Policy",
+        "/terms": "Terms & Conditions",
+        "/refund": "Refund Policy"
+      };
+      const subpageName = pageNames[route.path] || "Page";
+      const subpageBreadcrumbJson = JSON.stringify({
+        "@type": "BreadcrumbList",
+        "@id": `${productionUrl}${route.path}#breadcrumb`,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": `${productionUrl}/`
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": subpageName,
+            "item": `${productionUrl}${route.path}`
+          }
+        ]
+      }, null, 8);
+
+      pageHtml = pageHtml.replace(
+        /\{\s*"@type":\s*"BreadcrumbList"[\s\S]*?\}\s*,\s*\{\s*"@type":\s*"ItemList"/,
+        `${subpageBreadcrumbJson},\n        {\n          "@type": "ItemList"`
+      );
+    }
+  }
+
+  // 404 page must never be indexed by search engines
+  if (route.path === "/404") {
+    pageHtml = pageHtml.replace(/<meta name="robots" content=".*?" \/>/, '<meta name="robots" content="noindex, nofollow" />');
+    pageHtml = pageHtml.replace(/<link rel="canonical" href=".*?" \/>\s*/, '');
+    pageHtml = pageHtml.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>\s*/g, '');
   }
 
   // Canonical and OG
-  if (productionUrl) {
+  if (productionUrl && route.path !== "/404") {
     const canonicalUrl = route.path === "/" ? `${productionUrl}/` : `${productionUrl}${route.path}`;
     const socialImageUrl = socialImagePath ? new URL(socialImagePath, `${productionUrl}/`).href : "";
 
@@ -123,29 +163,48 @@ for (const route of routes) {
   }
 }
 
-// Sitemap
-const sitemapUrls = [
-  "",
-  "/privacy",
-  "/terms",
-  "/refund"
-];
+// Valid XML Sitemap with reliable lastmod for actual public pages (no fake changefreq/priority)
+const today = new Date().toISOString().split("T")[0];
+const sitemapUrls = ["/", "/privacy", "/terms", "/refund"];
 
-const sitemapLocs = productionUrl
-  ? sitemapUrls.map(u => `  <url><loc>${productionUrl}${u ? u : "/"}</loc></url>`).join("\n")
-  : `  <url><loc>/</loc></url>\n  <url><loc>/privacy</loc></url>\n  <url><loc>/terms</loc></url>\n  <url><loc>/refund</loc></url>`;
-
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${sitemapLocs}
-</urlset>
+${sitemapUrls.map(u => `  <url>
+    <loc>${productionUrl ? `${productionUrl}${u}` : u}</loc>
+    <lastmod>${today}</lastmod>
+  </url>`).join("\n")}
+</urlset>`.trim();
+
+await writeFile(path.join(distDirectory, "sitemap.xml"), sitemapXml);
+await writeFile(path.join(projectRoot, "public", "sitemap.xml"), sitemapXml);
+
+const robotsTxt = `User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: ${productionUrl}/sitemap.xml
 `;
-await writeFile(path.join(distDirectory, "sitemap.xml"), sitemap);
 
-const robots = productionUrl
-  ? `User-agent: *\nAllow: /\n\nSitemap: ${productionUrl}/sitemap.xml\n`
-  : "User-agent: *\nAllow: /\n\nSitemap: /sitemap.xml\n";
-
-await writeFile(path.join(distDirectory, "robots.txt"), robots);
+await writeFile(path.join(distDirectory, "robots.txt"), robotsTxt);
+await writeFile(path.join(projectRoot, "public", "robots.txt"), robotsTxt);
+await writeFile(path.join(projectRoot, "..", "public", "robots.txt"), robotsTxt).catch(() => {});
+await writeFile(path.join(projectRoot, "..", "public", "sitemap.xml"), sitemapXml).catch(() => {});
 
 console.log("Prerender complete. Routes rendered:", routes.map(r => r.path).join(", "));

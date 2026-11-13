@@ -55,6 +55,24 @@ export const faqItems = [
     answer:
       "Yes, we supply complete battery packs as well as e-rickshaw battery chargers.",
   },
+  {
+    id: "wholesale-supply",
+    question: "Do you supply wholesale e-rickshaw spare parts in Delhi?",
+    answer:
+      "Yes, JSR EV Spare Parts supplies e-rickshaw components at wholesale rates to local mechanics, workshops, and commercial fleet owners across Rohini, Badli, and North Delhi. Call or WhatsApp +91 9990120067 for wholesale order assistance.",
+  },
+  {
+    id: "motor-controller-compatibility",
+    question: "What e-rickshaw motor and controller voltages do you support?",
+    answer:
+      "We stock 48V and 60V brushless DC (BLDC) motors and matching heavy-duty speed controllers compatible with major e-rickshaw models in Delhi, along with copper wiring kits and throttle accelerators.",
+  },
+  {
+    id: "same-day-fitting",
+    question: "Can I get same-day parts fitting and replacement in Rohini?",
+    answer:
+      "Yes. Our physical workshop in Sector 18, Rohini provides fast, same-day component inspection, replacement, and fitting services so drivers and operators minimize vehicle downtime.",
+  },
 ];
 
 export default function FAQ() {

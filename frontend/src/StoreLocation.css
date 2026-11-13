@@ -1,0 +1,551 @@
+/* ================================================================
+   STORE LOCATION / CONTACT SECTION STYLES
+   Matches JSR EV SPARE PARTS design system (Compact Height)
+================================================================ */
+
+.store-location {
+  padding: 40px 0;
+  background-color: #FFFFFF;
+  scroll-margin-top: 80px;
+  position: relative;
+}
+
+.store-location__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Section Header ── */
+.store-location__header {
+  max-width: 760px;
+}
+
+.store-location__eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.store-location__eyebrow {
+  color: #1746CE;
+  font-size: var(--fs-sm, 13px);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.store-location__eyebrow-line {
+  width: 40px;
+  height: 3px;
+  background-color: #39D000;
+  border-radius: 2px;
+}
+
+.store-location__heading {
+  color: #071B35;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: clamp(24px, 2.6vw, 32px);
+  font-weight: 850;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+.store-location__subtitle {
+  margin-top: 6px;
+  color: #5A6B82;
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+
+/* ── Responsive Two-Column Layout ── */
+.store-location__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* ── Store Details Card (Left Column) ── */
+.store-location__card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 20px 22px;
+  background-color: #F8FAFD;
+  border: 1px solid #DCE3EE;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(7, 27, 53, 0.04);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.store-location__card:hover {
+  border-color: #C3D3EC;
+  box-shadow: 0 8px 24px rgba(7, 27, 53, 0.08);
+}
+
+.store-location__brand-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.store-location__badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.store-location__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  background-color: #E8EFFF;
+  color: #1746CE;
+  font-size: 11.5px;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 20px;
+}
+
+.store-location__badge-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #39D000;
+  box-shadow: 0 0 0 0 rgba(57, 208, 0, 0.7);
+  animation: storeLocationPulse 2s infinite;
+}
+
+@keyframes storeLocationPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(57, 208, 0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(57, 208, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(57, 208, 0, 0);
+  }
+}
+
+.store-location__name {
+  margin: 0;
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 850;
+  color: #071B35;
+  letter-spacing: -0.02em;
+}
+
+.store-location__business-type {
+  margin: 0;
+  color: #1746CE;
+  font-weight: 650;
+  font-size: 14px;
+}
+
+/* ── Info Items List ── */
+.store-location__info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.store-location__info-item {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding: 10px 0;
+  border-top: 1px solid #E1E8F2;
+}
+
+.store-location__info-item:first-child {
+  border-top: none;
+  padding-top: 4px;
+}
+
+.store-location__info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background-color: #E8EFFF;
+  color: #1746CE;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.store-location__info-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.store-location__info-item:hover .store-location__info-icon {
+  background-color: #D6E4FF;
+  transform: scale(1.05);
+}
+
+.store-location__info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.store-location__info-label {
+  font-size: 11px;
+  font-weight: 750;
+  color: #5A6B82;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.store-location__info-value {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 650;
+  color: #071B35;
+  line-height: 1.4;
+}
+
+.store-location__info-sub {
+  margin: 0;
+  font-size: 13px;
+  color: #5A6B82;
+  line-height: 1.35;
+}
+
+.store-location__phone-link {
+  color: #1746CE;
+  text-decoration: underline;
+  text-decoration-color: rgba(23, 70, 206, 0.35);
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.store-location__phone-link:hover {
+  color: #1239B0;
+  text-decoration-color: #1239B0;
+}
+
+.store-location__highlight-open {
+  color: #2CA500;
+  font-weight: 700;
+}
+
+/* ── Action Buttons ── */
+.store-location__actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.store-location__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 9px 14px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+/* 1. Primary "Get Directions" Button */
+.store-location__btn--directions {
+  grid-column: span 2;
+  background-color: #1746CE;
+  color: #FFFFFF;
+  border: 1.5px solid #1746CE;
+  font-size: 14px;
+  box-shadow: 0 3px 12px rgba(23, 70, 206, 0.25);
+}
+
+.store-location__btn--directions:hover {
+  background-color: #1239B0;
+  border-color: #1239B0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(23, 70, 206, 0.35);
+}
+
+/* 2. Call Button */
+.store-location__btn--call {
+  background-color: #FFFFFF;
+  color: #071B35;
+  border: 1.5px solid #DCE3EE;
+}
+
+.store-location__btn--call:hover {
+  background-color: #F0F4FC;
+  border-color: #1746CE;
+  color: #1746CE;
+  transform: translateY(-2px);
+}
+
+/* 3. WhatsApp Button */
+.store-location__btn--whatsapp {
+  background-color: #25D366;
+  color: #FFFFFF;
+  border: 1.5px solid #25D366;
+}
+
+.store-location__btn--whatsapp:hover {
+  background-color: #20BA5A;
+  border-color: #20BA5A;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+/* 4. Google Review Button */
+.store-location__btn--review {
+  grid-column: span 2;
+  background-color: #FFFFFF;
+  color: #071B35;
+  border: 1.5px solid #F59E0B;
+}
+
+.store-location__btn--review:hover {
+  background-color: #FFFBEB;
+  border-color: #D97706;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.20);
+}
+
+.store-location__review-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: #F59E0B;
+}
+
+/* ── Google Maps Card (Right Column) ── */
+.store-location__map-container {
+  height: 100%;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  background-color: #F8FAFD;
+  border: 1px solid #DCE3EE;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(7, 27, 53, 0.05);
+  position: relative;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.store-location__map-container:hover {
+  border-color: #C3D3EC;
+  box-shadow: 0 8px 26px rgba(7, 27, 53, 0.09);
+}
+
+.store-location__map-frame-wrap {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-height: 290px;
+  overflow: hidden;
+  background-color: #EEF2F8;
+}
+
+.store-location__iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Floating overlay chip inside the map */
+.store-location__map-floating-chip {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  background-color: rgba(7, 27, 53, 0.88);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+  pointer-events: none;
+}
+
+.store-location__chip-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #39D000;
+  box-shadow: 0 0 8px #39D000;
+}
+
+/* Bottom status & quick directions strip */
+.store-location__map-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  background-color: #FFFFFF;
+  border-top: 1px solid #DCE3EE;
+  flex-shrink: 0;
+}
+
+.store-location__map-bar-text {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  color: #5A6B82;
+  line-height: 1.35;
+}
+
+.store-location__map-bar-icon {
+  color: #1746CE;
+  flex-shrink: 0;
+}
+
+.store-location__map-bar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #1746CE;
+  font-size: 13px;
+  font-weight: 750;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: color 0.2s ease, transform 0.15s ease;
+}
+
+.store-location__map-bar-link:hover {
+  color: #1239B0;
+  transform: translateX(2px);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   RESPONSIVE BREAKPOINTS
+───────────────────────────────────────────────────────────── */
+
+/* Tablet (768px – 1024px) */
+@media (max-width: 1024px) {
+  .store-location {
+    padding: 34px 0;
+  }
+
+  .store-location__layout {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .store-location__card {
+    padding: 18px 20px;
+  }
+
+  .store-location__map-container {
+    min-height: 320px;
+  }
+
+  .store-location__map-frame-wrap {
+    min-height: 260px;
+  }
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 767px) {
+  .store-location {
+    padding: 26px 0;
+  }
+
+  .store-location__inner {
+    gap: 16px;
+  }
+
+  .store-location__layout {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .store-location__card {
+    padding: 16px 14px;
+    border-radius: 14px;
+    gap: 14px;
+  }
+
+  .store-location__actions {
+    grid-template-columns: 1fr;
+  }
+
+  .store-location__btn--directions,
+  .store-location__btn--review {
+    grid-column: span 1;
+  }
+
+  .store-location__btn {
+    width: 100%;
+    min-height: 38px;
+    font-size: 13px;
+  }
+
+  .store-location__map-container {
+    min-height: 260px;
+    border-radius: 14px;
+  }
+
+  .store-location__map-frame-wrap {
+    min-height: 210px;
+    height: 210px;
+  }
+
+  .store-location__map-floating-chip {
+    top: 8px;
+    left: 8px;
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .store-location__map-bar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 12px;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .store-location__map-bar-text {
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  .store-location__map-bar-link {
+    justify-content: center;
+    width: 100%;
+    padding: 6px 0;
+  }
+}

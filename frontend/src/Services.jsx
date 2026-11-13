@@ -237,6 +237,51 @@ export default function Services() {
               </div>
             ))}
           </div>
+
+          {/* Detailed Category Guide for Customers & AI Search Discovery */}
+          <div className="stock-parts__categories-guide" aria-label="E-Rickshaw Spare Parts Categories and Specifications">
+            <h4 className="stock-parts__categories-title">
+              E-Rickshaw Parts &amp; Service Categories
+            </h4>
+            <div className="stock-parts__categories-grid">
+              <article className="stock-parts__category-card">
+                <h5 className="stock-parts__category-heading">Motors &amp; Drivetrain</h5>
+                <p className="stock-parts__category-text">
+                  Heavy-duty copper-wound BLDC motors (48V / 60V) and precision-machined rear axle differential gears engineered for superior torque, hill-climbing power, and heavy passenger loads in Delhi.
+                </p>
+              </article>
+              <article className="stock-parts__category-card">
+                <h5 className="stock-parts__category-heading">Controllers &amp; Converters</h5>
+                <p className="stock-parts__category-text">
+                  Intelligent brushless speed controllers with heat-sink protection and 48V/60V-to-12V step-down DC converters powering lighting, horn, and electronic accessories with zero fluctuations.
+                </p>
+              </article>
+              <article className="stock-parts__category-card">
+                <h5 className="stock-parts__category-heading">Battery Chargers &amp; Packs</h5>
+                <p className="stock-parts__category-text">
+                  Automatic micro-controlled SMPS battery chargers with voltage cut-off, short-circuit protection, and durable battery packs designed for prolonged daily commercial operation.
+                </p>
+              </article>
+              <article className="stock-parts__category-card">
+                <h5 className="stock-parts__category-heading">Suspension, Brakes &amp; Tyres</h5>
+                <p className="stock-parts__category-text">
+                  Heavy-duty hydraulic front and rear shockers, heat-resistant brake shoes for quick emergency stopping, and high-ply commercial tyres offering high durability on rough urban roads.
+                </p>
+              </article>
+              <article className="stock-parts__category-card">
+                <h5 className="stock-parts__category-heading">Wiring Kits &amp; Accessories</h5>
+                <p className="stock-parts__category-text">
+                  Complete copper wiring harness kits, bright energy-saving LED headlights, high-visibility tail lamps, and ergonomic accelerator throttle grips with forward-reverse toggles.
+                </p>
+              </article>
+              <article className="stock-parts__category-card">
+                <h5 className="stock-parts__category-heading">Rohini Repair &amp; Fitting</h5>
+                <p className="stock-parts__category-text">
+                  Professional in-shop component diagnostics, motor servicing, axle alignment, and fast same-day parts replacement by skilled technicians in Sector 18, Rohini, Delhi.
+                </p>
+              </article>
+            </div>
+          </div>
         </section>
       </div>
     </section>

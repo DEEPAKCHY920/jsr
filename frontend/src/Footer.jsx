@@ -14,7 +14,7 @@ const quickLinks = [
 const serviceHighlights = [
   {
     id: "erickshaw",
-    label: "E-Rickshaw\nParts",
+    lines: ["E-Rickshaw", "Parts"],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#39D000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M19 17h2v-3.34a4 4 0 0 0-1.17-2.83L17 8h-4v9h2" />
@@ -26,7 +26,7 @@ const serviceHighlights = [
   },
   {
     id: "scooter",
-    label: "Scooter\nParts",
+    lines: ["Scooter", "Parts"],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#39D000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <circle cx="6" cy="18" r="3" />
@@ -40,7 +40,7 @@ const serviceHighlights = [
   },
   {
     id: "repair",
-    label: "Repair &\nFitting",
+    lines: ["Repair &", "Fitting"],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#39D000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
@@ -49,7 +49,7 @@ const serviceHighlights = [
   },
   {
     id: "wholesale",
-    label: "Wholesale\n& Retail",
+    lines: ["Wholesale", "& Retail"],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#39D000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
@@ -246,7 +246,7 @@ export default function Footer() {
                     {service.icon}
                   </div>
                   <span className="site-footer__service-label">
-                    {service.label.split("\n").map((line, i) => (
+                    {service.lines.map((line, i) => (
                       <span key={i} className="site-footer__service-line">{line}</span>
                     ))}
                   </span>
@@ -407,6 +407,47 @@ export default function Footer() {
               </div>
             </nav>
           </div>
+        </div>
+
+        {/* Dedicated Desktop/Tablet Brand Wordmark Band (Unobstructed, no text overlaps) */}
+        <div className="site-footer__wordmark-band reveal-up" aria-hidden="true">
+          <div className="site-footer__wordmark-text">
+            JSR EV SPARE PARTS
+          </div>
+          <svg
+            className="site-footer__wordmark-curves"
+            viewBox="0 0 1440 160"
+            fill="none"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <defs>
+              <linearGradient id="wordmarkSwooshLeft" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#39D000" stopOpacity="0" />
+                <stop offset="35%" stopColor="#39D000" stopOpacity="0.9" />
+                <stop offset="85%" stopColor="#39D000" stopOpacity="0.45" />
+                <stop offset="100%" stopColor="#39D000" stopOpacity="0" />
+              </linearGradient>
+              <linearGradient id="wordmarkSwooshRight" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#39D000" stopOpacity="0" />
+                <stop offset="45%" stopColor="#39D000" stopOpacity="0.9" />
+                <stop offset="90%" stopColor="#39D000" stopOpacity="0.35" />
+                <stop offset="100%" stopColor="#39D000" stopOpacity="0" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M -40 120 C 160 95, 310 140, 520 90"
+              stroke="url(#wordmarkSwooshLeft)"
+              strokeWidth="3.5"
+              strokeLinecap="round"
+            />
+            <path
+              d="M 920 65 C 1110 25, 1270 95, 1480 70"
+              stroke="url(#wordmarkSwooshRight)"
+              strokeWidth="3.5"
+              strokeLinecap="round"
+            />
+          </svg>
         </div>
 
         {/* Bottom Bar: Horizontal Divider, Hindi Tagline, Copyright & Legal Links */}

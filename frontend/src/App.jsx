@@ -7,7 +7,7 @@ import StatsStrip from "./StatsStrip.jsx";
 import About from "./About.jsx";
 import Reviews from "./Reviews.jsx";
 import FAQ from "./FAQ.jsx";
-import Contact from "./Contact.jsx";
+import StoreLocation from "./StoreLocation.jsx";
 import FloatingCTA from "./FloatingCTA.jsx";
 import BackToTop from "./BackToTop.jsx";
 import Footer from "./Footer.jsx";
@@ -51,7 +51,7 @@ export default function App({ url }) {
         <About />
         <Reviews />
         <FAQ />
-        <Contact />
+        <StoreLocation />
       </main>
     );
   } else if (isPrivacy) {

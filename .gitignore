@@ -1,6 +1,8 @@
 node_modules/
 dist/
 dist-ssr/
+dist-server/
+scratch/
 .vercel/
 .env
 .env.*
